@@ -35,10 +35,12 @@ exports.userAddToCart = function(req,res){
 	console.log("In userAddToCart method.");
 	
 	var ItemId = req.param("ItemId");
-	var UserId =  req.param("UserId");
 	var Qty = 	 req.param("Qty");
+	var UserId =  req.session.userid;
 	
-	var userAddToCartQuery = "INSERT INTO usercart(`UserId`,`ItemId`,`Qty`)VALUES("+ItemId+","+UserId+","+Qty+");";
+	console.log("Add to cart for: "+UserId+" itemId: "+ItemId+" Qty:"+Qty);
+	
+	var userAddToCartQuery = "INSERT INTO usercart(`UserId`,`ItemId`,`Qty`)VALUES("+UserId+","+ItemId+","+Qty+");";
 	console.log("Query:: " + userAddToCartQuery);
 
 	mysql.fetchData(function(err,results) {
@@ -58,5 +60,5 @@ exports.userAddToCart = function(req,res){
 				res.send(json_responses);
 			}
 		}
-	}, getAllProductQuery );	
+	}, userAddToCartQuery );	
 };

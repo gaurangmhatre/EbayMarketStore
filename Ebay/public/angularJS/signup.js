@@ -75,6 +75,8 @@ signup.controller('signup', function($scope, $filter, $http) {
 				$scope.isEmailExist = false;
 				$scope.emailExists = null;
 				$scope.$apply();
+				
+				window.location.assign("/signin");
 			}
 			else if(isSignUp == "false") {
 				console.log("isSignUp=false");

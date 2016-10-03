@@ -43,7 +43,6 @@ products.controller('products', function($scope, $filter, $http) {
 				url : '/userAddToCart',//change the method to get 10 items at a time.
 				data : {
 					"ItemId" : ItemId,
-					"UserId" : UserId,
 					"Qty" : 1
 				}
 			}).success(function(data) {
@@ -52,7 +51,8 @@ products.controller('products', function($scope, $filter, $http) {
 				console.log(data);
 				
 				$scope.allProducts = data.results;
-				
+			
+				window.location.assign("/products");
 				//set all variables.
 					 
 			}).error(function(error) {
