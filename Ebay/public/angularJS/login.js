@@ -37,7 +37,9 @@ login.controller('login', function($scope, $window ,$http) {
 				$scope.unexpected_error = true;
 				//Redirecting to HomePage
 				console.log("Redirecting to HomePage");
-				window.location.assign("/homepage");
+				//window.location.assign("/homepage"); change this later
+				
+				window.location.assign("/userProfile");
 			}
 				//Making a get call to the '/redirectToHomepage' API
 				 

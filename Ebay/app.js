@@ -68,6 +68,7 @@ app.post('/checklogin',home.checklogin);
 
 
 app.get('/userProfile',userProfile.accountdetails);
+app.post('/getUserAccountDetails',userProfile.getUserAccountDetails)
 
 app.get('/accountDetails', function (req, res) {
     res.sendfile(__dirname +'/public/templates/userProfile/accountDetails.html');

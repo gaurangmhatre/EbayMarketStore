@@ -4,7 +4,7 @@ var userProfile = angular.module('userProfile', ['ui.router']);
 userProfile.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		$locationProvider.html5Mode(true);
 		$stateProvider.state('userProfile', {	
-			url : '/',
+			url : '/userProfile',
 			views: {
 	            'header': {
 	                templateUrl : 'templates/userProfile/header.html',
@@ -32,12 +32,12 @@ userProfile.config(function($stateProvider, $urlRouterProvider, $locationProvide
 	});
 
 
-
+/*
 userProfile.controller('accountDetailsController',function($scope, $http,$state){
 	
 	
 	
-});
+});*/
 
 
 userProfile.controller('activityController',function($scope, $http,$state){
