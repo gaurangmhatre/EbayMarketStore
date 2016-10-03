@@ -73,7 +73,7 @@ app.post('/getUserAccountDetails',userProfile.getUserAccountDetails);
 
 app.get('/products',products.getProductsPage);
 app.post('/getAllProducts',products.getAllProducts);
-
+app.post('/userAddToCart',products.userAddToCart);
 
 app.get('/accountDetails', function (req, res) {
     res.sendfile(__dirname +'/public/templates/userProfile/accountDetails.html');
