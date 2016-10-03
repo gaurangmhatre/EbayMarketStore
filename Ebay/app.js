@@ -9,7 +9,8 @@ var express = require('express')
   , calculator = require('./routes/calculator')
   , home = require('./routes/home')
   , userProfile = require('./routes/userProfile')
-  , session = require('client-sessions');
+  , session = require('client-sessions')
+  , products = require('./routes/products');
 
 var app = express();
 
@@ -68,7 +69,11 @@ app.post('/checklogin',home.checklogin);
 
 
 app.get('/userProfile',userProfile.accountdetails);
-app.post('/getUserAccountDetails',userProfile.getUserAccountDetails)
+app.post('/getUserAccountDetails',userProfile.getUserAccountDetails);
+
+app.get('/products',products.getProductsPage);
+app.post('/getAllProducts',products.getAllProducts);
+
 
 app.get('/accountDetails', function (req, res) {
     res.sendfile(__dirname +'/public/templates/userProfile/accountDetails.html');
