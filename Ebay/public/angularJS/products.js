@@ -21,6 +21,8 @@ products.controller('products', function($scope, $filter, $http) {
 			console.log("data is ::");
 			console.log(data);
 			
+			$scope.allProducts = data.results;
+			
 			//set all variables.
 				 
 		}).error(function(error) {
