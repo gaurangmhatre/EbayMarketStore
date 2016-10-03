@@ -11,7 +11,7 @@ signup.controller('signup', function($scope, $filter, $http) {
 			
 		console.log("in submit funtion");
 		$scope.emailExists = "";
-		console.log("username :: " + $scope.username);
+		
 		console.log("email :: " + $scope.email);
 		$http({
 			method : "POST",
@@ -47,21 +47,20 @@ signup.controller('signup', function($scope, $filter, $http) {
 	function doSignUp() {
 		
 		console.log("in doSignUp");
-		console.log("before calling http :: username :: " + $scope.username);
+		console.log("before calling http :: email :: " + $scope.email);
 
 		$http({
 			method : "POST",
 			url : '/aftersignup',
 			data : {
-				"username" : $scope.username,
-				"password" : $scope.password,
 				"firstname" : $scope.firstname,
 				"lastname" : $scope.lastname,
 				"email" : $scope.email,
-				"gender" : $scope.gender,
-				"birthdate" : $filter('date')($scope.birthdate, 'yyyy-MM-dd'),
+				"password" : $scope.password,
+				"location" : $scope.location,
 				"contact" : $scope.contact,
-				"location" : $scope.location
+				"creditCardNumber": $scope.creditCardNumber
+				
 			}
 		}).success(function(isSignUp,data) {
 			console.log("in success of doSignUp");

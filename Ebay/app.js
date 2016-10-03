@@ -8,10 +8,22 @@ var express = require('express')
   , path = require('path')  
   , calculator = require('./routes/calculator')
   , home = require('./routes/home')
-  , userProfile = require('./routes/userProfile');
+  , userProfile = require('./routes/userProfile')
+  , session = require('client-sessions');
+
 var app = express();
 
 // all environments
+
+
+//configure the sessions with our application
+app.use(session({   
+	  
+	cookieName: 'session',    
+	secret: 'cmpe273_test_string',    
+	duration: 30 * 60 * 1000,    //setting the time for active session
+	activeDuration: 5 * 60 * 1000,  })); // setting time for the session to be active when the window is open // 5 minutes set currently
+
 app.set('port', process.env.PORT || 3000);
 
 //__dirname is the name of the directory that the currently executing script resides in.
@@ -48,8 +60,14 @@ if ('development' == app.get('env')) {
 
 app.get('/signup',home.signup);
 app.get('/signin',home.signin);
-app.get('/userProfile',userProfile.accountdetails);
 
+app.post('/checksignup',home.checksignup);
+app.post('/afterSignup',home.afterSignup);
+
+app.post('/checklogin',home.checklogin);
+
+
+app.get('/userProfile',userProfile.accountdetails);
 
 app.get('/accountDetails', function (req, res) {
     res.sendfile(__dirname +'/public/templates/userProfile/accountDetails.html');
