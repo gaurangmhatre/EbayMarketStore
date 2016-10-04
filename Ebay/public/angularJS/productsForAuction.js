@@ -1,18 +1,17 @@
-var products = angular.module('products',[]);
 
-products.controller('products', function($scope, $filter, $http) {
+products.controller('productsForAuction', function($scope, $filter, $http) {
 
 	
 		$scope.unexpected_error = true;
 
-		console.log("inside products controller");
+		console.log("inside productsForAuction controller");
 	
 		//console.log("userId:: " + $scope.userId)
 	
 		
 		$http({
 			method : "POST",
-			url : '/getAllProducts',//change the method to get 10 items at a time.
+			url : '/getAllProductsForAuction',//change the method to get 10 items at a time.
 			data : {
 				
 			}
@@ -21,7 +20,7 @@ products.controller('products', function($scope, $filter, $http) {
 			console.log("data is ::");
 			console.log(data);
 			
-			$scope.allProducts = data.results;
+			$scope.allProductsForAuction = data.results;
 			
 			//set all variables.
 				 
@@ -33,24 +32,24 @@ products.controller('products', function($scope, $filter, $http) {
 			$window.alert("unexpected_error");
 		});
 		
-		$scope.AddToCart = function(ItemId) {
+		
+		
+		$scope.addBidOnProduct = function(ItemId,BidAmount) {
 			
 			console.log("Selected ItemId : "+ItemId);
 			
 
 			$http({
 				method : "POST",
-				url : '/userAddToCart',//change the method to get 10 items at a time.
+				url : '/addBidOnProduct',//change the method to get 10 items at a time.
 				data : {
 					"ItemId" : ItemId,
-					"Qty" : 1
+					"BidAmount" : BidAmount
 				}
 			}).success(function(data) {
 				console.log("inside success");
 				console.log("data is ::");
 				console.log(data);
-				
-				//$scope.allProducts = data.results;
 			
 				window.location.assign("/products");
 				//set all variables.
@@ -63,4 +62,5 @@ products.controller('products', function($scope, $filter, $http) {
 				$window.alert("unexpected_error");
 			});	
 		}
+		
 });

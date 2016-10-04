@@ -1,8 +1,6 @@
 var userProfile = angular.module('userProfile', ['ngRoute']);
 
 
-
-
 userProfile.config(['$routeProvider',
             function ($routeProvider) {
                 $routeProvider.  
@@ -34,6 +32,4 @@ userProfile.controller('activityController', function($scope) {
 	$scope.message = 'Everyone come and see how good I look!';
 });
 
-userProfile.controller('sellItemController', function($scope) {
-	$scope.message = 'Look! I am an about page.';
-});
+

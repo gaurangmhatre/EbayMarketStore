@@ -23,45 +23,93 @@
 	
 <!--  <script src="public/scripts/ProductGrid.js"></script>-->
 <script src="/angularJS/products.js"></script>
-
+<script src="/angularJS/productsForAuction.js"></script>
 </head>
 
-<body ng-app="products" ng-controller="products">
+<body ng-app="products" >
+<div ng-controller="products">
 
-<div class="container">
-    <div class="well well-sm">
-        <strong>Category Title</strong>
-        <!-- <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-        </div> -->
-    </div>
-    
-    <div id="products" class="row list-group">
-        
-        <div class="item  col-xs-4 col-lg-4"  ng-repeat="product in allProducts">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        {{product.ItemName}}</h4>
-                    <p class="group inner list-group-item-text">
-                        {{product.ItemDescription}} </p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                ${{product.Price}}</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" ng-click= "AddToCart(product.ItemId)">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
-    </div>
+	<div class="container">
+	    <div class="well well-sm">
+	        <strong>Buy Directly,</strong>
+	        <!-- <div class="btn-group">
+	            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+	            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+	                class="glyphicon glyphicon-th"></span>Grid</a>
+	        </div> -->
+	    </div>
+	    
+	    <div id="products" class="row list-group">
+	        
+	        <div class="item  col-xs-4 col-lg-4"  ng-repeat="product in allProducts">
+	            <div class="thumbnail">
+	                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+	                <div class="caption">
+	                    <h4 class="group inner list-group-item-heading">
+	                        {{product.ItemName}}</h4>
+	                    <p class="group inner list-group-item-text">
+	                        {{product.ItemDescription}} </p>
+	                    <div class="row">
+	                        <div class="col-xs-12 col-md-6">
+	                            <p class="lead">
+	                                ${{product.Price}}</p>
+	                        </div>
+	                        <div class="col-xs-12 col-md-6">
+	                            <a class="btn btn-success" ng-click= "AddToCart(product.ItemId)">Add to cart</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	       
+	    </div>
+	</div>
 </div>
+
+<div ng-controller="productsForAuction">
+
+	<div class="container">
+	    <div class="well well-sm">
+	        <strong>Items for auction, </strong>
+	        <!-- <div class="btn-group">
+	            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+	            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+	                class="glyphicon glyphicon-th"></span>Grid</a>
+	        </div> -->
+	    </div>
+	    
+	    <div id="products" class="row list-group">
+	        
+	        <div class="item  col-xs-4 col-lg-4"  ng-repeat="product in allProductsForAuction">
+	            <div class="thumbnail">
+	                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+	                <div class="caption">
+	                    <h4 class="group inner list-group-item-heading">
+	                        {{product.ItemName}}</h4>
+	                    <p class="group inner list-group-item-text">
+	                        {{product.ItemDescription}} </p>
+	                    <div class="row">
+	                        <div class="col-xs-12 col-md-6">
+	                            <p class="lead">
+	                                ${{product.Price}}</p>
+	                        </div>
+	                    </div> 
+	                    <div class="row">   
+	                        <div class = "col-xs-8">
+    							<input class="form-control input-md " id="inputsm" type="text" ng-model="product.BidAmount" placeholder="Bid amount in USD" >
+	                        </div>
+	                        <div class="col-xs-12 col-md-4">
+	                            <a class="btn btn-success" ng-click= "addBidOnProduct(product.ItemId,product.BidAmount)">Bid</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	       
+	    </div>
+	</div>
+</div>
+
+
 </body>
 </html>
