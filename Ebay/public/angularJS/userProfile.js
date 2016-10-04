@@ -1,52 +1,39 @@
-var userProfile = angular.module('userProfile', ['ui.router']);
+var userProfile = angular.module('userProfile', ['ngRoute']);
 
-/*
-userProfile.config(
+
+
+
+userProfile.config(['$routeProvider',
             function ($routeProvider) {
-                $routeProvider.                 
+                $routeProvider.  
+	                when('/', {
+	    				templateUrl : '/templates/userProfile/cart.html',
+	    				//controller  : 'mainController'
+	    			}).
                     when('/accountDetails', {
-                        templateUrl: '/public/templates/userProfile/accountDetails.html',
+                        templateUrl: '/templates/userProfile/accountDetails.html',
                         controller: 'accountDetailsController'
                     }).
                     when('/activity', {
-                        templateUrl: '/public/templates/userProfile/activity.html',
+                        templateUrl: '/templates/userProfile/activity.html',
                         controller: 'activityController'
                     }).
                     when('/cart', {
-                        templateUrl: '/public/templates/userProfile/cart.html',
-                        controller: 'cartController'
+                        templateUrl : '/templates/userProfile/cart.html',
+                      //  controller: 'cartController'
                     }).
                     when('/sellItem', {
-                        templateUrl: '/public/templates/userProfile/sellItem.html',
-                        controller: 'sellItemController'
+                        templateUrl : '/templates/userProfile/sellItem.html',
+                        controller : 'sellItemController'
                     });
-            });
+            }]);
 
-*/
-userProfile.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-	$locationProvider.html5Mode(true);
-	$stateProvider.state('userProfile', {	
-		url : '/userProfile',
-		views: {
-            'header': {
-                templateUrl : '/templates/userProfile/header.html',
-            },
-            'cart': {
-                templateUrl : '/templates/userProfile/cart.html',
-            },
-		}
-	})
-	$urlRouterProvider.otherwise('/');
+
+userProfile.controller('activityController', function($scope) {
+	// create a message to display in our view
+	$scope.message = 'Everyone come and see how good I look!';
 });
 
-
-
-userProfile.controller('activityController',function($scope, $http, $state){
-});
-
-
-
-
-
-userProfile.controller('sellItemController',function($scope, $http, $state){
+userProfile.controller('sellItemController', function($scope) {
+	$scope.message = 'Look! I am an about page.';
 });

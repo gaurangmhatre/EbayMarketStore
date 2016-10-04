@@ -1,4 +1,5 @@
-userProfile.controller('cartController',function($scope, $http, $state){
+
+userProfile.controller('cartController', function($scope,$http) {
 	
 	$scope.unexpected_error = true;
 

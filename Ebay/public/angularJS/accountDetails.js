@@ -1,4 +1,4 @@
-userProfile.controller('accountDetailsController',function($scope, $http,$state){
+userProfile.controller('accountDetailsController',function($scope, $http){
 	
 	$scope.invalid_login = true;
 	$scope.unexpected_error = true;
@@ -38,8 +38,4 @@ userProfile.controller('accountDetailsController',function($scope, $http,$state)
 			$window.alert("unexpected_error");
 		});
 
-
-	
-	
-	
 });

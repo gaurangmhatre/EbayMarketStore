@@ -3,53 +3,74 @@
 <head>
 <link rel='stylesheet' href='/stylesheets/style.css' />
 
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	
+ -->	
+
 	<script	src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    
 
-<script src="/scripts/angular-route.min.js"></script>
+<!-- 	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+ -->    
+
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+  <!-- SPELLS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+ 
+
+
+
+<!-- <script src="/scripts/angular-route.min.js"></script> -->
 <script src="/scripts/ProductGrid.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+
+
+
+
 <script src="/angularJS/userProfile.js"></script>
 <script src="/angularJS/accountDetails.js"></script>
 <script src="/angularJS/cart.js"></script>
 
-
-
 </head>
 <body ng-app="userProfile">
 
-	<style type="text/css">
-form.tab-form-demo .tab-pane {
-	margin: 20px 20px;
-}
-</style>
+		<style type="text/css">
+		form.tab-form-demo .tab-pane {
+			margin: 20px 20px;
+		}
+		</style>
 	<div>
-		
-			<!-- 
-				<div ui-view="header"></div>
-				<div ui-view="accountDetails"></div>
-				<div ui-view="activity"></div>
-				<div ui-view="cart"></div>
-				<div ui-view="sellItem"></div>		
-			-->
-			<!--
-				<a href="#/accountDetails">accountDetails</a>
-				<a href="#/activity">activity</a>
-				<a href="#/cart">cart</a>
-				<a href="#/sellItem">sellItem</a>
-			-->
-			
-			<div ui-view="cart"></div>
 
+		  <nav class="navbar navbar-default">
+		    <div class="container">
+		      <div class="navbar-header">
+		        <a class="navbar-brand" href="/">User Profile Details</a>
+		      </div>
+		
+		      <ul class="nav navbar-nav navbar-right">
+		        <!-- <li><a href="#"><i class="fa fa-home"></i> Home</a></li> -->
+		        <li><a href="#accountDetails"><i class="fa fa-shield"></i> AccountDetails</a></li>
+		        <li><a href="#activity"><i class="fa fa-comment"></i> Activity</a></li>
+		        <li><a href="#cart"><i class="fa fa-shield"></i> Cart</a></li>
+		        <li><a href="#sellItem"><i class="fa fa-comment"></i> sellItem</a></li>
+		      </ul>
+		    </div>
+		  </nav>
+
+	  <div id="main">
+	  
 	
+	    <div ng-view></div>
+	    
+	  </div>
+		
 		
 
 		
