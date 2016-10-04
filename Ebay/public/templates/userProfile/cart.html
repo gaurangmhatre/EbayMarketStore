@@ -1,1 +1,38 @@
-cart
+
+
+<div class="container" ng-controller="cartController">
+    <div class="well well-sm">
+        <strong>Items In Cart</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>Grid</a>
+        </div> 
+    </div>
+    
+    <div id="products" class="row list-group">
+
+        
+        <div class="item  col-xs-4 col-lg-4"  ng-repeat="product in allProductsInCart">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        {{product.ItemName}}</h4>
+                    <p class="group inner list-group-item-text">
+                        {{product.ItemDescription}} </p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                ${{product.Price}}</p>
+                        </div>
+                       <!-- <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" ng-click= "AddToCart(product.ItemId)">Add to cart</a>
+                        </div> --> 
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>

@@ -70,6 +70,8 @@ app.post('/checklogin',home.checklogin);
 
 app.get('/userProfile',userProfile.accountdetails);
 app.post('/getUserAccountDetails',userProfile.getUserAccountDetails);
+app.post('/getAllProductsInCart',userProfile.getAllProductsInCart);
+
 
 app.get('/products',products.getProductsPage);
 app.post('/getAllProducts',products.getAllProducts);

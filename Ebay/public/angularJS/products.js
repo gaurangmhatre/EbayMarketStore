@@ -61,11 +61,6 @@ products.controller('products', function($scope, $filter, $http) {
 				$scope.unexpected_error = false;
 				$scope.invalid_login = true;
 				$window.alert("unexpected_error");
-			});
-			
-			
+			});	
 		}
-		
-		
-	
 });

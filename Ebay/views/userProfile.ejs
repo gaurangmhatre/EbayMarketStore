@@ -3,26 +3,25 @@
 <head>
 <link rel='stylesheet' href='/stylesheets/style.css' />
 
-
-
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	
-	<script
-	src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+	<script	src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    
 
-<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="/scripts/angular-route.min.js"></script>
+<script src="/scripts/ProductGrid.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+<script src="/angularJS/userProfile.js"></script>
+<script src="/angularJS/accountDetails.js"></script>
+<script src="/angularJS/cart.js"></script>
 
 
-<script src="angularJS/userProfile.js"></script>
-<script src="angularJS/accountDetails.js"></script>
 
 </head>
 <body ng-app="userProfile">
@@ -32,14 +31,30 @@ form.tab-form-demo .tab-pane {
 	margin: 20px 20px;
 }
 </style>
-
 	<div>
 		
-			<div ui-view="header"></div>
-			<div ui-view="accountDetails"></div>
-			<div ui-view="activity"></div>
+			<!-- 
+				<div ui-view="header"></div>
+				<div ui-view="accountDetails"></div>
+				<div ui-view="activity"></div>
+				<div ui-view="cart"></div>
+				<div ui-view="sellItem"></div>		
+			-->
+			<!--
+				<a href="#/accountDetails">accountDetails</a>
+				<a href="#/activity">activity</a>
+				<a href="#/cart">cart</a>
+				<a href="#/sellItem">sellItem</a>
+			-->
+			
 			<div ui-view="cart"></div>
-			<div ui-view="sellItem"></div>
+
+	
+		
+
+		
+		
+		
 	</div>
 </body>
 </html>
