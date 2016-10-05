@@ -57,7 +57,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-//app.get('/', calculator.getCalculator);
+app.get('/', products.getProductsPage);
 
 app.get('/signup',home.signup);
 app.get('/signin',home.signin);

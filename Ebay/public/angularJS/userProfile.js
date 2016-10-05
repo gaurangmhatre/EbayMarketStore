@@ -5,8 +5,8 @@ userProfile.config(['$routeProvider',
             function ($routeProvider) {
                 $routeProvider.  
 	                when('/', {// default path
-	    				templateUrl : '/templates/userProfile/cart.html',
-	    				controller  : 'cartController'
+	                	templateUrl: '/templates/userProfile/accountDetails.html',
+                        controller: 'accountDetailsController'
 	    			}).
                     when('/accountDetails', {
                         templateUrl: '/templates/userProfile/accountDetails.html',
