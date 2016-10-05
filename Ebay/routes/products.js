@@ -126,3 +126,72 @@ exports.addBidOnProduct = function(req,res){
 	
 	
 };
+
+exports.getItemType = function(req,res){
+	console.log("Inside getItemType Method.");
+	
+	var getItemTypeQuery = "SELECT ItemTypeId,ItemType FROM itemtype;";
+	console.log("Query:: " + getItemTypeQuery);
+
+	mysql.fetchData(function(err,results) {
+		if(err) {
+			throw err;
+		}
+		else {
+			if(results.length > 0) {
+					console.log("Successful got All the ItemTypes.");
+					
+					json_responses = results;
+			}
+			else{
+					res.send(json_responses);
+					console.log("Invalid string.");
+					json_responses = {"statusCode" : 401};
+			}
+			res.send(json_responses);
+		}	
+		
+	}, getItemTypeQuery);
+	
+};
+
+
+exports.addProduct = function(req,res){
+	console.log("Inside addProduct.");
+	
+	var SellerId = req.session.userid;
+	
+	var ItemName = req.param("ItemName");
+	var ItemDescription = req.param("ItemDescription");
+	var ItemTypeId = req.param("ItemTypeId");
+	var Price = req.param("Price");
+	var Qty = req.param("Qty");
+	var IsBidItem = req.param("IsBidItem");
+	var DateAdded = "2016-12-04 05:45:10";
+	var ModificationDate = "2016-12-04 05:45:10";
+	var Sold = 0;
+	//ItemName,ItemDescription,ItemTypeId,Price,Qty,IsBidItem
+	var insertNewProductQuery = "INSERT INTO item (ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,ModificationDate,IsBidItem,Sold) VALUES ('"+ItemName+"','"+ItemDescription+"',"+ItemTypeId+","+SellerId+","+Price+","+Qty+",'"+DateAdded+"','"+ModificationDate+"',"+IsBidItem+","+Sold+")";
+	console.log("Query:: " + insertNewProductQuery);
+
+	mysql.fetchData(function(err,results) {
+		if(err) {
+			throw err;
+		}
+		else {
+			if(results.length > 0) {
+					console.log("Successful added the item to Items table.");
+					
+					json_responses = results;
+			}
+			else{
+					res.send(json_responses);
+					console.log("Invalid string.");
+					json_responses = {"statusCode" : 401};
+			}
+			res.send(json_responses);
+		}	
+		
+	}, insertNewProductQuery);
+		
+};

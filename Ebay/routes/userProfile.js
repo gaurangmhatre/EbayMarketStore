@@ -77,6 +77,5 @@ exports.getAllProductsInCart = function(req,res){
 			
 		}, getUserCartItemsQuery);
 	}	
-		
-	
 };
+

@@ -18,7 +18,7 @@ userProfile.config(['$routeProvider',
                     }).
                     when('/cart', {
                         templateUrl : '/templates/userProfile/cart.html',
-                      //  controller: 'cartController'
+                        controller: 'cartController'
                     }).
                     when('/sellItem', {
                         templateUrl : '/templates/userProfile/sellItem.html',
