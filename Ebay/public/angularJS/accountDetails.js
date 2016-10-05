@@ -19,13 +19,13 @@ userProfile.controller('accountDetailsController',function($scope, $http){
 			console.log("data is ::");
 			console.log(data);
 			
-			$scope.email = data.EmailId;
+			
 			$scope.UserId = data.UserId;
 			$scope.FirstName = data.FirstName;
 			$scope.LastName = data.LastName;
 			$scope.EmailId = data.EmailId;
 			$scope.Address = data.Address;
-			$scope.CreditCarddetails = data.CreditCarddetails;
+			$scope.CreditCardNumber = data.CreditCarddetails;
 			
 			
 			//set all variables.

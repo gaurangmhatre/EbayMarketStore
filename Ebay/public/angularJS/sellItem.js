@@ -1,3 +1,4 @@
+
 userProfile.controller('sellItemController', function($scope,$http) {
 	console.log("Inside sellItemController.");
 	

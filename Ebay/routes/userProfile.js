@@ -30,8 +30,8 @@ exports.getUserAccountDetails = function(req,res){
 											,"FirstName": results[0].FirstName
 											,"LastName": results[0].LastName
 											,"EmailId":results[0].EmailId
-											,"Address":results[0].Adderess
-											,"CreditCarddetails":results[0].CreditCarddetails
+											,"Address":results[0].Address
+											,"CreditCardNumber":results[0].CreditCardNumber
 											};
 						}
 				else{

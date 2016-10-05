@@ -4,9 +4,9 @@ var userProfile = angular.module('userProfile', ['ngRoute']);
 userProfile.config(['$routeProvider',
             function ($routeProvider) {
                 $routeProvider.  
-	                when('/', {
+	                when('/', {// default path
 	    				templateUrl : '/templates/userProfile/cart.html',
-	    				//controller  : 'mainController'
+	    				controller  : 'cartController'
 	    			}).
                     when('/accountDetails', {
                         templateUrl: '/templates/userProfile/accountDetails.html',
