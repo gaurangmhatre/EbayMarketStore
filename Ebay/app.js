@@ -71,7 +71,7 @@ app.post('/checklogin',home.checklogin);
 app.get('/userProfile',userProfile.accountdetails);
 app.post('/getUserAccountDetails',userProfile.getUserAccountDetails);
 app.post('/getAllProductsInCart',userProfile.getAllProductsInCart);
-
+app.post('/removeItemFromCart',userProfile.removeItemFromCart);
 
 
 

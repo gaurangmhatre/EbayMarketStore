@@ -79,3 +79,45 @@ exports.getAllProductsInCart = function(req,res){
 	}	
 };
 
+exports.removeItemFromCart = function(req,res){
+	console.log("Inside removeItemFromCart for user: "+req.session.userid);
+	
+	var userId = req.session.userid;
+	var itemId = req.param("itemId");
+	
+	if(userId != '') {
+		var removeItemFromCartQuery = "delete from usercart where UserId = "+userId+" and ItemId = "+itemId;
+		console.log("Query:: " + removeItemFromCartQuery);
+
+		mysql.fetchData(function(err,results) {
+			if(err) {
+				throw err;
+			}
+			else {
+				if(results.length > 0) {
+						console.log("Successful removed item from the cart");
+						
+						json_responses = results;
+						}
+				else{
+						res.send(json_responses);
+						console.log("Invalid string.");
+						json_responses = {"statusCode" : 401};
+				}
+				res.send(json_responses);
+			}	
+			
+		}, removeItemFromCartQuery);
+	}
+};
+
+exports.buyItemsInCart = function(req,res)
+{
+/*
+ * 1. Get all items from cart table by userid
+ * 2. push the items to sold table.
+ * 3. empty cart.
+ * 4. Qty -= 1 in items table. 
+ */
+}
+

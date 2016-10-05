@@ -3,11 +3,7 @@
 <div class="container">
     <div class="well well-sm">
         <strong>Items In Cart</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-        </div> 
+
     </div>
     
     <div id="products" class="row list-group">
@@ -24,15 +20,26 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <p class="lead">
-                                ${{product.Price}}</p>
-                        </div>
-                       <!-- <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" ng-click= "AddToCart(product.ItemId)">Add to cart</a>
-                        </div> --> 
+                                ${{product.Price}}
+                            </p>
+                            <div class="col-xs-12 col-md-6">
+	                            <a class="btn btn-success" ng-click= "removeItemFromTheCart(product.ItemId)">Remove</a>
+	                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
         </div>
        
     </div>
+    
+	<div class="well well-sm">
+        <strong><h2>Total: ${{TotalCostOfCart}}</h2></strong>
+
+    </div>    
+    
+    
+    
+    
+    
 </div>

@@ -7,8 +7,8 @@ exports.getProductsPage = function(req,res){
 
 exports.getAllProducts = function(req,res){
 	console.log("In getAllProducts.");
-
-		var getAllProductQuery = "select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,ModificationDate,IsBidItem, sold from item where IsBidItem=0";
+		
+		var getAllProductQuery = "select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,ModificationDate,IsBidItem, sold from item where IsBidItem=0 and Qty>0";
 		console.log("Query:: " + getAllProductQuery);
 
 		mysql.fetchData(function(err,results) {
