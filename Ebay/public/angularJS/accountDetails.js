@@ -25,7 +25,7 @@ userProfile.controller('accountDetailsController',function($scope, $http){
 			$scope.LastName = data.LastName;
 			$scope.EmailId = data.EmailId;
 			$scope.Address = data.Address;
-			$scope.CreditCardNumber = data.CreditCarddetails;
+			$scope.CreditCardNumber = data.CreditCardNumber;
 			
 			
 			//set all variables.

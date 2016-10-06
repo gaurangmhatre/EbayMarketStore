@@ -23,7 +23,7 @@
                                 ${{product.Price}}
                             </p>
                             <div class="col-xs-12 col-md-6">
-	                            <a class="btn btn-success" ng-click= "removeItemFromTheCart(product.ItemId)">Remove</a>
+	                            <a class="btn btn-danger" ng-click= "removeItemFromTheCart(product.ItemId)">Remove</a>
 	                        </div>
                         </div> 
                     </div>
@@ -34,12 +34,31 @@
     </div>
     
 	<div class="well well-sm">
-        <strong><h2>Total: ${{TotalCostOfCart}}</h2></strong>
-
+        
+        
+        <div class="col-xs-12 col-md-6">
+	         <h2><a class="btn btn-success" ng-click= "checkout()">Checkout</a></h2>
+	    </div>
+		<strong><h2>Total: ${{TotalCostOfCart}}</h2></strong>
     </div>    
     
-    
-    
-    
-    
+    <div class="well well-sm" ng-if="visibleTransactionDiv == true;">
+        <strong><h2>Transaction details:</h2></strong>
+        <br>
+				<div class="form-group">
+			      <label for="creditCardNumber">Credit Card Number:</label>
+			      <input type="text" class="form-control" ng-model="CreditCardNumber" placeholder="Add credit card number" required/>
+			      <!-- <label ng-show = "ItemAddForm.firstname.$error.required">First Name is Required</label> -->
+			    </div>
+			    
+			    <div class="form-group">
+			      <label for="Address">Address:</label>
+			      <input type="text" class="form-control" ng-model="Address" placeholder="Add you address" required/>
+			      <!-- <label ng-show = "ItemAddForm.firstname.$error.required">First Name is Required</label> -->
+			    </div>
+			    
+			    <div class="form-group">
+			    <button type="submit" class="btn btn-success btn-block" ng-click= buyItemsInCart()>Place your order</button>
+				</div>
+    </div>
 </div>

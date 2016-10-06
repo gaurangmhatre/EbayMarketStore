@@ -9,6 +9,8 @@ userProfile.controller('cartController', function($scope,$http) {
 	
 	function initialize(){
 		$scope.TotalCostOfCart=0;
+		$scope.visibleTransactionDiv = false;
+		
 		//console.log("userId:: " + $scope.userId)
 	
 		
@@ -41,6 +43,41 @@ userProfile.controller('cartController', function($scope,$http) {
 			$scope.invalid_login = true;
 			$window.alert("unexpected_error");
 		});
+		
+		//For getting the creditCard Number and address.
+		$http({
+			method : "POST",
+			url : '/getUserAccountDetails',
+			data : {
+				"userId": $scope.userId //pass userId via session.
+			}
+		}).success(function(data) {
+			console.log("inside success");
+			console.log("data is ::");
+			console.log(data);
+			
+			
+			/*$scope.UserId = data.UserId;
+			$scope.FirstName = data.FirstName;
+			$scope.LastName = data.LastName;
+			$scope.EmailId = data.EmailId;*/
+			$scope.Address = data.Address;
+			$scope.CreditCardNumber = data.CreditCardNumber;
+			
+			
+			//set all variables.
+				 
+		}).error(function(error) {
+			console.log("inside error");
+			console.log(error);
+			$scope.unexpected_error = false;
+			$scope.invalid_login = true;
+			$window.alert("unexpected_error");
+		});
+		
+		
+		
+		
 	}
 	$scope.removeItemFromTheCart = function(itemId) {
 		
@@ -49,7 +86,7 @@ userProfile.controller('cartController', function($scope,$http) {
 			url : '/removeItemFromCart',
 			data : {
 				"itemId" : itemId,		
-			}
+		}
 		}).success(function(data) {
 			console.log("inside success");
 			console.log("Item is removed::");
@@ -68,4 +105,34 @@ userProfile.controller('cartController', function($scope,$http) {
 		});	
 	}
 	
+	$scope.checkout= function(){
+		$scope.visibleTransactionDiv = true;
+	}
+	
+	$scope.buyItemsInCart = function(){
+		console.log("Inside place the order method.")
+		 $http({
+				method : "POST",
+				url : '/buyItemsInCart',
+				data : {
+					Address: $scope.Address,
+					CreditCardNumber: $scope.CreditCardNumber
+			}
+			}).success(function(data) {
+				console.log("inside success");
+				console.log("Order is placed.");
+				console.log(data);
+				initialize();
+				window.location.assign("#/cart");
+				//set all variables.
+					 
+			}).error(function(error) {
+				console.log("inside error");
+				console.log(error);
+				$scope.unexpected_error = false;
+				$scope.invalid_login = true;
+				$window.alert("unexpected_error");
+				initialize();
+			});
+	}
 });

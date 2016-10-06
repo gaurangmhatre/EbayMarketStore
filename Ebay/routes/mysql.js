@@ -36,7 +36,7 @@ function fetchData(callback,sqlQuery){
 	});	
 }	
 
-function storeData(sqlQuery, callback){
+function storeData(sqlQuery,callback){
 	console.log('---SQL Query ::' + sqlQuery + '---');
 	var connection = getConnection();
 	connection.getConnection(function(err, connection){

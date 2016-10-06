@@ -34,7 +34,7 @@ exports.getAllProducts = function(req,res){
 exports.getAllProductsForAuction = function(req,res){
 	console.log("In getAllProductsForAuction.");
 
-		var getAllProductForAuctionQuery = "select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,ModificationDate,IsBidItem, sold from item where IsBidItem=1";
+		var getAllProductForAuctionQuery = "select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.ModificationDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.ModificationDate,i.IsBidItem, i.sold";
 		console.log("Query:: " + getAllProductForAuctionQuery);
 
 		mysql.fetchData(function(err,results) {
@@ -99,9 +99,9 @@ exports.addBidOnProduct = function(req,res){
 	var ItemId = req.param("ItemId");
 	var BidAmount = req.param("BidAmount");
 	var UserId =  req.session.userid;
+
 	
-	
-	var addBidOnProductQuery = "INSERT INTO bidderlist(`BidderId`,`ItemId`,`BidAmount`)VALUES("+UserId+","+ItemId+","+BidAmount+");";
+	var addBidOnProductQuery = "INSERT INTO bidderlist(BidderId,ItemId,BidAmount,BidTime)VALUES("+UserId+","+ItemId+","+BidAmount+",NOW());";
 	console.log("Query:: " + addBidOnProductQuery);
 
 	mysql.fetchData(function(err,results) {
@@ -167,11 +167,11 @@ exports.addProduct = function(req,res){
 	var Price = req.param("Price");
 	var Qty = req.param("Qty");
 	var IsBidItem = req.param("IsBidItem");
-	var DateAdded = "2016-12-04 05:45:10";
-	var ModificationDate = "2016-12-04 05:45:10";
+	/*var DateAdded = "2016-12-04 05:45:10";
+	var ModificationDate = "2016-12-04 05:45:10";*/
 	var Sold = 0;
 	//ItemName,ItemDescription,ItemTypeId,Price,Qty,IsBidItem
-	var insertNewProductQuery = "INSERT INTO item (ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,ModificationDate,IsBidItem,Sold) VALUES ('"+ItemName+"','"+ItemDescription+"',"+ItemTypeId+","+SellerId+","+Price+","+Qty+",'"+DateAdded+"','"+ModificationDate+"',"+IsBidItem+","+Sold+")";
+	var insertNewProductQuery = "INSERT INTO item (ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,ModificationDate,IsBidItem,Sold) VALUES ('"+ItemName+"','"+ItemDescription+"',"+ItemTypeId+","+SellerId+","+Price+","+Qty+",NOW(),NOW(),"+IsBidItem+","+Sold+")";
 	console.log("Query:: " + insertNewProductQuery);
 
 	mysql.fetchData(function(err,results) {
