@@ -70,6 +70,7 @@ exports.afterSignup = function(req,res){// load new user data in database
 	var contact = req.param("contact");//not added in database
 	var location = req.param("location");
 	var creditCardNumber = req.param("creditCardNumber");
+	var dateOfBirth = req.param("dateOfBirth");
 	
 	console.log("firstname :: " + firstname);
 	console.log("lastname :: " + lastname);
@@ -78,10 +79,10 @@ exports.afterSignup = function(req,res){// load new user data in database
 	console.log("contact :: " + contact);
 	console.log("location : " + location);
 	console.log("creditCardNumber : " + creditCardNumber);
-
+	console.log("dateOfBirth :: " +dateOfBirth);
 	//var hash = bcrypt.hashSync(password);
 
-	var query = "INSERT INTO user (FirstName, LastName, EmailId, Password, Address, CreditCardNumber) VALUES ('" + firstname + "','" + lastname + "','" + email + "','" + password + "','" + location + "','" + creditCardNumber + "')";
+	var query = "INSERT INTO user (FirstName, LastName, EmailId, Password, Address, CreditCardNumber,DateOfBirth) VALUES ('" + firstname + "','" + lastname + "','" + email + "','" + password + "','" + location + "','" + creditCardNumber + "','"+dateOfBirth+"')";
 	console.log("Query:: " + query);
 
 	mysql.storeData(query, function(err, result){

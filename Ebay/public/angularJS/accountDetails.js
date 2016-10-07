@@ -1,4 +1,4 @@
-userProfile.controller('accountDetailsController',function($scope, $http){
+userProfile.controller('accountDetailsController',function($scope, $filter,$http){
 	
 	$scope.invalid_login = true;
 	$scope.unexpected_error = true;
@@ -26,7 +26,7 @@ userProfile.controller('accountDetailsController',function($scope, $http){
 			$scope.EmailId = data.EmailId;
 			$scope.Address = data.Address;
 			$scope.CreditCardNumber = data.CreditCardNumber;
-			
+			$scope.DateOfBirth = $filter('date')(data.DateOfBirth, 'yyyy-MM-dd')
 			
 			//set all variables.
 				 

@@ -14,7 +14,7 @@ exports.getUserAccountDetails = function(req,res){
 	var userId = req.session.userid;
 	
 	if(userId != '') {
-		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber from user where UserId= '" + userId+"'";
+		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth from user where UserId= '" + userId+"'";
 		console.log("Query:: " + getUserAccountDetailsQuery);
 
 		mysql.fetchData(function(err,results) {
@@ -32,6 +32,7 @@ exports.getUserAccountDetails = function(req,res){
 											,"EmailId":results[0].EmailId
 											,"Address":results[0].Address
 											,"CreditCardNumber":results[0].CreditCardNumber
+											,"DateOfBirth":results[0].DateOfBirth
 											};
 						}
 				else{
@@ -266,7 +267,7 @@ exports.getAllUserDirectBuyingActivities= function(req,res){
 						json_responses = results;
 						}
 				else{
-						res.send(json_responses);
+						
 						console.log("Invalid string.");
 						json_responses = {"statusCode" : 401};
 				}
@@ -285,7 +286,7 @@ exports.getAllSoldProducts= function(req,res){
 	var userId = req.session.userid;
 	
 	if(userId != '') {
-		var getAllSoldProductsQuery = "select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = "+userId;
+		var getAllSoldProductsQuery = "select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = "+userId+";";
 		console.log("Query:: " + getAllSoldProductsQuery);
 
 		mysql.fetchData(function(err,results) {
@@ -299,7 +300,6 @@ exports.getAllSoldProducts= function(req,res){
 						json_responses = results;
 						}
 				else{
-						res.send(json_responses);
 						console.log("Invalid string.");
 						json_responses = {"statusCode" : 401};
 				}

@@ -82,6 +82,20 @@
 			      <!-- <label ng-show = "signupform.password.$error.required">Password is Required</label> -->
 			    </div>
 
+				<!-- Date of Birth -->
+				<div class="form-group">
+			    	
+			    	<label for="birthday">Date of birth</label>
+					<script>
+			    		webshims.setOptions('forms-ext', {types: 'date'});
+						webshims.polyfill('forms forms-ext');
+					</script>
+					<div >
+						<input type="date" class="form-control" ng-model="dateOfBirth" ></input>
+					</div> 
+			    </div>
+
+
 			    <!-- Location -->
 				<div class="form-group">
 
@@ -100,7 +114,7 @@
 				<!-- Become a seller -->
 				<br>			
 			    <!-- Credit Card Number -->
-			    Become a seller buy just adding credit-card number.
+			    Become a seller just by adding credit-card number.
 				<div class="form-group">
 			      <label for="CreditCardNumber">Credit Card Number</label>
 			      <input type="text" class="form-control" ng-model="creditCardNumber" placeholder="Enter 16-digit card number"/>

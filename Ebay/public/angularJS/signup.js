@@ -59,7 +59,8 @@ signup.controller('signup', function($scope, $filter, $http) {
 				"password" : $scope.password,
 				"location" : $scope.location,
 				"contact" : $scope.contact,
-				"creditCardNumber": $scope.creditCardNumber
+				"creditCardNumber": $scope.creditCardNumber,
+				"dateOfBirth": $filter('date')($scope.dateOfBirth, 'yyyy-MM-dd')
 				
 			}
 		}).success(function(isSignUp,data) {
