@@ -1,4 +1,4 @@
-userProfile.controller('activityController', function($scope) {
+userProfile.controller('activityController', function($scope,$http) {
 	// create a message to display in our view
 	$scope.invalid_login = true;
 	$scope.unexpected_error = true;
