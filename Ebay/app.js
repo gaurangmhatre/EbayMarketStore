@@ -74,6 +74,7 @@ app.post('/getAllProductsInCart',userProfile.getAllProductsInCart);
 app.post('/removeItemFromCart',userProfile.removeItemFromCart);
 app.post('/buyItemsInCart',userProfile.buyItemsInCart);
 app.post('/getAllUserDirectBuyingActivities',userProfile.getAllUserDirectBuyingActivities);
+app.post('/getAllSoldProducts',userProfile.getAllSoldProducts)
 
 app.get('/products',products.getProductsPage);
 app.post('/getAllProducts',products.getAllProducts);

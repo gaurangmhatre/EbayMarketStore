@@ -276,3 +276,36 @@ exports.getAllUserDirectBuyingActivities= function(req,res){
 		}, getAllUserDirectBuyingActivitiesQuery);
 	}	
 };
+
+
+//select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = 1 
+exports.getAllSoldProducts= function(req,res){
+	console.log("inside getAllSoldProducts for user: "+req.session.userid);
+	
+	var userId = req.session.userid;
+	
+	if(userId != '') {
+		var getAllSoldProductsQuery = "select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = "+userId;
+		console.log("Query:: " + getAllSoldProductsQuery);
+
+		mysql.fetchData(function(err,results) {
+			if(err) {
+				throw err;
+			}
+			else {
+				if(results.length > 0) {
+						console.log("Successful got the sold products.");
+						
+						json_responses = results;
+						}
+				else{
+						res.send(json_responses);
+						console.log("Invalid string.");
+						json_responses = {"statusCode" : 401};
+				}
+				res.send(json_responses);
+			}	
+			
+		},getAllSoldProductsQuery);
+	}	
+};
