@@ -8,7 +8,7 @@ exports.getProductsPage = function(req,res){
 exports.getAllProducts = function(req,res){
 	console.log("In getAllProducts.");
 		
-		var getAllProductQuery = "select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,ModificationDate,IsBidItem, sold from item where IsBidItem=0 and Qty>0";
+		var getAllProductQuery = "select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0";
 		console.log("Query:: " + getAllProductQuery);
 
 		mysql.fetchData(function(err,results) {
@@ -34,7 +34,7 @@ exports.getAllProducts = function(req,res){
 exports.getAllProductsForAuction = function(req,res){
 	console.log("In getAllProductsForAuction.");
 
-		var getAllProductForAuctionQuery = "select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.ModificationDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.ModificationDate,i.IsBidItem, i.sold";
+		var getAllProductForAuctionQuery = "select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold";
 		console.log("Query:: " + getAllProductForAuctionQuery);
 
 		mysql.fetchData(function(err,results) {
@@ -168,10 +168,10 @@ exports.addProduct = function(req,res){
 	var Qty = req.param("Qty");
 	var IsBidItem = req.param("IsBidItem");
 	/*var DateAdded = "2016-12-04 05:45:10";
-	var ModificationDate = "2016-12-04 05:45:10";*/
+	var AuctionEndDate = "2016-12-04 05:45:10";*/
 	var Sold = 0;
 	//ItemName,ItemDescription,ItemTypeId,Price,Qty,IsBidItem
-	var insertNewProductQuery = "INSERT INTO item (ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,ModificationDate,IsBidItem,Sold) VALUES ('"+ItemName+"','"+ItemDescription+"',"+ItemTypeId+","+SellerId+","+Price+","+Qty+",NOW(),NOW(),"+IsBidItem+","+Sold+")";
+	var insertNewProductQuery = "INSERT INTO item (ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,AuctionEndDate,IsBidItem,Sold) VALUES ('"+ItemName+"','"+ItemDescription+"',"+ItemTypeId+","+SellerId+","+Price+","+Qty+",NOW(),date_add(NOW(),INTERVAL 4 DAY),"+IsBidItem+","+Sold+")";
 	console.log("Query:: " + insertNewProductQuery);
 
 	mysql.fetchData(function(err,results) {

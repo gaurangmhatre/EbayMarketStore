@@ -1,4 +1,3 @@
-
 products.controller('productsForAuction', function($scope, $filter, $http) {
 
 	

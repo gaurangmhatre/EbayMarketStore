@@ -57,6 +57,31 @@ userProfile.controller('activityController', function($scope,$http) {
 		});
 
 	
-	
+		
+		$http({
+			method : "POST",
+			url : '/getAllUserBiddingActivity',
+			data : {
+				
+			}
+		}).success(function(data1) {
+			console.log("inside success");
+			console.log("data is ::");
+			console.log(data1);
+			
+			
+			$scope.AllUserBiddingActivity= data1;
+			
+			
+			//set all variables.
+				 
+		}).error(function(error) {
+			console.log("inside error");
+			console.log(error);
+			$scope.unexpected_error = false;
+			$scope.invalid_login = true;
+			$window.alert("unexpected_error");
+		});
+
 	
 });

@@ -98,14 +98,24 @@
 	                    <h4 class="group inner list-group-item-heading">
 	                        {{product.ItemName}}</h4>
 	                    <p class="group inner list-group-item-text">
-	                        {{product.ItemDescription}} </p>
+	                        {{product.ItemDescription}}
+	                    </p>
+	                        
+	                     <br>
+	                     <p class="group inner list-group-item-text">
+	                    		Item Added on: {{product.DateAdded  | date:'medium'}}   
+	                     </p>
+	                     <p class="group inner list-group-item-text text-danger">
+	                    		Auction ends on: {{product.AuctionEndDate  | date:'medium'}}   
+	                     </p>
+	                     <br>
 	                    <div class="row">
 	                        <div class="col-xs-12 col-md-5">
 	                            <p class="lead">
 	                                ${{product.Price}} </p> 
 	                        </div>
 	                        <div class="col-xs-12 col-md-7">
-	                        <p >
+	                        <p class="text-danger">
 	                        	 Bid more than ${{product.MaxBidAmount}}
 	                        </p>	 
 	                        </div>
