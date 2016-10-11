@@ -122,8 +122,7 @@ exports.buyItemsInCart = function(req,res)
  */
 	
 	var userId = req.session.userid;
-	/*var dateAdded = "2016-12-04 05:45:10";
-	*/
+
 	var creditCardNumber = req.param("CreditCardNumber");
 	
 	if(userId != '') {
@@ -395,3 +394,64 @@ exports.updateAuctionWinners = function(req,res)
 		},getAllUserBiddingActivityQuery);
 	}
 }
+
+
+exports.getAllWonAuctions= function(req,res)
+{
+	console.log("inside getAllWonAuctions for user: "+req.session.userid);
+	
+	var userId = req.session.userid;
+	
+	if(userId != '') {
+		var getAllWonAuctionsQuery = "select a.WinnerId, a.ItemId, a.PaymentByCard,a.PaymentDate,a.IsPaymentDone, i.ItemName, i.ItemDescription, i.price, b.BidAmount,b.BidTime from auctionwinners as a left join item as i on a.ItemId = i.ItemId left join bidderList as b on a.winnerId = b.BidderId and a.ItemId= b.ItemId where a.IsPaymentDone=0 and a.WinnerId = "+userId;
+		console.log("Query:: " + getAllWonAuctionsQuery);
+
+		mysql.fetchData(function(err,results) {
+			if(err) {
+				throw err;
+			}
+			else {
+				if(results.length > 0) {
+						console.log("Successful got the winning items.");
+						
+						json_responses = results;
+						}
+				else{
+						console.log("Invalid string.");
+						json_responses = {"statusCode" : 401};
+				}
+				res.send(json_responses);
+			}	
+			
+		},getAllWonAuctionsQuery);
+	}
+}
+
+exports.updatePaymentDetailsForAuction= function(req,res){
+	console.log("Inside updatePaymentDetailsForAuction method.")
+	var userId = req.session.userid;
+	var creditCardNumber = req.param("CreditCardNumber");
+	
+	var updatePaymentDetailsForAuctionQuery = "UPDATE `auctionwinners` SET `PaymentByCard` = "+creditCardNumber+", `PaymentDate` = now(),`IsPaymentDone` = 1 WHERE `AuctionWinnerId` = "+userId +"and IsPaymentDone = 0";
+;
+	console.log("Query:: " + updatePaymentDetailsForAuctionQuery);
+
+
+	mysql.storeData(updatePaymentDetailsForAuctionQuery, function(err, result){
+		//render on success
+		if(!err){
+			console.log('Auction payment detils updated for userId: '+userId);
+				json_responses = {
+					"statusCode" : 200
+				}
+				//res.send(json_responses);
+		}
+		else{
+			console.log('ERROR! Insertion not done');
+			throw err;
+		}
+	});
+}
+
+
+

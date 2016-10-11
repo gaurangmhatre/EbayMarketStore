@@ -23,7 +23,11 @@ userProfile.config(['$routeProvider',
                     when('/sellItem', {
                         templateUrl : '/templates/userProfile/sellItem.html',
                         controller : 'sellItemController'
-                    });
+                    }).
+                	when('/auctionWon',{
+                		templateUrl : '/templates/userProfile/AuctionWon.html',
+                       controller : 'auctionWonController'
+                	});
             }]);
 
 

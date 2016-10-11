@@ -77,6 +77,11 @@ app.post('/getAllUserDirectBuyingActivities',userProfile.getAllUserDirectBuyingA
 app.post('/getAllSoldProducts',userProfile.getAllSoldProducts);
 app.post('/getAllUserBiddingActivity',userProfile.getAllUserBiddingActivity);
 
+app.post('/getAllWonAuctions',userProfile.getAllWonAuctions);
+app.post('/updatePaymentDetailsForAuction',userProfile.updatePaymentDetailsForAuction);
+
+
+
 app.get('/products',products.getProductsPage);
 app.post('/getAllProducts',products.getAllProducts);
 app.post('/getAllProductsForAuction',products.getAllProductsForAuction);
