@@ -3,12 +3,13 @@ var mysql = require('./mysql');
 
 
 exports.signup=function (req,res) {
+	getAllAuctionResults();
 	res.render('signup', { validationMessage: 'Empty Message'});
 };
 
 exports.signin = function(req,res){
-	
-	res.render('signin',{validationMessgae:'Empty Message'});
+	getAllAuctionResults();
+	res.render('signin',{validationMessage:'Empty Message'});
 };
 
 
@@ -96,10 +97,8 @@ exports.afterSignup = function(req,res){// load new user data in database
 			console.log('Invalid SingUp!');
 			res.send("false");
 		}
-	});
-	
-	
-}
+	});	
+};
 
 exports.checksignup = function(req,res){ //check if email ID is valid or not
 	console.log("In check signup .");
@@ -128,7 +127,80 @@ exports.checksignup = function(req,res){ //check if email ID is valid or not
 			}
 		}, checkEmailQuery); 
 	}
+};
+
+
+function getAllAuctionResults(){
+	console.log("In GetAllAuction method.");
 	
+	var getAllItemsWithCompletedAction =  "select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0";
+	console.log("Query is :: " + getAllItemsWithCompletedAction);
+
+	mysql.fetchData(function(err,results) {
+		if(err) {
+			throw err;
+		}
+		else {
+			if(results.length > 0) {
+				console.log("Items exists!");
+				for(result in results)
+				{
+					addAuctionWinnerToTheList(results[result].ItemId);	
+					itemIsSold(results[result].ItemId);
+				}	
+			}
+			else {
+				console.log("Item doesn't exist");
+				//res.send("false");
+			}
+		}
+	}, getAllItemsWithCompletedAction); 
 }
+
+
+function itemIsSold(ItemId) {
+
+	console.log("Inside itemIsSold flag.");
+		
+		var updateSoldItemFlagQuery = "update Item set sold = 1 where ItemId = "+ItemId;
+
+		console.log("Query:: " + updateSoldItemFlagQuery);
+
+		mysql.storeData(updateSoldItemFlagQuery, function(err, result){
+			//render on success
+			if(!err){
+				console.log('Sold flag updated for Item:'+ItemId);
+			}
+			else{
+				console.log('ERROR! Insertion not done for auction results.');
+				throw err;
+			}
+		});
+};
+
+function addAuctionWinnerToTheList(ItemId) {
+
+	console.log("Inside addAuctionWinnerToTheList method.");
+	
+	var addAuctionWinnerToTheListQuery = "INSERT INTO `ebay`.`auctionwinners`(`WinnerId`,`ItemId`,`IsPaymentDone`)(select b.BidderId, b.ItemId, 0 as IsPaymentDone from bidderlist as b where ItemId = "+ItemId+" and b.BidAmount = (	select max(b.BidAmount)	from bidderlist as b left join item as i	on b.ItemId=i.ItemId	where i.IsBidItem =1  and i.AuctionEndDate < now() and i.ItemId="+ItemId+"));";
+
+	console.log("Query:: " + addAuctionWinnerToTheListQuery);
+
+	mysql.storeData(addAuctionWinnerToTheListQuery, function(err, result){
+		//render on success
+		if(!err){
+			console.log('New bidder successfully added to winners list! for Item:'+ItemId);
+				
+				//res.send(json_responses);
+		}
+		else{
+			console.log('ERROR! Insertion not done for auction results.');
+			throw err;
+		}
+	});
+};
+
+
+
 
 

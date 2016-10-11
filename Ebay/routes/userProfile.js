@@ -137,15 +137,12 @@ exports.buyItemsInCart = function(req,res)
 			else {
 				if(results.length > 0) {
 						console.log("Got all the items for userId: "+ userId);
-						
-						//insert item into sold table.
 						for(result in results)
 						{
 							AddItemToSoldTable(results[result].ItemId,userId,creditCardNumber);
 							updateItemQty(results[result].ItemId);
 							removingItemFromCart(userId,results[result].ItemId);
-						}
-						
+						}						
 						json_responses = results;
 				}
 				else{
@@ -157,10 +154,12 @@ exports.buyItemsInCart = function(req,res)
 			}	
 			
 		}, getAllCartItemsQuery);
-	}
-
-	
+	}	
 }
+
+
+
+
 
 function AddItemToSoldTable(ItemId,userId,creditCardNumber) {
 
@@ -315,6 +314,62 @@ exports.getAllUserBiddingActivity = function(req,res)
 	console.log("inside getAllUserBiddingActivity for user: "+req.session.userid);
 	
 	var userId = req.session.userid;
+	
+	if(userId != '') {
+		var getAllUserBiddingActivityQuery = "select  i.ItemName, i.ItemDescription, i.Price, b.BidAmount,b.BidTime  from bidderList as b left join item as i  on b.ItemId=i.ItemId where BidderId = "+userId+" order by BidTime desc";
+		console.log("Query:: " + getAllUserBiddingActivityQuery);
+
+		mysql.fetchData(function(err,results) {
+			if(err) {
+				throw err;
+			}
+			else {
+				if(results.length > 0) {
+						console.log("Successful got the sold products.");
+						
+						json_responses = results;
+						}
+				else{
+						console.log("Invalid string.");
+						json_responses = {"statusCode" : 401};
+				}
+				res.send(json_responses);
+			}	
+			
+		},getAllUserBiddingActivityQuery);
+	}
+}
+
+//Select BidderId,max(BidAmount) from bidderList where ItemId = (select (ItemId) from Item where  IsBidItem =1  and AuctionEndDate < now());
+exports.updateAuctionWinners = function(req,res)
+{
+	console.log("inside updateAuctionWinners");
+	
+	var getAuctionWinner = "Select BidderId,max(BidAmount) from bidderList where ItemId = (select (ItemId) from Item where  IsBidItem =1  and AuctionEndDate < now()) and IsWinner<>1;";
+	console.log("Query:: " + getAuctionWinner);
+
+	mysql.fetchData(function(err,results) {
+		if(err) {
+			throw err;
+		}
+		else {
+			if(results.length > 0) {
+					console.log("Successful got the sold products.");
+					
+					json_responses = results;
+					}
+			else{
+					console.log("Invalid string.");
+					json_responses = {"statusCode" : 401};
+			}
+			res.send(json_responses);
+		}	
+		
+	},getAuctionWinner);
+	
+	
+	
+	
 	
 	if(userId != '') {
 		var getAllUserBiddingActivityQuery = "select  i.ItemName, i.ItemDescription, i.Price, b.BidAmount,b.BidTime  from bidderList as b left join item as i  on b.ItemId=i.ItemId where BidderId = "+userId+" order by BidTime desc";
