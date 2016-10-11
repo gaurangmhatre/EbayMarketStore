@@ -136,6 +136,51 @@
             </table>
         </div>
     </div>
-    
+
+    <div class="well well-sm">
+        <strong>All Items bought from bidding</strong>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Product History</th>
+                    <!--  <th>Quantity</th> -->
+                    <th class="text-center">Base Price</th>
+                    <th class="text-center">Payment date</th>
+
+                    <th class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat= "item in AllUserAuctionsWonActivity">
+                    <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="#">{{item.ItemName}}</a></h4>
+                                <h5 class="media-heading"> by <a href="#">{{item.ItemDescription}}</a></h5>
+                                <span>Seller: </span><span class="text-success"><strong>{{item.SellerName}}</strong></span>
+                            </div>
+                        </div></td>
+
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" value="3"> -->
+                    <!-- <td class="col-sm-1 col-md-1 text-center"><strong>{{item.Qty}}</strong></td> -->
+
+
+                    <!--<td class="col-sm-1 col-md-1 text-center"><strong>{{item.BidAmount}}</strong></td>
+                    -->
+                    <td class="col-sm-1 col-md-1 text-center"><strong>{{item.Price}}</strong></td>
+                    <td class="col-sm-1 col-md-1 text-center"><strong>{{item.Paymentdate| date:'medium'}}</strong></td>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
     
 </div>

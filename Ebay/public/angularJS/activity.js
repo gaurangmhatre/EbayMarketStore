@@ -83,5 +83,29 @@ userProfile.controller('activityController', function($scope,$http) {
 			$window.alert("unexpected_error");
 		});
 
-	
+
+
+
+		$http({
+			method : "POST",
+			url : '/getAllAuctionProductHistory',
+			data : {
+
+			}
+		}).success(function(data2) {
+			console.log("inside success");
+			console.log("data is ::");
+			console.log(data2);
+
+
+			$scope.AllUserAuctionsWonActivity= data2;
+
+		}).error(function(error) {
+			console.log("inside error");
+			console.log(error);
+			$scope.unexpected_error = false;
+			$scope.invalid_login = true;
+			$window.alert("unexpected_error");
+		});
+
 });

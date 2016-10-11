@@ -23,13 +23,16 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 			console.log("inside success");
 			console.log("data is ::");
 			console.log(data);
-			$scope.TotalCostOfItems=0
+			$scope.TotalCostOfItems=0;
 			$scope.allProductsWon= data;
 			
 			
 			for(product in $scope.allProductsWon)
 			{
-				$scope.TotalCostOfItems = $scope.TotalCostOfItems+$scope.allProductsInCart[product].BidAmount;				
+				$scope.TotalCostOfItems = $scope.TotalCostOfItems+$scope.allProductsWon[product].BidAmount;
+
+				//temp code
+				//$scope.ItemId = $scope.allProductsWon[product].ItemId;
 			}
 			
 			
@@ -87,7 +90,8 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 				url : '/updatePaymentDetailsForAuction',
 				data : {
 					//Address: $scope.Address,
-					CreditCardNumber: $scope.CreditCardNumber
+					CreditCardNumber: $scope.CreditCardNumber,
+					ItemId: $scope.allProductsWon[0].ItemId
 			}
 			}).success(function(data) {
 				console.log("inside success");

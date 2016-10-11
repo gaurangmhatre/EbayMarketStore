@@ -6,7 +6,6 @@ exports.accountdetails = function(req,res){
 
 };
 
-
 exports.getUserAccountDetails = function(req,res){
 	
 	console.log("userId: "+req.session.userid);
@@ -47,7 +46,6 @@ exports.getUserAccountDetails = function(req,res){
 	}	
 	
 };
-
 
 exports.getAllProductsInCart = function(req,res){
 	console.log("inside get All Products from cart for user: "+req.session.userid);
@@ -112,8 +110,7 @@ exports.removeItemFromCart = function(req,res){
 	}
 };
 
-exports.buyItemsInCart = function(req,res)
-{
+exports.buyItemsInCart = function(req,res){
 /*
  * 1. Get all items from cart table by userid
  * 2. push the items to sold table.
@@ -156,14 +153,10 @@ exports.buyItemsInCart = function(req,res)
 	}	
 }
 
-
-
-
-
 function AddItemToSoldTable(ItemId,userId,creditCardNumber) {
 
 	console.log("Inside addItemTOSoldTable method.")
-	
+
 	var addItemToSoldTableQuery = "INSERT INTO sold(ItemId,BuyerId,SoldDate,Qty,PaymentByCard)VALUES("+ItemId+","+userId+",NOW(),1,'"+creditCardNumber+"');";
 	console.log("Query:: " + addItemToSoldTableQuery);
 
@@ -242,9 +235,6 @@ function removingItemFromCart(userId,ItemId) {
 	});
 }
 
-//select u.Solddate, u.Qty, i.ItemName, i.ItemDescription,i.Price,seller.FirstName from sold as u left join item as i on u.ItemId=i.ItemId left join user as seller on i.SellerId=seller.UserId
-
-
 exports.getAllUserDirectBuyingActivities= function(req,res){
 	console.log("inside getAllUserDirectBuyingActivities for user: "+req.session.userid);
 	
@@ -276,8 +266,6 @@ exports.getAllUserDirectBuyingActivities= function(req,res){
 	}	
 };
 
-
-//select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = 1 
 exports.getAllSoldProducts= function(req,res){
 	console.log("inside getAllSoldProducts for user: "+req.session.userid);
 	
@@ -308,8 +296,7 @@ exports.getAllSoldProducts= function(req,res){
 	}	
 };
 
-exports.getAllUserBiddingActivity = function(req,res)
-{
+exports.getAllUserBiddingActivity = function(req,res){
 	console.log("inside getAllUserBiddingActivity for user: "+req.session.userid);
 	
 	var userId = req.session.userid;
@@ -340,8 +327,7 @@ exports.getAllUserBiddingActivity = function(req,res)
 }
 
 //Select BidderId,max(BidAmount) from bidderList where ItemId = (select (ItemId) from Item where  IsBidItem =1  and AuctionEndDate < now());
-exports.updateAuctionWinners = function(req,res)
-{
+exports.updateAuctionWinners = function(req,res){
 	console.log("inside updateAuctionWinners");
 	
 	var getAuctionWinner = "Select BidderId,max(BidAmount) from bidderList where ItemId = (select (ItemId) from Item where  IsBidItem =1  and AuctionEndDate < now()) and IsWinner<>1;";
@@ -395,9 +381,7 @@ exports.updateAuctionWinners = function(req,res)
 	}
 }
 
-
-exports.getAllWonAuctions= function(req,res)
-{
+exports.getAllWonAuctions= function(req,res){
 	console.log("inside getAllWonAuctions for user: "+req.session.userid);
 	
 	var userId = req.session.userid;
@@ -431,19 +415,18 @@ exports.updatePaymentDetailsForAuction= function(req,res){
 	console.log("Inside updatePaymentDetailsForAuction method.")
 	var userId = req.session.userid;
 	var creditCardNumber = req.param("CreditCardNumber");
-	
-	var updatePaymentDetailsForAuctionQuery = "UPDATE `auctionwinners` SET `PaymentByCard` = "+creditCardNumber+", `PaymentDate` = now(),`IsPaymentDone` = 1 WHERE `AuctionWinnerId` = "+userId +"and IsPaymentDone = 0";
-;
+	var ItemId = req.param("ItemId");
+	var updatePaymentDetailsForAuctionQuery = "UPDATE `auctionwinners` SET `PaymentByCard` = "+creditCardNumber+", `PaymentDate` = now(),`IsPaymentDone` = 1 WHERE `WinnerId` = "+userId +" and IsPaymentDone = 0;";
 	console.log("Query:: " + updatePaymentDetailsForAuctionQuery);
-
-
 	mysql.storeData(updatePaymentDetailsForAuctionQuery, function(err, result){
 		//render on success
 		if(!err){
 			console.log('Auction payment detils updated for userId: '+userId);
-				json_responses = {
+			UpdateItemStatusToSold(ItemId);
+					json_responses = {
 					"statusCode" : 200
 				}
+
 				//res.send(json_responses);
 		}
 		else{
@@ -453,5 +436,56 @@ exports.updatePaymentDetailsForAuction= function(req,res){
 	});
 }
 
+function UpdateItemStatusToSold(ItemId) {
 
+	console.log("Inside UpdateItemStatusToSold method.")
 
+	var updateItemStatusToSoldQuery = "UPDATE `ebay`.`item`	SET `Sold` = 1 WHERE `ItemId` = "+ItemId +";";
+	console.log("Query:: " + updateItemStatusToSoldQuery);
+
+	mysql.storeData(updateItemStatusToSoldQuery, function(err, result){
+		//render on success
+		if(!err){
+			console.log('Item is sold!');
+			json_responses = {
+				"statusCode" : 200
+			}
+			//res.send(json_responses);
+		}
+		else{
+			console.log('ERROR! Insertion not done');
+			throw err;
+		}
+	});
+}
+
+//select a.Paymentdate, i.ItemName, i.ItemDescription,i.Price, u.FirstName as SellerName from auctionWinners as a left join item as i on a.ItemId = i.ItemId left join user as u on i.SellerId = u.UserId where a.WinnerId = 3;
+
+exports.getAllAuctionProductHistory= function(req,res){
+	console.log("Inside getAllAuctionProductHistory method.")
+	var userId = req.session.userid;
+
+	if(userId != '') {
+		var getAllAuctionProductHistoryQuery = "select a.Paymentdate, i.ItemName, i.ItemDescription,i.Price, u.FirstName as SellerName from auctionWinners as a left join item as i on a.ItemId = i.ItemId left join user as u on i.SellerId = u.UserId where a.WinnerId = "+userId+";";
+		console.log("Query:: " + getAllAuctionProductHistoryQuery);
+
+		mysql.fetchData(function(err,results) {
+			if(err) {
+				throw err;
+			}
+			else {
+				if(results.length > 0) {
+					console.log("Successful got the user data");
+				    json_responses = results;
+				}
+				else{
+					console.log("Invalid string.");
+					json_responses = {"statusCode" : 401};
+				}
+				res.send(json_responses);
+			}
+
+		}, getAllAuctionProductHistoryQuery);
+	}
+
+}

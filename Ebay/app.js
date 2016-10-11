@@ -79,6 +79,7 @@ app.post('/getAllUserBiddingActivity',userProfile.getAllUserBiddingActivity);
 
 app.post('/getAllWonAuctions',userProfile.getAllWonAuctions);
 app.post('/updatePaymentDetailsForAuction',userProfile.updatePaymentDetailsForAuction);
+app.post('/getAllAuctionProductHistory',userProfile.getAllAuctionProductHistory);
 
 
 
