@@ -30,6 +30,9 @@ login.controller('login', function($scope, $window ,$http) {
 				$scope.unexpected_error = true;
 				$window.alert("invalid_login");
 
+				$scope.message = "Invalid Login.";
+				clear();
+
 			}
 			else if(data.statusCode != 401 && data.statusCode == 200) {
 				//Login Successful
@@ -37,7 +40,6 @@ login.controller('login', function($scope, $window ,$http) {
 				$scope.unexpected_error = true;
 				//Redirecting to HomePage
 				console.log("Redirecting to HomePage");
-				//window.location.assign("/homepage"); change this later
 				
 				//window.location.assign("/products");
 				window.location.assign("/userProfile");
@@ -61,7 +63,7 @@ login.controller('login', function($scope, $window ,$http) {
 			}).success(function(data) {
 				//checking the response data for statusCode
 				if (data.statusCode == 401) {
-					
+
 				}
 				else
 					//Making a get call to the '/redirectToHomepage' API
@@ -70,4 +72,8 @@ login.controller('login', function($scope, $window ,$http) {
 				
 			})
 	};
+
+	function clear() {
+		//clran variables and fields.
+	}
 })
