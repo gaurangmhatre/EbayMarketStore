@@ -26,8 +26,8 @@ userProfile.controller('accountDetailsController',function($scope, $filter,$http
 			$scope.EmailId = data.EmailId;
 			$scope.Address = data.Address;
 			$scope.CreditCardNumber = data.CreditCardNumber;
-			$scope.DateOfBirth = $filter('date')(data.DateOfBirth, 'yyyy-MM-dd')
-			
+			$scope.DateOfBirth = $filter('date')(data.DateOfBirth, 'yyyy-MM-dd');
+			$scope.LastLoggedIn = $filter('date')(data.LastLoggedIn, 'yyyy-MM-dd hh:mm:ss');
 			//set all variables.
 				 
 		}).error(function(error) {

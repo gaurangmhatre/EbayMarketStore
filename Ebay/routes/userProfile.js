@@ -13,7 +13,7 @@ exports.getUserAccountDetails = function(req,res){
 	var userId = req.session.userid;
 	
 	if(userId != '') {
-		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth from user where UserId= '" + userId+"'";
+		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '" + userId+"'";
 		console.log("Query:: " + getUserAccountDetailsQuery);
 
 		mysql.fetchData(function(err,results) {
@@ -32,6 +32,7 @@ exports.getUserAccountDetails = function(req,res){
 											,"Address":results[0].Address
 											,"CreditCardNumber":results[0].CreditCardNumber
 											,"DateOfBirth":results[0].DateOfBirth
+											,"LastLoggedIn":results[0].LastLoggedIn
 											};
 						}
 				else{

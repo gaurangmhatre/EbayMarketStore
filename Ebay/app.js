@@ -66,6 +66,7 @@ app.post('/checksignup',home.checksignup);
 app.post('/afterSignup',home.afterSignup);
 
 app.post('/checklogin',home.checklogin);
+app.post('/signout',home.signout);
 
 
 app.get('/userProfile',userProfile.accountdetails);
@@ -81,8 +82,6 @@ app.post('/getAllWonAuctions',userProfile.getAllWonAuctions);
 app.post('/updatePaymentDetailsForAuction',userProfile.updatePaymentDetailsForAuction);
 app.post('/getAllAuctionProductHistory',userProfile.getAllAuctionProductHistory);
 
-
-
 app.get('/products',products.getProductsPage);
 app.post('/getAllProducts',products.getAllProducts);
 app.post('/getAllProductsForAuction',products.getAllProductsForAuction);
@@ -90,6 +89,7 @@ app.post('/userAddToCart',products.userAddToCart);
 app.post('/addBidOnProduct',products.addBidOnProduct);
 app.post('/getItemType',products.getItemType);
 app.post('/addProduct',products.addProduct)
+
 
 app.get('/accountDetails', function (req, res) {
     res.sendfile(__dirname +'/public/templates/userProfile/accountDetails.html');

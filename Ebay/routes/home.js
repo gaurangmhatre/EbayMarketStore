@@ -200,6 +200,36 @@ function addAuctionWinnerToTheList(ItemId) {
 	});
 };
 
+exports.signout = function(req,res){
+
+	var userId = req.session.userid;
+	addLastLogin(userId);
+
+	req.session.destroy();
+
+	json_responses = {"statusCode" : 200};
+	res.send(json_responses);
+}
+
+
+function addLastLogin(userId) {
+
+	var addItemToSoldTableQuery = "UPDATE user	SET LastLoggedIn = NOW() WHERE UserId = "+userId+";";
+	console.log("Query:: " + addItemToSoldTableQuery);
+
+	mysql.storeData(addItemToSoldTableQuery, function(err, result){
+		//render on success
+		if(!err){
+			console.log('last Login for userId = '+userId+" is added.");
+		}
+		else{
+			console.log('ERROR! while adding current login.');
+			throw err;
+		}
+	});
+}
+
+
 
 
 
