@@ -1,0 +1,10 @@
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 'undefined'","timestamp":"2016-10-12T07:30:51.474Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-12T07:45:02.476Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-12T07:45:02.820Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-12T07:45:02.822Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'kaushik@gmail.com';","timestamp":"2016-10-12T07:45:07.454Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-12T07:45:08.113Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-12T07:45:08.394Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '7'","timestamp":"2016-10-12T07:45:09.083Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-12T07:45:09.502Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-12T07:45:09.504Z"}
