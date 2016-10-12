@@ -1,5 +1,5 @@
 var mysql = require('./mysql');
-//var bcrypt = require('./bCrypt.js')
+var bcrypt = require('./bCrypt.js');
 
 
 exports.signup=function (req,res) {
@@ -12,19 +12,18 @@ exports.signin = function(req,res){
 	res.render('signin',{validationMessage:'Empty Message'});
 };
 
-
 exports.checklogin= function(req,res) {
 
 	console.log("in checklogin");
 
 	var email = req.param("email");
 	var password = req.param("password");
-	
+
 	console.log("email :: " + email);
 	console.log("password :: " + password);
 
 	if(email != '') {
-		var checkLoginQuery = "select UserId from user where EmailId = '" + email + "' and Password = '" + password + "'";
+		var checkLoginQuery = "select UserId,Password from user where EmailId = '" + email + "';";
 		console.log("Query:: " + checkLoginQuery);
 
 		mysql.fetchData(function(err,results) {
@@ -32,23 +31,23 @@ exports.checklogin= function(req,res) {
 				throw err;
 			}
 			else {
-				if(results.length > 0) {
+				if(bcrypt.compareSync(password, results[0].Password)) {
 					//if(bcrypt.compareSync(password,results[0].password)) {
-						console.log("Successful Login");
-						console.log("UserId :  " + results[0].UserId);
-						//Assigning the session
-						req.session.email = email;
-						req.session.userid = results[0].UserId;
-						console.log("Session Initialized with email : " + req.session.email);
-						console.log("userid :: " + req.session.userid);
-						json_responses = {"statusCode" : 200};
-						res.send(json_responses);
-					}
-					//else {
-					//	console.log("Invalid Password");
-					//	json_responses = {"statusCode" : 401};
-					//	res.send(json_responses);
-					//}
+					console.log("Successful Login");
+					console.log("UserId :  " + results[0].UserId);
+					//Assigning the session
+					req.session.email = email;
+					req.session.userid = results[0].UserId;
+					console.log("Session Initialized with email : " + req.session.email);
+					console.log("userid :: " + req.session.userid);
+					json_responses = {"statusCode" : 200};
+					res.send(json_responses);
+				}
+				//else {
+				//	console.log("Invalid Password");
+				//	json_responses = {"statusCode" : 401};
+				//	res.send(json_responses);
+				//}
 				//}
 				else {
 					console.log("Invalid Login");
@@ -59,6 +58,7 @@ exports.checklogin= function(req,res) {
 		}, checkLoginQuery);
 	}
 };
+
 
 
 exports.afterSignup = function(req,res){// load new user data in database
@@ -81,9 +81,10 @@ exports.afterSignup = function(req,res){// load new user data in database
 	console.log("location : " + location);
 	console.log("creditCardNumber : " + creditCardNumber);
 	console.log("dateOfBirth :: " +dateOfBirth);
-	//var hash = bcrypt.hashSync(password);
 
-	var query = "INSERT INTO user (FirstName, LastName, EmailId, Password, Address, CreditCardNumber,DateOfBirth) VALUES ('" + firstname + "','" + lastname + "','" + email + "','" + password + "','" + location + "','" + creditCardNumber + "','"+dateOfBirth+"')";
+	var hash = bcrypt.hashSync(password);
+
+	var query = "INSERT INTO user (FirstName, LastName, EmailId, Password, Address, CreditCardNumber,DateOfBirth) VALUES ('" + firstname + "','" + lastname + "','" + email + "','" + hash + "','" + location + "','" + creditCardNumber + "','"+dateOfBirth+"')";
 	console.log("Query:: " + query);
 
 	mysql.storeData(query, function(err, result){

@@ -72,12 +72,13 @@ signup.controller('signup', function($scope, $filter, $http) {
 			}
 			else if(isSignUp == "true") {
 				console.log("isSignUp=true");
-				window.location.assign('/');
+				//window.location.assign('/');
+				window.location.assign("/signin");
 				$scope.isEmailExist = false;
 				$scope.emailExists = null;
 				$scope.$apply();
 				
-				window.location.assign("/signin");
+
 			}
 			else if(isSignUp == "false") {
 				console.log("isSignUp=false");
