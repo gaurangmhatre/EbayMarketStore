@@ -154,3 +154,258 @@
 {"level":"info","message":"\nConnection closed..","timestamp":"2016-10-12T21:01:37.817Z"}
 {"level":"info","message":"DB Results:[object Object],[object Object]","timestamp":"2016-10-12T21:01:37.817Z"}
 {"level":"info","message":"\nConnection closed..","timestamp":"2016-10-12T21:01:37.820Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-13T00:51:29.027Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-13T00:51:29.029Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T00:51:30.103Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-13T00:51:30.104Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:51:30.105Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T00:51:33.729Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T00:51:33.730Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T00:51:33.729Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:51:33.736Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T00:51:34.399Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:51:34.457Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T00:51:34.400Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T00:51:34.400Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:51:35.409Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:51:35.409Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:51:35.445Z"}
+{"level":"info","message":"Successful got the user data  for userId1","timestamp":"2016-10-13T00:51:35.447Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:51:35.450Z"}
+{"level":"info","message":"Query:: select u.Solddate, u.Qty, i.ItemName, i.ItemDescription,i.Price,seller.FirstName from sold as u left join item as i on u.ItemId=i.ItemId left join user as seller on i.SellerId=seller.UserId where u.BuyerId = 1","timestamp":"2016-10-13T00:51:42.132Z"}
+{"level":"info","message":"SQL Query::select u.Solddate, u.Qty, i.ItemName, i.ItemDescription,i.Price,seller.FirstName from sold as u left join item as i on u.ItemId=i.ItemId left join user as seller on i.SellerId=seller.UserId where u.BuyerId = 1","timestamp":"2016-10-13T00:51:42.133Z"}
+{"level":"info","message":"Query:: select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = 1;","timestamp":"2016-10-13T00:51:42.135Z"}
+{"level":"info","message":"Query:: select  i.ItemName, i.ItemDescription, i.Price, b.BidAmount,b.BidTime  from bidderList as b left join item as i  on b.ItemId=i.ItemId where BidderId = 1 order by BidTime desc","timestamp":"2016-10-13T00:51:42.138Z"}
+{"level":"info","message":"Query:: select a.Paymentdate, i.ItemName, i.ItemDescription,i.Price, u.FirstName as SellerName from auctionWinners as a left join item as i on a.ItemId = i.ItemId left join user as u on i.SellerId = u.UserId where a.WinnerId = 1;","timestamp":"2016-10-13T00:51:42.141Z"}
+{"level":"info","message":"SQL Query::select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = 1;","timestamp":"2016-10-13T00:51:42.135Z"}
+{"level":"info","message":"SQL Query::select  i.ItemName, i.ItemDescription, i.Price, b.BidAmount,b.BidTime  from bidderList as b left join item as i  on b.ItemId=i.ItemId where BidderId = 1 order by BidTime desc","timestamp":"2016-10-13T00:51:42.138Z"}
+{"level":"info","message":"SQL Query::select a.Paymentdate, i.ItemName, i.ItemDescription,i.Price, u.FirstName as SellerName from auctionWinners as a left join item as i on a.ItemId = i.ItemId left join user as u on i.SellerId = u.UserId where a.WinnerId = 1;","timestamp":"2016-10-13T00:51:42.141Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object]","timestamp":"2016-10-13T00:51:42.192Z"}
+{"level":"info","message":"Successful got the sold product for userId:: 1","timestamp":"2016-10-13T00:51:42.195Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:51:42.204Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:51:42.206Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:51:42.215Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T00:51:42.218Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:51:42.219Z"}
+{"level":"info","message":"Successful got the user activity data for userId:: 1","timestamp":"2016-10-13T00:51:42.211Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object]","timestamp":"2016-10-13T00:51:42.220Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:51:42.222Z"}
+{"level":"info","message":"Successful got the sold products for userId:: 1","timestamp":"2016-10-13T00:51:42.221Z"}
+{"level":"info","message":"Query:: select a.WinnerId, a.ItemId, a.PaymentByCard,a.PaymentDate,a.IsPaymentDone, i.ItemName, i.ItemDescription, i.price, b.BidAmount,b.BidTime from auctionwinners as a left join item as i on a.ItemId = i.ItemId left join bidderList as b on a.winnerId = b.BidderId and a.ItemId= b.ItemId where a.IsPaymentDone=0 and a.WinnerId = 1","timestamp":"2016-10-13T00:52:08.226Z"}
+{"level":"info","message":"SQL Query::select a.WinnerId, a.ItemId, a.PaymentByCard,a.PaymentDate,a.IsPaymentDone, i.ItemName, i.ItemDescription, i.price, b.BidAmount,b.BidTime from auctionwinners as a left join item as i on a.ItemId = i.ItemId left join bidderList as b on a.winnerId = b.BidderId and a.ItemId= b.ItemId where a.IsPaymentDone=0 and a.WinnerId = 1","timestamp":"2016-10-13T00:52:08.226Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:52:08.229Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:52:08.229Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:52:08.247Z"}
+{"level":"info","message":"Successful got the user data  for userId1","timestamp":"2016-10-13T00:52:08.248Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:52:08.249Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T00:52:08.263Z"}
+{"level":"info","message":"Invalid string for userId:1","timestamp":"2016-10-13T00:52:08.263Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:52:08.264Z"}
+{"level":"info","message":"Query:: select u.Solddate, u.Qty, i.ItemName, i.ItemDescription,i.Price,seller.FirstName from sold as u left join item as i on u.ItemId=i.ItemId left join user as seller on i.SellerId=seller.UserId where u.BuyerId = 1","timestamp":"2016-10-13T00:52:15.208Z"}
+{"level":"info","message":"SQL Query::select u.Solddate, u.Qty, i.ItemName, i.ItemDescription,i.Price,seller.FirstName from sold as u left join item as i on u.ItemId=i.ItemId left join user as seller on i.SellerId=seller.UserId where u.BuyerId = 1","timestamp":"2016-10-13T00:52:15.208Z"}
+{"level":"info","message":"Query:: select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = 1;","timestamp":"2016-10-13T00:52:15.213Z"}
+{"level":"info","message":"Query:: select  i.ItemName, i.ItemDescription, i.Price, b.BidAmount,b.BidTime  from bidderList as b left join item as i  on b.ItemId=i.ItemId where BidderId = 1 order by BidTime desc","timestamp":"2016-10-13T00:52:15.217Z"}
+{"level":"info","message":"Query:: select a.Paymentdate, i.ItemName, i.ItemDescription,i.Price, u.FirstName as SellerName from auctionWinners as a left join item as i on a.ItemId = i.ItemId left join user as u on i.SellerId = u.UserId where a.WinnerId = 1;","timestamp":"2016-10-13T00:52:15.221Z"}
+{"level":"info","message":"SQL Query::select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = 1;","timestamp":"2016-10-13T00:52:15.214Z"}
+{"level":"info","message":"SQL Query::select  i.ItemName, i.ItemDescription, i.Price, b.BidAmount,b.BidTime  from bidderList as b left join item as i  on b.ItemId=i.ItemId where BidderId = 1 order by BidTime desc","timestamp":"2016-10-13T00:52:15.217Z"}
+{"level":"info","message":"SQL Query::select a.Paymentdate, i.ItemName, i.ItemDescription,i.Price, u.FirstName as SellerName from auctionWinners as a left join item as i on a.ItemId = i.ItemId left join user as u on i.SellerId = u.UserId where a.WinnerId = 1;","timestamp":"2016-10-13T00:52:15.221Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:52:15.258Z"}
+{"level":"info","message":"Successful got the user activity data for userId:: 1","timestamp":"2016-10-13T00:52:15.261Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:52:15.261Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object]","timestamp":"2016-10-13T00:52:15.262Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:52:15.264Z"}
+{"level":"info","message":"Successful got the sold product for userId:: 1","timestamp":"2016-10-13T00:52:15.263Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object]","timestamp":"2016-10-13T00:52:15.297Z"}
+{"level":"info","message":"Successful got the sold products for userId:: 1","timestamp":"2016-10-13T00:52:15.299Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:52:15.300Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T00:52:15.300Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:52:15.301Z"}
+{"level":"info","message":"SQL Query::select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-13T00:52:17.950Z"}
+{"level":"info","message":"SQL Query::select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-13T00:52:17.954Z"}
+{"level":"info","message":"Query:: select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-13T00:52:17.950Z"}
+{"level":"info","message":"Query:: select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-13T00:52:17.954Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-13T00:52:17.960Z"}
+{"level":"info","message":"Results are loaded for user : 1","timestamp":"2016-10-13T00:52:17.964Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:52:17.966Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-13T00:52:18.012Z"}
+{"level":"info","message":"Results are loaded for user (auction): 1","timestamp":"2016-10-13T00:52:18.019Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:52:18.021Z"}
+{"level":"info","message":"Query:: INSERT INTO bidderlist(BidderId,ItemId,BidAmount,BidTime)VALUES(1,7,404,NOW());","timestamp":"2016-10-13T00:52:43.445Z"}
+{"level":"info","message":"SQL Query::INSERT INTO bidderlist(BidderId,ItemId,BidAmount,BidTime)VALUES(1,7,404,NOW());","timestamp":"2016-10-13T00:52:43.445Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:52:43.573Z"}
+{"level":"info","message":"Query:: select uc.UserCartId, uc.ItemId, i.ItemName, i.ItemDescription, i.ItemTypeId ,i.Price from ebay.usercart uc join ebay.item i on uc.ItemId =  i.itemId where uc.UserId = '1'","timestamp":"2016-10-13T00:53:15.814Z"}
+{"level":"info","message":"SQL Query::select uc.UserCartId, uc.ItemId, i.ItemName, i.ItemDescription, i.ItemTypeId ,i.Price from ebay.usercart uc join ebay.item i on uc.ItemId =  i.itemId where uc.UserId = '1'","timestamp":"2016-10-13T00:53:15.817Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:53:15.985Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:53:15.985Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:53:16.014Z"}
+{"level":"info","message":"Successful got the user cart data1","timestamp":"2016-10-13T00:53:16.039Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:53:16.041Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:53:16.042Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:53:16.046Z"}
+{"level":"info","message":"Successful got the user data  for userId1","timestamp":"2016-10-13T00:53:16.044Z"}
+{"level":"info","message":"SQL Query::SELECT ItemTypeId,ItemType FROM itemtype;","timestamp":"2016-10-13T00:53:20.445Z"}
+{"level":"info","message":"Query:: SELECT ItemTypeId,ItemType FROM itemtype;","timestamp":"2016-10-13T00:53:20.445Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-13T00:53:20.450Z"}
+{"level":"info","message":"Successful got All the ItemTypes.","timestamp":"2016-10-13T00:53:20.451Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:53:20.451Z"}
+{"level":"info","message":"Query:: select uc.UserCartId, uc.ItemId, i.ItemName, i.ItemDescription, i.ItemTypeId ,i.Price from ebay.usercart uc join ebay.item i on uc.ItemId =  i.itemId where uc.UserId = '1'","timestamp":"2016-10-13T00:53:46.560Z"}
+{"level":"info","message":"SQL Query::select uc.UserCartId, uc.ItemId, i.ItemName, i.ItemDescription, i.ItemTypeId ,i.Price from ebay.usercart uc join ebay.item i on uc.ItemId =  i.itemId where uc.UserId = '1'","timestamp":"2016-10-13T00:53:46.561Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:53:46.563Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:53:46.563Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:53:46.593Z"}
+{"level":"info","message":"Successful got the user cart data1","timestamp":"2016-10-13T00:53:46.594Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:53:46.594Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:53:46.606Z"}
+{"level":"info","message":"Successful got the user data  for userId1","timestamp":"2016-10-13T00:53:46.606Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:53:46.607Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:54:16.169Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '1'","timestamp":"2016-10-13T00:54:16.169Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T00:54:16.182Z"}
+{"level":"info","message":"Successful got the user data  for userId1","timestamp":"2016-10-13T00:54:16.182Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:54:16.184Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-13T00:54:32.536Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-13T00:54:32.536Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T00:54:32.543Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-13T00:54:32.543Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:54:32.543Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-13T00:54:33.565Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-13T00:54:33.566Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T00:54:33.573Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-13T00:54:33.573Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T00:54:33.573Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:46:13.170Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:46:13.173Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:46:13.172Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:46:14.131Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:46:14.136Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:46:14.146Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:48:25.578Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:48:25.582Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:48:25.582Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:48:25.686Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:48:25.687Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:48:25.692Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:49:31.056Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:49:31.057Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:49:31.057Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:49:31.065Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:49:31.066Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:49:31.068Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:49:47.156Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T02:49:47.157Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:49:47.157Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T02:49:47.162Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T02:49:47.514Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:49:47.517Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:49:47.514Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T02:49:47.514Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:50:44.097Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T02:50:44.097Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:50:44.097Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T02:50:44.102Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T02:50:44.338Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:50:44.339Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:50:44.338Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T02:50:44.339Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T02:51:05.905Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:51:05.905Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:51:05.905Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T02:51:05.910Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T02:51:06.149Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:51:06.150Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:51:06.149Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T02:51:06.149Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:51:30.291Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T02:51:30.296Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:51:30.292Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T02:51:30.303Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T02:51:30.552Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:51:30.554Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T02:51:30.553Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T02:51:30.553Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:52:07.231Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:52:07.232Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:52:07.232Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:52:07.238Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:52:07.238Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:52:07.239Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:52:56.910Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:52:56.913Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:52:56.912Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:52:57.017Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:52:57.018Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:52:57.036Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:53:44.758Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:53:44.758Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:53:44.758Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:53:44.761Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:53:44.761Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:53:44.761Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:55:05.107Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:55:05.107Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:55:05.107Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:55:05.107Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:55:05.107Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:55:05.107Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:57:15.036Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:57:15.036Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:57:15.036Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:57:15.042Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:57:15.042Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:57:15.043Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:57:50.801Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T02:57:50.802Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T02:57:50.802Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T02:57:50.808Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T02:57:50.808Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T02:57:50.808Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T03:01:16.468Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T03:01:16.469Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T03:01:16.469Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T03:01:16.474Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T03:01:16.475Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T03:01:16.476Z"}
+{"level":"info","message":"Signin request from: gaurangmhatree@gmail.com","timestamp":"2016-10-13T03:02:41.749Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatree@gmail.com';","timestamp":"2016-10-13T03:02:41.753Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatree@gmail.com","timestamp":"2016-10-13T03:02:41.753Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-13T03:02:41.850Z"}
+{"level":"error","message":"Invalid Login for email Id: gaurangmhatree@gmail.com user is not registered.","timestamp":"2016-10-13T03:02:41.851Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T03:02:41.868Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:02:51.369Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T03:02:51.369Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:02:51.369Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T03:02:51.382Z"}
+{"level":"error","message":"Invalid password for email Id: gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:02:51.647Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T03:02:51.649Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:03:03.023Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T03:03:03.023Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:03:03.023Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T03:03:03.027Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T03:03:03.264Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T03:03:03.268Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:03:03.265Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T03:03:03.265Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:07:27.791Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T03:07:27.791Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:07:27.791Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T03:07:27.795Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T03:07:28.027Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T03:07:28.029Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:07:28.028Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T03:07:28.028Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:12:39.912Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T03:12:39.912Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:12:39.912Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T03:12:39.916Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T03:12:40.166Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T03:12:40.169Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:12:40.166Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T03:12:40.166Z"}
+{"level":"info","message":"Signin request from: gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:17:58.180Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurangmhatre@gmail.com';","timestamp":"2016-10-13T03:17:58.180Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:17:58.180Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-13T03:17:58.186Z"}
+{"level":"info","message":"Successful Login for = gaurangmhatre@gmail.com userId: 1","timestamp":"2016-10-13T03:17:58.423Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-13T03:17:58.424Z"}
+{"level":"info","message":"Session Initialized with email : gaurangmhatre@gmail.com","timestamp":"2016-10-13T03:17:58.423Z"}
+{"level":"info","message":"userid :: 1","timestamp":"2016-10-13T03:17:58.423Z"}

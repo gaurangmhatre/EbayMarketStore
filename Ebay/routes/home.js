@@ -63,13 +63,14 @@ exports.checklogin= function(req,res) {
 					else {
 						logger.log('error', "Invalid password for email Id: " + email);
 						console.log("Invalid Login");
-						json_responses = {"statusCode": 401,"Message":"User password is not valod "};
+						json_responses = {"statusCode": 401};
 						res.send(json_responses);
 					}
 				}
 				else{
 					logger.log('error', "Invalid Login for email Id: "+email +' user is not registered.');
-					json_responses = {"statusCode": 401, "Message": "User is not registered."};
+					json_responses = {"statusCode": 401};
+					console.log(json_responses);
 					res.send(json_responses);
 				}
 			}

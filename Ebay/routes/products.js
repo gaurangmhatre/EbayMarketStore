@@ -70,9 +70,6 @@ exports.getAllProductsForAuction = function(req,res){
 		}, getAllProductForAuctionQuery );
 };
 
-
-
-
 exports.userAddToCart = function(req,res){
 	console.log("In userAddToCart method.");
 	
@@ -109,7 +106,6 @@ exports.userAddToCart = function(req,res){
 		}
 	}, userAddToCartQuery );	
 };
-
 
 exports.addBidOnProduct = function(req,res){
 	console.log("In addBidOnProduct method.");
