@@ -95,12 +95,6 @@ app.get('/accountDetails', function (req, res) {
     res.sendfile(__dirname +'/public/templates/userProfile/accountDetails.html');
 });
 
-//app.get('/calculator',calculator.getCalculator);
-//app.post('/getAddition',calculator.getAddition);
-//app.post('/getSubtraction',calculator.getSubtraction);
-//app.post('/getMultiplication',calculator.getMultiplication);
-//app.post('/getDivision',calculator.getDivision);
-
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
