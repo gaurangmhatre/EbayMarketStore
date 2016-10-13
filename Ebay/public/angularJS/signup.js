@@ -44,6 +44,10 @@ signup.controller('signup', function($scope, $filter, $http) {
 		});
 	};
 
+	$scope.backToSignin= function(){
+		window.location.assign("/signin");
+	};
+
 	function doSignUp() {
 		
 		console.log("in doSignUp");
@@ -77,8 +81,6 @@ signup.controller('signup', function($scope, $filter, $http) {
 				$scope.isEmailExist = false;
 				$scope.emailExists = null;
 				$scope.$apply();
-				
-
 			}
 			else if(isSignUp == "false") {
 				console.log("isSignUp=false");

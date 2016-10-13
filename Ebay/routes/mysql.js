@@ -24,6 +24,8 @@ function getConnection(){
 
 
 
+
+
 function fetchData(callback,sqlQuery){
 
 	logger.log('info', 'SQL Query::'+sqlQuery);

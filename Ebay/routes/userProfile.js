@@ -20,7 +20,7 @@ exports.getUserAccountDetails = function(req,res){
 	
 	var userId = req.session.userid;
 	
-	if(userId != '') {
+	if(userId != undefined ) {
 		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '" + userId+"'";
 		console.log("Query:: " + getUserAccountDetailsQuery);
 		logger.log('info','Query:: ' + getUserAccountDetailsQuery);
@@ -56,8 +56,12 @@ exports.getUserAccountDetails = function(req,res){
 			}	
 			
 		}, getUserAccountDetailsQuery);
-	}	
-	
+
+	}
+	else {
+		var json_responses = {"statusCode": 401};
+		res.send(json_responses);
+	}
 };
 
 exports.getAllProductsInCart = function(req,res){
@@ -65,7 +69,7 @@ exports.getAllProductsInCart = function(req,res){
 	
 	var userId = req.session.userid;
 	
-	if(userId != '') {
+	if(userId != undefined) {
 		var getUserCartItemsQuery = "select uc.UserCartId, uc.ItemId, i.ItemName, i.ItemDescription, i.ItemTypeId ,i.Price from ebay.usercart uc join ebay.item i on uc.ItemId =  i.itemId where uc.UserId = '" + userId +"'";
 		console.log("Query:: " + getUserCartItemsQuery);
 		logger.log('info','Query:: ' + getUserCartItemsQuery);
@@ -91,7 +95,12 @@ exports.getAllProductsInCart = function(req,res){
 			}	
 			
 		}, getUserCartItemsQuery);
-	}	
+	}
+
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
 };
 
 exports.removeItemFromCart = function(req,res){
@@ -100,7 +109,7 @@ exports.removeItemFromCart = function(req,res){
 	var userId = req.session.userid;
 	var itemId = req.param("itemId");
 	
-	if(userId != '') {
+	if(userId != undefined) {
 		var removeItemFromCartQuery = "delete from usercart where UserId = "+userId+" and ItemId = "+itemId;
 		console.log("Query:: " + removeItemFromCartQuery);
 		logger.log('info','Query:: ' + removeItemFromCartQuery);
@@ -127,6 +136,10 @@ exports.removeItemFromCart = function(req,res){
 			
 		}, removeItemFromCartQuery);
 	}
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
 };
 
 exports.buyItemsInCart = function(req,res){
@@ -141,7 +154,7 @@ exports.buyItemsInCart = function(req,res){
 
 	var creditCardNumber = req.param("CreditCardNumber");
 	
-	if(userId != '') {
+	if(userId != undefined) {
 		var getAllCartItemsQuery = "Select UserCartId,UserId,ItemId,Qty from usercart where UserId ="+userId;
 		console.log("Query:: " + getAllCartItemsQuery);
 		logger.log('info','Query:: ' + getAllCartItemsQuery);
@@ -171,7 +184,11 @@ exports.buyItemsInCart = function(req,res){
 			}	
 			
 		}, getAllCartItemsQuery);
-	}	
+	}
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
 }
 
 function AddItemToSoldTable(ItemId,userId,creditCardNumber) {
@@ -267,7 +284,7 @@ exports.getAllUserDirectBuyingActivities= function(req,res){
 	
 	var userId = req.session.userid;
 	
-	if(userId != '') {
+	if(userId != undefined) {
 		var getAllUserDirectBuyingActivitiesQuery = "select u.Solddate, u.Qty, i.ItemName, i.ItemDescription,i.Price,seller.FirstName from sold as u left join item as i on u.ItemId=i.ItemId left join user as seller on i.SellerId=seller.UserId where u.BuyerId = "+userId;
 		console.log("Query:: " + getAllUserDirectBuyingActivitiesQuery);
 		logger.log('info','Query:: ' + getAllUserDirectBuyingActivitiesQuery);
@@ -291,7 +308,11 @@ exports.getAllUserDirectBuyingActivities= function(req,res){
 			}	
 			
 		}, getAllUserDirectBuyingActivitiesQuery);
-	}	
+	}
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
 };
 
 exports.getAllSoldProducts= function(req,res){
@@ -299,7 +320,7 @@ exports.getAllSoldProducts= function(req,res){
 	
 	var userId = req.session.userid;
 	
-	if(userId != '') {
+	if(userId != undefined) {
 		var getAllSoldProductsQuery = "select i.ItemName, i.ItemDescription,s.Qty,s.SoldDate,u.FirstName as Buyer,i.Price from item as i right join sold as s on i.ItemId=s.ItemId left join user u on s.BuyerId=u.UserId where i.SellerId = "+userId+";";
 		console.log("Query:: " + getAllSoldProductsQuery);
 		logger.log('info','Query:: ' + getAllSoldProductsQuery);
@@ -322,7 +343,11 @@ exports.getAllSoldProducts= function(req,res){
 			}	
 			
 		},getAllSoldProductsQuery);
-	}	
+	}
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
 };
 
 exports.getAllUserBiddingActivity = function(req,res){
@@ -330,7 +355,7 @@ exports.getAllUserBiddingActivity = function(req,res){
 	
 	var userId = req.session.userid;
 	
-	if(userId != '') {
+	if(userId != undefined) {
 		var getAllUserBiddingActivityQuery = "select  i.ItemName, i.ItemDescription, i.Price, b.BidAmount,b.BidTime  from bidderList as b left join item as i  on b.ItemId=i.ItemId where BidderId = "+userId+" order by BidTime desc";
 		console.log("Query:: " + getAllUserBiddingActivityQuery);
 		logger.log('info','Query:: ' + getAllUserBiddingActivityQuery);
@@ -355,6 +380,10 @@ exports.getAllUserBiddingActivity = function(req,res){
 			
 		},getAllUserBiddingActivityQuery);
 	}
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
 }
 
 //Select BidderId,max(BidAmount) from bidderList where ItemId = (select (ItemId) from Item where  IsBidItem =1  and AuctionEndDate < now());
@@ -411,14 +440,14 @@ exports.updateAuctionWinners = function(req,res){
 		},getAllUserBiddingActivityQuery);
 	}
 }
-*/ // dont know what is that
+*/ // Do not  remember why I wrote this.
 
 exports.getAllWonAuctions= function(req,res){
 	console.log("inside getAllWonAuctions for user: "+req.session.userid);
 	
 	var userId = req.session.userid;
 	
-	if(userId != '') {
+	if(userId != undefined) {
 		var getAllWonAuctionsQuery = "select a.WinnerId, a.ItemId, a.PaymentByCard,a.PaymentDate,a.IsPaymentDone, i.ItemName, i.ItemDescription, i.price, b.BidAmount,b.BidTime from auctionwinners as a left join item as i on a.ItemId = i.ItemId left join bidderList as b on a.winnerId = b.BidderId and a.ItemId= b.ItemId where a.IsPaymentDone=0 and a.WinnerId = "+userId;
 		console.log("Query:: " + getAllWonAuctionsQuery);
 		logger.log('info','Query:: ' + getAllWonAuctionsQuery);
@@ -443,6 +472,10 @@ exports.getAllWonAuctions= function(req,res){
 			
 		},getAllWonAuctionsQuery);
 	}
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
 }
 
 exports.updatePaymentDetailsForAuction= function(req,res){
@@ -450,27 +483,38 @@ exports.updatePaymentDetailsForAuction= function(req,res){
 	var userId = req.session.userid;
 	var creditCardNumber = req.param("CreditCardNumber");
 	var ItemId = req.param("ItemId");
-	var updatePaymentDetailsForAuctionQuery = "UPDATE `auctionwinners` SET `PaymentByCard` = "+creditCardNumber+", `PaymentDate` = now(),`IsPaymentDone` = 1 WHERE `WinnerId` = "+userId +" and IsPaymentDone = 0;";
-	console.log("Query:: " + updatePaymentDetailsForAuctionQuery);
-	logger.log('info','Query:: ' + updatePaymentDetailsForAuctionQuery);
-	mysql.storeData(updatePaymentDetailsForAuctionQuery, function(err, result){
-		//render on success
-		if(!err){
-			console.log('Auction payment details updated for userId: '+userId);
-			logger.log('info','Auction payment details updated for userId: '+userId);
-			UpdateItemStatusToSold(ItemId);
-					json_responses = {
-					"statusCode" : 200
+
+	if(userId != undefined) {
+		var updatePaymentDetailsForAuctionQuery = "UPDATE `auctionwinners` SET `PaymentByCard` = " + creditCardNumber + ", `PaymentDate` = now(),`IsPaymentDone` = 1 WHERE `WinnerId` = " + userId + " and IsPaymentDone = 0;";
+		console.log("Query:: " + updatePaymentDetailsForAuctionQuery);
+		logger.log('info', 'Query:: ' + updatePaymentDetailsForAuctionQuery);
+		mysql.storeData(updatePaymentDetailsForAuctionQuery, function (err, result) {
+			//render on success
+			if (!err) {
+				console.log('Auction payment details updated for userId: ' + userId);
+				logger.log('info', 'Auction payment details updated for userId: ' + userId);
+				UpdateItemStatusToSold(ItemId);
+				json_responses = {
+					"statusCode": 200
 				}
 
 				//res.send(json_responses);
-		}
-		else{
-			console.log('ERROR! Insertion not done');
-			logger.log('error',err);
-			throw err;
-		}
-	});
+			}
+			else {
+				console.log('ERROR! Insertion not done');
+				logger.log('error', err);
+				throw err;
+
+				var json_responses = {"statusCode" : 401};
+				res.send(json_responses);
+			}
+		});
+	}
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
+
 }
 
 function UpdateItemStatusToSold(ItemId) {
@@ -503,7 +547,7 @@ exports.getAllAuctionProductHistory= function(req,res){
 	console.log("Inside getAllAuctionProductHistory method.")
 	var userId = req.session.userid;
 
-	if(userId != '') {
+	if(userId != undefined) {
 		var getAllAuctionProductHistoryQuery = "select a.Paymentdate, i.ItemName, i.ItemDescription,i.Price, u.FirstName as SellerName from auctionWinners as a left join item as i on a.ItemId = i.ItemId left join user as u on i.SellerId = u.UserId where a.WinnerId = "+userId+";";
 		console.log("Query:: " + getAllAuctionProductHistoryQuery);
 		logger.log('info','Query:: ' + getAllAuctionProductHistoryQuery);
@@ -528,5 +572,11 @@ exports.getAllAuctionProductHistory= function(req,res){
 
 		}, getAllAuctionProductHistoryQuery);
 	}
+    else {
+        var json_responses = {"statusCode": 401};
+        res.send(json_responses);
+    }
 
 }
+
+

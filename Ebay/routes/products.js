@@ -80,31 +80,39 @@ exports.userAddToCart = function(req,res){
 	console.log("Add to cart for: "+UserId+" itemId: "+ItemId+" Qty:"+Qty);
 	logger.log('info', "Add to cart for: "+UserId+" itemId: "+ItemId+" Qty:"+Qty);
 
-	var userAddToCartQuery = "INSERT INTO usercart(`UserId`,`ItemId`,`Qty`)VALUES("+UserId+","+ItemId+","+Qty+");";
-	console.log("Query:: " + userAddToCartQuery);
-	logger.log('info', "Query:: " + userAddToCartQuery);
+	if(userId != undefined ) {
+		var userAddToCartQuery = "INSERT INTO usercart(`UserId`,`ItemId`,`Qty`)VALUES(" + UserId + "," + ItemId + "," + Qty + ");";
+		console.log("Query:: " + userAddToCartQuery);
+		logger.log('info', "Query:: " + userAddToCartQuery);
 
-	mysql.fetchData(function(err,results) {
-		if(err) {
-			throw err;
-			logger.log('error', "Error:: " + err);
-		}
-		else {
-			if(results.length > 0) {
-					logger.log('info','Items loaded in the cart of user'+ UserId);
-					json_responses = {"statusCode" : 200,
-										"results" : results};
-					
-					res.send(json_responses);
+		mysql.fetchData(function (err, results) {
+			if (err) {
+				throw err;
+				logger.log('error', "Error:: " + err);
 			}
 			else {
-				console.log("No items to display");
-				logger.log('info',"No items to display for usrId"+ UserId);
-				json_responses = {"statusCode" : 401};
-				res.send(json_responses);
+				if (results.length > 0) {
+					logger.log('info', 'Items loaded in the cart of user' + UserId);
+					json_responses = {
+						"statusCode": 200,
+						"results": results
+					};
+
+					res.send(json_responses);
+				}
+				else {
+					console.log("No items to display");
+					logger.log('info', "No items to display for usrId" + UserId);
+					json_responses = {"statusCode": 401};
+					res.send(json_responses);
+				}
 			}
-		}
-	}, userAddToCartQuery );	
+		}, userAddToCartQuery);
+	}
+	else {
+		var json_responses = {"statusCode": 401};
+		res.send(json_responses);
+	}
 };
 
 exports.addBidOnProduct = function(req,res){
@@ -114,31 +122,38 @@ exports.addBidOnProduct = function(req,res){
 	var BidAmount = req.param("BidAmount");
 	var UserId =  req.session.userid;
 
-	
-	var addBidOnProductQuery = "INSERT INTO bidderlist(BidderId,ItemId,BidAmount,BidTime)VALUES("+UserId+","+ItemId+","+BidAmount+",NOW());";
-	console.log("Query:: " + addBidOnProductQuery);
-	logger.log('info',"Query:: " + addBidOnProductQuery);
-	mysql.fetchData(function(err,results) {
-		if(err) {
-			throw err;
-		}
-		else {
-			if(results.length > 0) {
-				logger.log('info',"Results from addBidOnProductQuery for userId:: " + userId);
-					json_responses = {"statusCode" : 200,
-										"results" : results,
-										"BidAmount":0};
-					
-					res.send(json_responses);
+	if(userId != undefined ) {
+		var addBidOnProductQuery = "INSERT INTO bidderlist(BidderId,ItemId,BidAmount,BidTime)VALUES(" + UserId + "," + ItemId + "," + BidAmount + ",NOW());";
+		console.log("Query:: " + addBidOnProductQuery);
+		logger.log('info', "Query:: " + addBidOnProductQuery);
+		mysql.fetchData(function (err, results) {
+			if (err) {
+				throw err;
 			}
 			else {
-				console.log("No items to display");
-				logger.log('info',"No, Results from addBidOnProductQuery for userId:: " + userId);
-				json_responses = {"statusCode" : 401};
-				res.send(json_responses);
+				if (results.length > 0) {
+					logger.log('info', "Results from addBidOnProductQuery for userId:: " + userId);
+					json_responses = {
+						"statusCode": 200,
+						"results": results,
+						"BidAmount": 0
+					};
+
+					res.send(json_responses);
+				}
+				else {
+					console.log("No items to display");
+					logger.log('info', "No, Results from addBidOnProductQuery for userId:: " + userId);
+					json_responses = {"statusCode": 401};
+					res.send(json_responses);
+				}
 			}
-		}
-	}, addBidOnProductQuery );
+		}, addBidOnProductQuery);
+	}
+	else {
+		var json_responses = {"statusCode": 401};
+		res.send(json_responses);
+	}
 };
 
 exports.getItemType = function(req,res){
@@ -187,29 +202,34 @@ exports.addProduct = function(req,res){
 	var Sold = 0;
 	var insertNewProductQuery = "INSERT INTO item (ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,AuctionEndDate,IsBidItem,Sold) VALUES ('"+ItemName+"','"+ItemDescription+"',"+ItemTypeId+","+SellerId+","+Price+","+Qty+",NOW(),date_add(NOW(),INTERVAL 4 DAY),"+IsBidItem+","+Sold+")";
 
-
 	console.log("Query:: " + insertNewProductQuery);
 	logger.log('info',"Query:: " + insertNewProductQuery);
-	mysql.fetchData(function(err,results) {
-		if(err) {
-			throw err;
-			logger.log('error',err);
-		}
-		else {
-			if(results.length > 0) {
-					console.log("Successful added the item to Items table.");
-					logger.log('info','Successful added the item to Items table for userId: '+ SellerId);
-					json_responses = results;
+
+	if(userId != undefined ){
+		mysql.fetchData(function (err, results) {
+			if (err) {
+				throw err;
+				logger.log('error', err);
 			}
-			else{
+			else {
+				if (results.length > 0) {
+					console.log("Successful added the item to Items table.");
+					logger.log('info', 'Successful added the item to Items table for userId: ' + SellerId);
+					json_responses = results;
+				}
+				else {
 					res.send(json_responses);
 					console.log("Invalid string.");
-					logger.log('info','Zero items added for userId: '+ SellerId);
-					json_responses = {"statusCode" : 401};
+					logger.log('info', 'Zero items added for userId: ' + SellerId);
+					json_responses = {"statusCode": 401};
+				}
+				res.send(json_responses);
 			}
-			res.send(json_responses);
-		}	
-		
-	}, insertNewProductQuery);
-		
+
+		}, insertNewProductQuery);
+	}
+	else {
+		var json_responses = {"statusCode": 401};
+		res.send(json_responses);
+	}
 };
