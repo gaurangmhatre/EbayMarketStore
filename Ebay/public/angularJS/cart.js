@@ -79,6 +79,7 @@ userProfile.controller('cartController', function($scope,$http) {
 		
 		
 	}
+
 	$scope.removeItemFromTheCart = function(itemId) {
 		
 		 $http({

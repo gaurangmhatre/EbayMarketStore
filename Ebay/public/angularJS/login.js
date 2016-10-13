@@ -5,6 +5,38 @@ login.controller('login', function($scope, $window ,$http) {
 	//Initializing the 'invalid_login' and 'unexpected_error' 
 	//to be hidden in the UI by setting them true,
 	//Note: They become visible when we set them to false
+
+
+	init();
+
+	function init()
+	{
+
+			console.log("inside signout method");
+			$http({
+				method : "POST",
+				url : '/signout',
+				data : {
+				}
+			}).success(function(data) {
+				console.log("inside success for signout");
+				//set all variables.
+				//window.location.assign("/signin");
+
+
+			}).error(function(error) {
+				console.log("inside error");
+				console.log(error);
+				$scope.unexpected_error = false;
+				$scope.invalid_login = true;
+				$window.alert("unexpected_error");
+			});
+
+	}
+
+
+
+
 	$scope.invalid_login = true;
 	$scope.unexpected_error = true;
 	$scope.submit = function() {

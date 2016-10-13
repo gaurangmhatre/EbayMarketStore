@@ -113,33 +113,30 @@ exports.removeItemFromCart = function(req,res){
 		var removeItemFromCartQuery = "delete from usercart where UserId = "+userId+" and ItemId = "+itemId;
 		console.log("Query:: " + removeItemFromCartQuery);
 		logger.log('info','Query:: ' + removeItemFromCartQuery);
-		mysql.fetchData(function(err,results) {
+		mysql.deleteData(removeItemFromCartQuery,function(err,results) {
 			if(err) {
 				throw err;
 				logger.log('error',err);
 
 			}
 			else {
-				if(results.length > 0) {
+				if(results.affectedRows > 0) {
 						console.log("Successful removed item from the cart");
-						logger.log('info','No items in cart' + userId);
+						//logger.log('info','No items in cart' + userId);
 						json_responses = {"statusCode" : 200};
 				}
 				else{
 						res.send(json_responses);
 						console.log("Invalid string.");
-						logger.log('info','No item to remove for:' + userId);
+						//logger.log('info','No item to remove for:' + userId);
 						json_responses = {"statusCode" : 401, "Message":  "cart is already empty"};
 				}
 				res.send(json_responses);
 			}	
 			
-		}, removeItemFromCartQuery);
+		});
 	}
-    else {
-        var json_responses = {"statusCode": 401};
-        res.send(json_responses);
-    }
+
 };
 
 exports.buyItemsInCart = function(req,res){

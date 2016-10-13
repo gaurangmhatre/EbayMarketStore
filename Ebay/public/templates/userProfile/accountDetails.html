@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="well well-sm">
-        <strong>Account Details</strong>
+        <h2><strong>Account Details</strong></h2>
     </div>
     
     <div id="products" class="well well-sm">
@@ -10,18 +10,25 @@
 				
 				<div class="row">
                     <div class="col-sm-6 col-md-4">
-                        <img src="http://placehold.it/400x250/000/fff" alt="" class="img-rounded img-responsive" />
+                        <img src="images/user_profile.jpg" alt="" class="img-rounded img-responsive" />
                     </div>
                     <div class="col-sm-6 col-md-8">
-                        <h4>{{FirstName}} {{LastName}}</h4>
-                        <i class="glyphicon glyphicon-envelope"></i>{{EmailId}}
+                        <h2>{{FirstName}} {{LastName}}</h2>
+
+
+
                         <p>
+                            <i class="glyphicon glyphicon-envelope"></i>{{EmailId}}
+                            <br />
                         <i class="glyphicon glyphicon-gift"></i>Date of birth: {{DateOfBirth}}    
                             <br />
+
                         	<i class="glyphicon glyphicon-map-marker"></i><cite title="Address"> {{Address}}</cite>
                             <br />
+
                            <i class="fa fa-credit-card"></i> Card Number: {{CreditCardNumber}}
                             <br />
+
 
                             <i class="fa fa-pencil-square-o"></i> Last Logged In: {{LastLoggedIn}}
                         </p> 

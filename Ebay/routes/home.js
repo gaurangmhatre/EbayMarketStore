@@ -233,9 +233,11 @@ function addAuctionWinnerToTheList(ItemId) {
 exports.signout = function(req,res){
 
 	var userId = req.session.userid;
-	logger.log('info','Sign oout request for userId: '+userId);
-	addLastLogin(userId);
 
+	if(userId!=undefined) {
+		logger.log('info','Sign out request for userId: '+userId);
+		addLastLogin(userId);
+	}
 	req.session.destroy();
 
 	json_responses = {"statusCode" : 200};

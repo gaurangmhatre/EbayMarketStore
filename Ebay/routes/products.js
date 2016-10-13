@@ -80,7 +80,7 @@ exports.userAddToCart = function(req,res){
 	console.log("Add to cart for: "+UserId+" itemId: "+ItemId+" Qty:"+Qty);
 	logger.log('info', "Add to cart for: "+UserId+" itemId: "+ItemId+" Qty:"+Qty);
 
-	if(userId != undefined ) {
+	if(UserId != undefined ) {
 		var userAddToCartQuery = "INSERT INTO usercart(`UserId`,`ItemId`,`Qty`)VALUES(" + UserId + "," + ItemId + "," + Qty + ");";
 		console.log("Query:: " + userAddToCartQuery);
 		logger.log('info', "Query:: " + userAddToCartQuery);
@@ -122,7 +122,7 @@ exports.addBidOnProduct = function(req,res){
 	var BidAmount = req.param("BidAmount");
 	var UserId =  req.session.userid;
 
-	if(userId != undefined ) {
+	if(UserId != undefined ) {
 		var addBidOnProductQuery = "INSERT INTO bidderlist(BidderId,ItemId,BidAmount,BidTime)VALUES(" + UserId + "," + ItemId + "," + BidAmount + ",NOW());";
 		console.log("Query:: " + addBidOnProductQuery);
 		logger.log('info', "Query:: " + addBidOnProductQuery);
