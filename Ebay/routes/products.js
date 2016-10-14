@@ -109,10 +109,10 @@ exports.userAddToCart = function(req,res){
 			}
 		}, userAddToCartQuery);
 	}
-	else {
+	/*else {
 		var json_responses = {"statusCode": 401};
 		res.send(json_responses);
-	}
+	}*/
 };
 
 exports.addBidOnProduct = function(req,res){
@@ -132,7 +132,7 @@ exports.addBidOnProduct = function(req,res){
 			}
 			else {
 				if (results.length > 0) {
-					logger.log('info', "Results from addBidOnProductQuery for userId:: " + userId);
+					logger.log('info', "Results from addBidOnProductQuery for userId:: " + UserId);
 					json_responses = {
 						"statusCode": 200,
 						"results": results,
@@ -143,17 +143,17 @@ exports.addBidOnProduct = function(req,res){
 				}
 				else {
 					console.log("No items to display");
-					logger.log('info', "No, Results from addBidOnProductQuery for userId:: " + userId);
+					logger.log('info', "No, Results from addBidOnProductQuery for userId:: " + UserId);
 					json_responses = {"statusCode": 401};
 					res.send(json_responses);
 				}
 			}
 		}, addBidOnProductQuery);
 	}
-	else {
+	/*else {
 		var json_responses = {"statusCode": 401};
 		res.send(json_responses);
-	}
+	}*/
 };
 
 exports.getItemType = function(req,res){
@@ -228,8 +228,8 @@ exports.addProduct = function(req,res){
 
 		}, insertNewProductQuery);
 	}
-	else {
+	/*else {
 		var json_responses = {"statusCode": 401};
 		res.send(json_responses);
-	}
+	}*/
 };

@@ -10,7 +10,7 @@ userProfile.controller('cartController', function($scope,$http) {
 	function initialize(){
 		$scope.TotalCostOfCart=0;
 		$scope.visibleTransactionDiv = false;
-		
+		$scope.donotloadtemplate=true;
 		//console.log("userId:: " + $scope.userId)
 	
 		
@@ -33,6 +33,10 @@ userProfile.controller('cartController', function($scope,$http) {
 				$scope.TotalCostOfCart = $scope.TotalCostOfCart+$scope.allProductsInCart[product].Price;				
 			}
 			
+			if($scope.TotalCostOfCart>0)
+			{
+					$scope.donotloadtemplate= false;
+			}
 			
 			//set all variables.
 				 
@@ -107,7 +111,9 @@ userProfile.controller('cartController', function($scope,$http) {
 	}
 	
 	$scope.checkout= function(){
-		$scope.visibleTransactionDiv = true;
+		if($scope.TotalCostOfCart>0) {
+			$scope.visibleTransactionDiv = true;
+		}
 	}
 	
 	$scope.buyItemsInCart = function(){

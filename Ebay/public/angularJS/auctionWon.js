@@ -9,7 +9,7 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 	function initialize(){
 		$scope.TotalCostOfItems=0;
 		$scope.visibleTransactionDiv = false;
-		
+		$scope.donotloadtemplate=true;
 		//console.log("userId:: " + $scope.userId)
 	
 		
@@ -34,7 +34,11 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 				//temp code
 				//$scope.ItemId = $scope.allProductsWon[product].ItemId;
 			}
-			
+
+			if($scope.TotalCostOfItems>0)
+			{
+				$scope.donotloadtemplate= false;
+			}
 			
 			//set all variables.
 				 
@@ -80,7 +84,9 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 	
 		
 	$scope.checkout= function(){
-		$scope.visibleTransactionDiv = true;
+		if($scope.TotalCostOfItems>0) {
+			$scope.visibleTransactionDiv = true;
+		}
 	}
 	
 	$scope.payForWonItems = function(){
@@ -97,7 +103,7 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 				console.log("inside success");
 				console.log("Order is placed.");
 				console.log(data);
-				initialize();
+				//initialize();
 				window.location.assign("#/auctionWon");
 				//set all variables.
 					 

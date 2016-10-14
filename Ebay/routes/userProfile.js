@@ -21,8 +21,8 @@ exports.getUserAccountDetails = function(req,res){
 	var userId = req.session.userid;
 	
 	if(userId != undefined ) {
-		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= '" + userId+"'";
-		console.log("Query:: " + getUserAccountDetailsQuery);
+		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= "+ userId+";";
+		console.log("Query :: " + getUserAccountDetailsQuery);
 		logger.log('info','Query:: ' + getUserAccountDetailsQuery);
 		mysql.fetchData(function(err,results) {
 			if(err) {
@@ -88,7 +88,7 @@ exports.getAllProductsInCart = function(req,res){
 				else{
 						res.send(json_responses);
 						console.log("Invalid string.");
-						logger.log('info','No items in cart' + UserId);
+						logger.log('info','No items in cart' + userId);
 						json_responses = {"statusCode" : 401, "Message":  "No items in cart"};
 				}
 				res.send(json_responses);
@@ -97,10 +97,10 @@ exports.getAllProductsInCart = function(req,res){
 		}, getUserCartItemsQuery);
 	}
 
-    else {
+    /*else {
         var json_responses = {"statusCode": 401};
         res.send(json_responses);
-    }
+    }*/
 };
 
 exports.removeItemFromCart = function(req,res){
@@ -182,10 +182,10 @@ exports.buyItemsInCart = function(req,res){
 			
 		}, getAllCartItemsQuery);
 	}
-    else {
+    /*else {
         var json_responses = {"statusCode": 401};
         res.send(json_responses);
-    }
+    }*/
 }
 
 function AddItemToSoldTable(ItemId,userId,creditCardNumber) {
@@ -225,7 +225,7 @@ function updateItemQty(ItemId) {
 		//render on success
 		if(!err){
 			console.log('Item Qty updated!');
-			logger.log('info','Item Qty updated for userId:: ' + userId);
+			logger.log('info','Item Qty updated');
 				json_responses = {
 					"statusCode" : 200
 				}
@@ -306,10 +306,10 @@ exports.getAllUserDirectBuyingActivities= function(req,res){
 			
 		}, getAllUserDirectBuyingActivitiesQuery);
 	}
-    else {
+    /*else {
         var json_responses = {"statusCode": 401};
         res.send(json_responses);
-    }
+    }*/
 };
 
 exports.getAllSoldProducts= function(req,res){
@@ -341,10 +341,10 @@ exports.getAllSoldProducts= function(req,res){
 			
 		},getAllSoldProductsQuery);
 	}
-    else {
+    /*else {
         var json_responses = {"statusCode": 401};
         res.send(json_responses);
-    }
+    }*/
 };
 
 exports.getAllUserBiddingActivity = function(req,res){
@@ -377,10 +377,10 @@ exports.getAllUserBiddingActivity = function(req,res){
 			
 		},getAllUserBiddingActivityQuery);
 	}
-    else {
+    /*else {
         var json_responses = {"statusCode": 401};
         res.send(json_responses);
-    }
+    }*/
 }
 
 //Select BidderId,max(BidAmount) from bidderList where ItemId = (select (ItemId) from Item where  IsBidItem =1  and AuctionEndDate < now());
@@ -469,10 +469,10 @@ exports.getAllWonAuctions= function(req,res){
 			
 		},getAllWonAuctionsQuery);
 	}
-    else {
+    /*else {
         var json_responses = {"statusCode": 401};
         res.send(json_responses);
-    }
+    }*/
 }
 
 exports.updatePaymentDetailsForAuction= function(req,res){
@@ -507,10 +507,10 @@ exports.updatePaymentDetailsForAuction= function(req,res){
 			}
 		});
 	}
-    else {
+    /*else {
         var json_responses = {"statusCode": 401};
         res.send(json_responses);
-    }
+    }*/
 
 }
 
@@ -569,10 +569,10 @@ exports.getAllAuctionProductHistory= function(req,res){
 
 		}, getAllAuctionProductHistoryQuery);
 	}
-    else {
+    /*else {
         var json_responses = {"statusCode": 401};
         res.send(json_responses);
-    }
+    }*/
 
 }
 

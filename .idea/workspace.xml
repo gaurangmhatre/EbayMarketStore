@@ -4,19 +4,14 @@
     <list default="true" id="2cc32835-9116-4d6b-90fd-1c499072999a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/ebayLog.log" afterPath="$PROJECT_DIR$/Ebay/ebayLog.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/angularJS/activity.js" afterPath="$PROJECT_DIR$/Ebay/public/angularJS/activity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/angularJS/auctionWon.js" afterPath="$PROJECT_DIR$/Ebay/public/angularJS/auctionWon.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/angularJS/cart.js" afterPath="$PROJECT_DIR$/Ebay/public/angularJS/cart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/angularJS/login.js" afterPath="$PROJECT_DIR$/Ebay/public/angularJS/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/Ebay/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/templates/userProfile/accountDetails.html" afterPath="$PROJECT_DIR$/Ebay/public/templates/userProfile/accountDetails.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/templates/userProfile/activity.html" afterPath="$PROJECT_DIR$/Ebay/public/templates/userProfile/activity.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/templates/userProfile/auctionWon.html" afterPath="$PROJECT_DIR$/Ebay/public/templates/userProfile/auctionWon.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/templates/userProfile/cart.html" afterPath="$PROJECT_DIR$/Ebay/public/templates/userProfile/cart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/public/templates/userProfile/sellItem.html" afterPath="$PROJECT_DIR$/Ebay/public/templates/userProfile/sellItem.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/routes/home.js" afterPath="$PROJECT_DIR$/Ebay/routes/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/routes/products.js" afterPath="$PROJECT_DIR$/Ebay/routes/products.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/routes/userProfile.js" afterPath="$PROJECT_DIR$/Ebay/routes/userProfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/views/products.ejs" afterPath="$PROJECT_DIR$/Ebay/views/products.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ebay/views/userProfile.ejs" afterPath="$PROJECT_DIR$/Ebay/views/userProfile.ejs" />
     </list>
     <ignored path="Lab1_Ebay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,64 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ebay/routes/home.js">
+      <file leaf-file-name="auctionWon.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/auctionWon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="244" column="1" selection-start-line="244" selection-start-column="1" selection-end-line="244" selection-end-column="1" />
-              <folding>
-                <element signature="e#138#258#0" expanded="false" />
-                <element signature="e#153#256#0" expanded="false" />
-                <element signature="e#296#386#0" expanded="false" />
-                <element signature="e#423#510#0" expanded="false" />
-                <element signature="e#551#2340#0" expanded="false" />
-                <element signature="e#765#2338#0" expanded="false" />
-                <element signature="e#1027#2316#0" expanded="false" />
-                <element signature="e#1040#1126#0" expanded="false" />
-                <element signature="e#1135#2312#0" expanded="false" />
-                <element signature="e#1163#2091#0" expanded="false" />
-                <element signature="e#1225#1883#0" expanded="false" />
-                <element signature="e#1895#2085#0" expanded="false" />
-                <element signature="e#2100#2307#0" expanded="false" />
-                <element signature="e#2382#4134#0" expanded="false" />
-                <element signature="e#3836#4129#0" expanded="false" />
-                <element signature="e#3870#3982#0" expanded="false" />
-                <element signature="e#4009#4126#0" expanded="false" />
-                <element signature="e#4176#4983#0" expanded="false" />
-                <element signature="e#4322#4981#0" expanded="false" />
-                <element signature="e#4585#4958#0" expanded="false" />
-                <element signature="e#4598#4650#0" expanded="false" />
-                <element signature="e#4659#4954#0" expanded="false" />
-                <element signature="e#4689#4813#0" expanded="false" />
-                <element signature="e#4823#4949#0" expanded="false" />
-                <element signature="n#!!block;n#getAllAuctionResults#0" expanded="false" />
-                <element signature="e#5367#5802#0" expanded="false" />
-                <element signature="e#5379#5427#0" expanded="false" />
-                <element signature="e#5435#5799#0" expanded="false" />
-                <element signature="e#5463#5641#0" expanded="false" />
-                <element signature="e#5530#5635#0" expanded="false" />
-                <element signature="e#5650#5795#0" expanded="false" />
-                <element signature="n#!!block;n#itemIsSold#0" expanded="false" />
-                <element signature="e#6178#6375#0" expanded="false" />
-                <element signature="e#6214#6275#0" expanded="false" />
-                <element signature="e#6283#6371#0" expanded="false" />
-                <element signature="n#!!block;n#addAuctionWinnerToTheList#0" expanded="false" />
-                <element signature="e#7077#7457#0" expanded="false" />
-                <element signature="e#7111#7289#0" expanded="false" />
-                <element signature="e#7296#7454#0" expanded="false" />
-                <element signature="e#8050#8381#0" expanded="false" />
-                <element signature="e#8084#8223#0" expanded="false" />
-                <element signature="e#8230#8378#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ebay/public/templates/userProfile/cart.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state relative-caret-position="335">
+              <caret line="105" column="18" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -103,137 +45,113 @@
       <file leaf-file-name="userProfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ebay/routes/userProfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+            <state relative-caret-position="46">
+              <caret line="485" column="0" selection-start-line="485" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
               <folding>
                 <element signature="e#101#221#0" expanded="false" />
                 <element signature="e#116#219#0" expanded="false" />
                 <element signature="e#267#337#0" expanded="false" />
-                <element signature="e#389#1902#0" expanded="false" />
-                <element signature="e#502#1817#0" expanded="false" />
-                <element signature="e#839#1783#0" expanded="false" />
-                <element signature="e#852#902#0" expanded="false" />
-                <element signature="e#911#1774#0" expanded="false" />
-                <element signature="e#940#1519#0" expanded="false" />
-                <element signature="e#1137#1510#0" expanded="false" />
-                <element signature="e#1528#1739#0" expanded="false" />
-                <element signature="e#1824#1900#0" expanded="false" />
-                <element signature="e#1953#3129#0" expanded="false" />
-                <element signature="e#2099#3025#0" expanded="false" />
-                <element signature="e#2466#2997#0" expanded="false" />
-                <element signature="e#2479#2530#0" expanded="false" />
-                <element signature="e#2539#2988#0" expanded="false" />
-                <element signature="e#2568#2736#0" expanded="false" />
-                <element signature="e#2745#2953#0" expanded="false" />
-                <element signature="e#3036#3127#0" expanded="false" />
-                <element signature="e#3178#4191#0" expanded="false" />
-                <element signature="e#4236#5540#0" expanded="false" />
-                <element signature="e#4238#4376#0" expanded="false" />
-                <element signature="e#4496#5437#0" expanded="false" />
-                <element signature="e#4748#5410#0" expanded="false" />
-                <element signature="e#4761#4812#0" expanded="false" />
-                <element signature="e#4821#5401#0" expanded="false" />
-                <element signature="e#4850#5233#0" expanded="false" />
-                <element signature="e#4999#5189#0" expanded="false" />
-                <element signature="e#5242#5366#0" expanded="false" />
-                <element signature="e#5447#5538#0" expanded="false" />
+                <element signature="e#389#1901#0" expanded="false" />
+                <element signature="e#502#1816#0" expanded="false" />
+                <element signature="e#838#1782#0" expanded="false" />
+                <element signature="e#851#901#0" expanded="false" />
+                <element signature="e#910#1773#0" expanded="false" />
+                <element signature="e#939#1518#0" expanded="false" />
+                <element signature="e#1136#1509#0" expanded="false" />
+                <element signature="e#1527#1738#0" expanded="false" />
+                <element signature="e#1823#1899#0" expanded="false" />
+                <element signature="e#1952#3132#0" expanded="false" />
+                <element signature="e#2098#3024#0" expanded="false" />
+                <element signature="e#2465#2996#0" expanded="false" />
+                <element signature="e#2478#2529#0" expanded="false" />
+                <element signature="e#2538#2987#0" expanded="false" />
+                <element signature="e#2567#2735#0" expanded="false" />
+                <element signature="e#2744#2952#0" expanded="false" />
+                <element signature="e#3030#3130#0" expanded="false" />
+                <element signature="e#3181#4194#0" expanded="false" />
+                <element signature="e#3354#4191#0" expanded="false" />
+                <element signature="e#3636#4186#0" expanded="false" />
+                <element signature="e#3649#3700#0" expanded="false" />
+                <element signature="e#3709#4177#0" expanded="false" />
+                <element signature="e#3744#3912#0" expanded="false" />
+                <element signature="e#3921#4142#0" expanded="false" />
+                <element signature="e#4239#5547#0" expanded="false" />
+                <element signature="e#4241#4379#0" expanded="false" />
+                <element signature="e#4499#5440#0" expanded="false" />
+                <element signature="e#4751#5413#0" expanded="false" />
+                <element signature="e#4764#4815#0" expanded="false" />
+                <element signature="e#4824#5404#0" expanded="false" />
+                <element signature="e#4853#5236#0" expanded="false" />
+                <element signature="e#5002#5192#0" expanded="false" />
+                <element signature="e#5245#5369#0" expanded="false" />
+                <element signature="e#5445#5545#0" expanded="false" />
                 <element signature="n#!!block;n#AddItemToSoldTable#0" expanded="false" />
-                <element signature="e#5984#6346#0" expanded="false" />
-                <element signature="e#6018#6244#0" expanded="false" />
-                <element signature="e#6177#6208#0" expanded="false" />
-                <element signature="e#6251#6343#0" expanded="false" />
+                <element signature="e#5991#6353#0" expanded="false" />
+                <element signature="e#6025#6251#0" expanded="false" />
+                <element signature="e#6184#6215#0" expanded="false" />
+                <element signature="e#6258#6350#0" expanded="false" />
                 <element signature="n#!!block;n#updateItemQty#0" expanded="false" />
-                <element signature="e#6677#7005#0" expanded="false" />
-                <element signature="e#6711#6903#0" expanded="false" />
-                <element signature="e#6836#6867#0" expanded="false" />
-                <element signature="e#6910#7002#0" expanded="false" />
-                <element signature="e#7408#7520#0" expanded="false" />
-                <element signature="e#7898#7989#0" expanded="false" />
-                <element signature="e#7921#7952#0" expanded="false" />
-                <element signature="e#8061#9248#0" expanded="false" />
-                <element signature="e#8213#9145#0" expanded="false" />
-                <element signature="e#8660#9101#0" expanded="false" />
-                <element signature="e#8673#8723#0" expanded="false" />
-                <element signature="e#8732#9092#0" expanded="false" />
-                <element signature="e#8761#8951#0" expanded="false" />
-                <element signature="e#8960#9057#0" expanded="false" />
-                <element signature="e#9155#9246#0" expanded="false" />
-                <element signature="e#9296#10388#0" expanded="false" />
-                <element signature="e#9434#10285#0" expanded="false" />
-                <element signature="e#9833#10256#0" expanded="false" />
-                <element signature="e#9846#9896#0" expanded="false" />
-                <element signature="e#9905#10247#0" expanded="false" />
-                <element signature="e#9934#10113#0" expanded="false" />
-                <element signature="e#10122#10212#0" expanded="false" />
-                <element signature="e#10295#10386#0" expanded="false" />
-                <element signature="e#10444#11548#0" expanded="false" />
-                <element signature="e#10589#11445#0" expanded="false" />
-                <element signature="e#10983#11409#0" expanded="false" />
-                <element signature="e#10996#11047#0" expanded="false" />
-                <element signature="e#11056#11400#0" expanded="false" />
-                <element signature="e#11085#11266#0" expanded="false" />
-                <element signature="e#11275#11365#0" expanded="false" />
-                <element signature="e#11455#11546#0" expanded="false" />
-                <element signature="e#11691#13311#0" expanded="false" />
-                <element signature="e#13395#14663#0" expanded="false" />
-                <element signature="e#13532#14560#0" expanded="false" />
-                <element signature="e#14049#14532#0" expanded="false" />
-                <element signature="e#14062#14112#0" expanded="false" />
-                <element signature="e#14121#14523#0" expanded="false" />
-                <element signature="e#14150#14327#0" expanded="false" />
-                <element signature="e#14336#14488#0" expanded="false" />
-                <element signature="e#14570#14661#0" expanded="false" />
-                <element signature="e#14722#15988#0" expanded="false" />
-                <element signature="e#14936#15884#0" expanded="false" />
-                <element signature="e#15371#15879#0" expanded="false" />
-                <element signature="e#15409#15691#0" expanded="false" />
+                <element signature="e#6684#6989#0" expanded="false" />
+                <element signature="e#6718#6887#0" expanded="false" />
+                <element signature="e#6820#6851#0" expanded="false" />
+                <element signature="e#6894#6986#0" expanded="false" />
+                <element signature="n#!!block;n#removingItemFromCart#0" expanded="false" />
+                <element signature="e#7380#7980#0" expanded="false" />
+                <element signature="e#7392#7504#0" expanded="false" />
+                <element signature="e#7512#7977#0" expanded="false" />
+                <element signature="e#7757#7874#0" expanded="false" />
+                <element signature="e#7780#7837#0" expanded="false" />
+                <element signature="e#7882#7973#0" expanded="false" />
+                <element signature="e#7905#7936#0" expanded="false" />
+                <element signature="e#8045#9236#0" expanded="false" />
+                <element signature="e#8197#9129#0" expanded="false" />
+                <element signature="e#8644#9085#0" expanded="false" />
+                <element signature="e#8657#8707#0" expanded="false" />
+                <element signature="e#8716#9076#0" expanded="false" />
+                <element signature="e#8745#8935#0" expanded="false" />
+                <element signature="e#8944#9041#0" expanded="false" />
+                <element signature="e#9134#9234#0" expanded="false" />
+                <element signature="e#9284#10380#0" expanded="false" />
+                <element signature="e#9422#10273#0" expanded="false" />
+                <element signature="e#9821#10244#0" expanded="false" />
+                <element signature="e#9834#9884#0" expanded="false" />
+                <element signature="e#9893#10235#0" expanded="false" />
+                <element signature="e#9922#10101#0" expanded="false" />
+                <element signature="e#10110#10200#0" expanded="false" />
+                <element signature="e#10278#10378#0" expanded="false" />
+                <element signature="e#10436#11544#0" expanded="false" />
+                <element signature="e#10581#11437#0" expanded="false" />
+                <element signature="e#10975#11401#0" expanded="false" />
+                <element signature="e#10988#11039#0" expanded="false" />
+                <element signature="e#11048#11392#0" expanded="false" />
+                <element signature="e#11077#11258#0" expanded="false" />
+                <element signature="e#11267#11357#0" expanded="false" />
+                <element signature="e#11442#11542#0" expanded="false" />
+                <element signature="e#11687#13307#0" expanded="false" />
+                <element signature="e#13391#14663#0" expanded="false" />
+                <element signature="e#13528#14556#0" expanded="false" />
+                <element signature="e#14045#14528#0" expanded="false" />
+                <element signature="e#14058#14108#0" expanded="false" />
+                <element signature="e#14117#14519#0" expanded="false" />
+                <element signature="e#14146#14323#0" expanded="false" />
+                <element signature="e#14332#14484#0" expanded="false" />
+                <element signature="e#14561#14661#0" expanded="false" />
                 <element signature="e#15623#15653#0" expanded="false" />
                 <element signature="e#15700#15875#0" expanded="false" />
-                <element signature="e#15894#15985#0" expanded="false" />
+                <element signature="e#15889#15989#0" expanded="false" />
                 <element signature="n#!!block;n#UpdateItemStatusToSold#0" expanded="false" />
-                <element signature="e#16377#16683#0" expanded="false" />
-                <element signature="e#16411#16580#0" expanded="false" />
-                <element signature="e#16516#16545#0" expanded="false" />
-                <element signature="e#16587#16680#0" expanded="false" />
-                <element signature="e#16743#17854#0" expanded="false" />
-                <element signature="e#16864#17750#0" expanded="false" />
-                <element signature="e#17311#17711#0" expanded="false" />
-                <element signature="e#17324#17375#0" expanded="false" />
-                <element signature="e#17384#17706#0" expanded="false" />
-                <element signature="e#17413#17574#0" expanded="false" />
-                <element signature="e#17583#17671#0" expanded="false" />
-                <element signature="e#17760#17851#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cart.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/cart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
-              <folding>
-                <element signature="e#184#1805#0" expanded="false" />
-                <element signature="e#315#442#0" expanded="false" />
-                <element signature="e#427#438#0" expanded="false" />
-                <element signature="e#467#819#0" expanded="false" />
-                <element signature="e#674#777#0" expanded="false" />
-                <element signature="e#843#1009#0" expanded="false" />
-                <element signature="e#1074#1206#0" expanded="false" />
-                <element signature="e#1141#1202#0" expanded="false" />
-                <element signature="e#1231#1598#0" expanded="false" />
-                <element signature="e#1330#1470#0" expanded="false" />
-                <element signature="e#1622#1788#0" expanded="false" />
-                <element signature="e#1856#2388#0" expanded="false" />
-                <element signature="e#1934#1964#0" expanded="false" />
-                <element signature="e#2199#2382#0" expanded="false" />
-                <element signature="e#2419#2462#0" expanded="false" />
-                <element signature="e#2500#3143#0" expanded="false" />
-                <element signature="e#2559#2710#0" expanded="false" />
-                <element signature="e#2622#2705#0" expanded="false" />
-                <element signature="e#2735#2924#0" expanded="false" />
-                <element signature="e#2948#3138#0" expanded="false" />
+                <element signature="e#16381#16687#0" expanded="false" />
+                <element signature="e#16415#16584#0" expanded="false" />
+                <element signature="e#16520#16549#0" expanded="false" />
+                <element signature="e#16591#16684#0" expanded="false" />
+                <element signature="e#16747#17862#0" expanded="false" />
+                <element signature="e#16868#17754#0" expanded="false" />
+                <element signature="e#17315#17715#0" expanded="false" />
+                <element signature="e#17328#17379#0" expanded="false" />
+                <element signature="e#17388#17710#0" expanded="false" />
+                <element signature="e#17417#17578#0" expanded="false" />
+                <element signature="e#17587#17675#0" expanded="false" />
+                <element signature="e#17759#17859#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -248,8 +166,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Ebay/public/angularJS/userProfile.js" />
-        <option value="$PROJECT_DIR$/Ebay/public/angularJS/auctionWon.js" />
-        <option value="$PROJECT_DIR$/Ebay/public/angularJS/activity.js" />
         <option value="$PROJECT_DIR$/Ebay/public/angularJS/products.js" />
         <option value="$PROJECT_DIR$/Ebay/public/angularJS/accountDetails.js" />
         <option value="$PROJECT_DIR$/Ebay/package.json" />
@@ -266,13 +182,15 @@
         <option value="$PROJECT_DIR$/Ebay/views/userProfile.ejs" />
         <option value="$PROJECT_DIR$/Ebay/views/products.ejs" />
         <option value="$PROJECT_DIR$/Ebay/public/templates/userProfile/accountDetails.html" />
-        <option value="$PROJECT_DIR$/Ebay/public/templates/userProfile/auctionWon.html" />
-        <option value="$PROJECT_DIR$/Ebay/public/templates/userProfile/activity.html" />
         <option value="$PROJECT_DIR$/Ebay/public/templates/userProfile/sellItem.html" />
-        <option value="$PROJECT_DIR$/Ebay/public/templates/userProfile/cart.html" />
-        <option value="$PROJECT_DIR$/Ebay/routes/products.js" />
-        <option value="$PROJECT_DIR$/Ebay/routes/userProfile.js" />
         <option value="$PROJECT_DIR$/Ebay/public/angularJS/cart.js" />
+        <option value="$PROJECT_DIR$/Ebay/public/templates/userProfile/cart.html" />
+        <option value="$PROJECT_DIR$/Ebay/routes/userProfile.js" />
+        <option value="$PROJECT_DIR$/Ebay/routes/products.js" />
+        <option value="$PROJECT_DIR$/Ebay/public/templates/userProfile/auctionWon.html" />
+        <option value="$PROJECT_DIR$/Ebay/public/angularJS/activity.js" />
+        <option value="$PROJECT_DIR$/Ebay/public/templates/userProfile/activity.html" />
+        <option value="$PROJECT_DIR$/Ebay/public/angularJS/auctionWon.js" />
       </list>
     </option>
   </component>
@@ -313,6 +231,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -359,24 +279,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab1_Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab1_Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -398,59 +300,9 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userProfile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab1_Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab1_Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab1_Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab1_Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ebay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angularJS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -554,22 +406,23 @@
       <workItem from="1476291255742" duration="15364000" />
       <workItem from="1476324318707" duration="5346000" />
       <workItem from="1476345377116" duration="18078000" />
+      <workItem from="1476474226062" duration="5317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60569000" />
+    <option name="totallyTimeSpent" value="65886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18155198" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18008785" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2488189" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2488189" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2488189" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2488189" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18425196" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -647,33 +500,50 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Ebay/routes/mysql.js</url>
           <line>55</line>
-          <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Ebay/public/angularJS/signup.js</url>
           <line>9</line>
-          <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Ebay/public/angularJS/signup.js</url>
           <line>69</line>
-          <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Ebay/public/angularJS/products.js</url>
           <line>57</line>
-          <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Ebay/public/angularJS/cart.js</url>
+          <line>102</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1440#1580#0" expanded="false" />
+            <element signature="e#1732#1898#0" expanded="false" />
+            <element signature="e#1966#2498#0" expanded="false" />
+            <element signature="e#2044#2074#0" expanded="false" />
+            <element signature="e#2648#3291#0" expanded="false" />
+            <element signature="e#2770#2853#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ebay/routes/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -729,7 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2193">
           <caret line="129" column="14" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,32 +624,26 @@
             <element signature="e#2070#2279#0" expanded="false" />
             <element signature="e#2181#2233#0" expanded="false" />
             <element signature="e#2289#2502#0" expanded="false" />
+            <element signature="e#2590#3823#0" expanded="false" />
+            <element signature="e#3193#3709#0" expanded="false" />
             <element signature="e#3207#3271#0" expanded="false" />
             <element signature="e#3404#3462#0" expanded="false" />
             <element signature="e#3511#3700#0" expanded="false" />
-            <element signature="e#3741#3817#0" expanded="false" />
-            <element signature="e#3865#4998#0" expanded="false" />
-            <element signature="e#4354#4886#0" expanded="false" />
-            <element signature="e#4368#4389#0" expanded="false" />
-            <element signature="e#4398#4882#0" expanded="false" />
-            <element signature="e#4428#4656#0" expanded="false" />
-            <element signature="e#4537#4617#0" expanded="false" />
-            <element signature="e#4666#4877#0" expanded="false" />
-            <element signature="e#4920#4996#0" expanded="false" />
-            <element signature="e#5040#5786#0" expanded="false" />
-            <element signature="e#5292#5762#0" expanded="false" />
-            <element signature="e#5304#5351#0" expanded="false" />
-            <element signature="e#5359#5755#0" expanded="false" />
-            <element signature="e#5387#5541#0" expanded="false" />
-            <element signature="e#5549#5722#0" expanded="false" />
-            <element signature="e#5828#7282#0" expanded="false" />
-            <element signature="e#6590#7197#0" expanded="false" />
-            <element signature="e#6634#7169#0" expanded="false" />
-            <element signature="e#6648#6699#0" expanded="false" />
-            <element signature="e#6708#7164#0" expanded="false" />
-            <element signature="e#6738#6932#0" expanded="false" />
-            <element signature="e#6942#7129#0" expanded="false" />
-            <element signature="e#7204#7280#0" expanded="false" />
+            <element signature="e#3869#5006#0" expanded="false" />
+            <element signature="e#4541#4621#0" expanded="false" />
+            <element signature="e#5048#5794#0" expanded="false" />
+            <element signature="e#5300#5770#0" expanded="false" />
+            <element signature="e#5312#5359#0" expanded="false" />
+            <element signature="e#5367#5763#0" expanded="false" />
+            <element signature="e#5395#5549#0" expanded="false" />
+            <element signature="e#5557#5730#0" expanded="false" />
+            <element signature="e#5836#7294#0" expanded="false" />
+            <element signature="e#6598#7205#0" expanded="false" />
+            <element signature="e#6642#7177#0" expanded="false" />
+            <element signature="e#6656#6707#0" expanded="false" />
+            <element signature="e#6716#7172#0" expanded="false" />
+            <element signature="e#6746#6940#0" expanded="false" />
+            <element signature="e#6950#7137#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -796,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
           <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
           <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,20 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/auctionWon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/activity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/accountDetails.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1021,7 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,7 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,7 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,17 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding>
-            <element signature="e#1133#2892#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,7 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,89 +975,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/public/templates/userProfile/auctionWon.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/public/templates/userProfile/activity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/routes/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
-          <folding>
-            <element signature="e#101#221#0" expanded="false" />
-            <element signature="e#116#219#0" expanded="false" />
-            <element signature="e#268#333#0" expanded="false" />
-            <element signature="e#378#1275#0" expanded="false" />
-            <element signature="e#726#1250#0" expanded="false" />
-            <element signature="e#739#790#0" expanded="false" />
-            <element signature="e#799#1246#0" expanded="false" />
-            <element signature="e#828#1029#0" expanded="false" />
-            <element signature="e#931#983#0" expanded="false" />
-            <element signature="e#1039#1241#0" expanded="false" />
-            <element signature="e#1330#2546#0" expanded="false" />
-            <element signature="e#1968#2511#0" expanded="false" />
-            <element signature="e#1981#2032#0" expanded="false" />
-            <element signature="e#2041#2507#0" expanded="false" />
-            <element signature="e#2070#2279#0" expanded="false" />
-            <element signature="e#2181#2233#0" expanded="false" />
-            <element signature="e#2289#2502#0" expanded="false" />
-            <element signature="e#3207#3271#0" expanded="false" />
-            <element signature="e#3404#3462#0" expanded="false" />
-            <element signature="e#3511#3700#0" expanded="false" />
-            <element signature="e#3741#3817#0" expanded="false" />
-            <element signature="e#3865#4998#0" expanded="false" />
-            <element signature="e#4354#4886#0" expanded="false" />
-            <element signature="e#4368#4389#0" expanded="false" />
-            <element signature="e#4398#4882#0" expanded="false" />
-            <element signature="e#4428#4656#0" expanded="false" />
-            <element signature="e#4537#4617#0" expanded="false" />
-            <element signature="e#4666#4877#0" expanded="false" />
-            <element signature="e#4920#4996#0" expanded="false" />
-            <element signature="e#5040#5786#0" expanded="false" />
-            <element signature="e#5292#5762#0" expanded="false" />
-            <element signature="e#5304#5351#0" expanded="false" />
-            <element signature="e#5359#5755#0" expanded="false" />
-            <element signature="e#5387#5541#0" expanded="false" />
-            <element signature="e#5549#5722#0" expanded="false" />
-            <element signature="e#5828#7282#0" expanded="false" />
-            <element signature="e#6590#7197#0" expanded="false" />
-            <element signature="e#6634#7169#0" expanded="false" />
-            <element signature="e#6648#6699#0" expanded="false" />
-            <element signature="e#6708#7164#0" expanded="false" />
-            <element signature="e#6738#6932#0" expanded="false" />
-            <element signature="e#6942#7129#0" expanded="false" />
-            <element signature="e#7204#7280#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ebay/routes/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
+        <state relative-caret-position="578">
           <caret line="244" column="1" selection-start-line="244" selection-start-column="1" selection-end-line="244" selection-end-column="1" />
           <folding>
             <element signature="e#138#258#0" expanded="false" />
@@ -1281,152 +1031,259 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ebay/ebayLog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
+        <state relative-caret-position="0">
+          <caret line="0" column="154" selection-start-line="0" selection-start-column="154" selection-end-line="0" selection-end-column="154" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/routes/userProfile.js">
+    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+        <state relative-caret-position="114">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/productsForAuction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/routes/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="117" column="43" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
           <folding>
             <element signature="e#101#221#0" expanded="false" />
             <element signature="e#116#219#0" expanded="false" />
-            <element signature="e#267#337#0" expanded="false" />
-            <element signature="e#389#1902#0" expanded="false" />
-            <element signature="e#502#1817#0" expanded="false" />
-            <element signature="e#839#1783#0" expanded="false" />
-            <element signature="e#852#902#0" expanded="false" />
-            <element signature="e#911#1774#0" expanded="false" />
-            <element signature="e#940#1519#0" expanded="false" />
-            <element signature="e#1137#1510#0" expanded="false" />
-            <element signature="e#1528#1739#0" expanded="false" />
-            <element signature="e#1824#1900#0" expanded="false" />
-            <element signature="e#1953#3129#0" expanded="false" />
-            <element signature="e#2099#3025#0" expanded="false" />
-            <element signature="e#2466#2997#0" expanded="false" />
-            <element signature="e#2479#2530#0" expanded="false" />
-            <element signature="e#2539#2988#0" expanded="false" />
-            <element signature="e#2568#2736#0" expanded="false" />
-            <element signature="e#2745#2953#0" expanded="false" />
-            <element signature="e#3036#3127#0" expanded="false" />
-            <element signature="e#3178#4191#0" expanded="false" />
-            <element signature="e#4236#5540#0" expanded="false" />
-            <element signature="e#4238#4376#0" expanded="false" />
-            <element signature="e#4496#5437#0" expanded="false" />
-            <element signature="e#4748#5410#0" expanded="false" />
-            <element signature="e#4761#4812#0" expanded="false" />
-            <element signature="e#4821#5401#0" expanded="false" />
-            <element signature="e#4850#5233#0" expanded="false" />
-            <element signature="e#4999#5189#0" expanded="false" />
-            <element signature="e#5242#5366#0" expanded="false" />
-            <element signature="e#5447#5538#0" expanded="false" />
-            <element signature="n#!!block;n#AddItemToSoldTable#0" expanded="false" />
-            <element signature="e#5984#6346#0" expanded="false" />
-            <element signature="e#6018#6244#0" expanded="false" />
-            <element signature="e#6177#6208#0" expanded="false" />
-            <element signature="e#6251#6343#0" expanded="false" />
-            <element signature="n#!!block;n#updateItemQty#0" expanded="false" />
-            <element signature="e#6677#7005#0" expanded="false" />
-            <element signature="e#6711#6903#0" expanded="false" />
-            <element signature="e#6836#6867#0" expanded="false" />
-            <element signature="e#6910#7002#0" expanded="false" />
-            <element signature="e#7408#7520#0" expanded="false" />
-            <element signature="e#7898#7989#0" expanded="false" />
-            <element signature="e#7921#7952#0" expanded="false" />
-            <element signature="e#8061#9248#0" expanded="false" />
-            <element signature="e#8213#9145#0" expanded="false" />
-            <element signature="e#8660#9101#0" expanded="false" />
-            <element signature="e#8673#8723#0" expanded="false" />
-            <element signature="e#8732#9092#0" expanded="false" />
-            <element signature="e#8761#8951#0" expanded="false" />
-            <element signature="e#8960#9057#0" expanded="false" />
-            <element signature="e#9155#9246#0" expanded="false" />
-            <element signature="e#9296#10388#0" expanded="false" />
-            <element signature="e#9434#10285#0" expanded="false" />
-            <element signature="e#9833#10256#0" expanded="false" />
-            <element signature="e#9846#9896#0" expanded="false" />
-            <element signature="e#9905#10247#0" expanded="false" />
-            <element signature="e#9934#10113#0" expanded="false" />
-            <element signature="e#10122#10212#0" expanded="false" />
-            <element signature="e#10295#10386#0" expanded="false" />
-            <element signature="e#10444#11548#0" expanded="false" />
-            <element signature="e#10589#11445#0" expanded="false" />
-            <element signature="e#10983#11409#0" expanded="false" />
-            <element signature="e#10996#11047#0" expanded="false" />
-            <element signature="e#11056#11400#0" expanded="false" />
-            <element signature="e#11085#11266#0" expanded="false" />
-            <element signature="e#11275#11365#0" expanded="false" />
-            <element signature="e#11455#11546#0" expanded="false" />
-            <element signature="e#11691#13311#0" expanded="false" />
-            <element signature="e#13395#14663#0" expanded="false" />
-            <element signature="e#13532#14560#0" expanded="false" />
-            <element signature="e#14049#14532#0" expanded="false" />
-            <element signature="e#14062#14112#0" expanded="false" />
-            <element signature="e#14121#14523#0" expanded="false" />
-            <element signature="e#14150#14327#0" expanded="false" />
-            <element signature="e#14336#14488#0" expanded="false" />
-            <element signature="e#14570#14661#0" expanded="false" />
-            <element signature="e#14722#15988#0" expanded="false" />
-            <element signature="e#14936#15884#0" expanded="false" />
-            <element signature="e#15371#15879#0" expanded="false" />
-            <element signature="e#15409#15691#0" expanded="false" />
-            <element signature="e#15623#15653#0" expanded="false" />
-            <element signature="e#15700#15875#0" expanded="false" />
-            <element signature="e#15894#15985#0" expanded="false" />
-            <element signature="n#!!block;n#UpdateItemStatusToSold#0" expanded="false" />
-            <element signature="e#16377#16683#0" expanded="false" />
-            <element signature="e#16411#16580#0" expanded="false" />
-            <element signature="e#16516#16545#0" expanded="false" />
-            <element signature="e#16587#16680#0" expanded="false" />
-            <element signature="e#16743#17854#0" expanded="false" />
-            <element signature="e#16864#17750#0" expanded="false" />
-            <element signature="e#17311#17711#0" expanded="false" />
-            <element signature="e#17324#17375#0" expanded="false" />
-            <element signature="e#17384#17706#0" expanded="false" />
-            <element signature="e#17413#17574#0" expanded="false" />
-            <element signature="e#17583#17671#0" expanded="false" />
-            <element signature="e#17760#17851#0" expanded="false" />
+            <element signature="e#268#333#0" expanded="false" />
+            <element signature="e#378#1275#0" expanded="false" />
+            <element signature="e#726#1250#0" expanded="false" />
+            <element signature="e#739#790#0" expanded="false" />
+            <element signature="e#799#1246#0" expanded="false" />
+            <element signature="e#828#1029#0" expanded="false" />
+            <element signature="e#931#983#0" expanded="false" />
+            <element signature="e#1039#1241#0" expanded="false" />
+            <element signature="e#1330#2546#0" expanded="false" />
+            <element signature="e#1968#2511#0" expanded="false" />
+            <element signature="e#1981#2032#0" expanded="false" />
+            <element signature="e#2041#2507#0" expanded="false" />
+            <element signature="e#2070#2279#0" expanded="false" />
+            <element signature="e#2181#2233#0" expanded="false" />
+            <element signature="e#2289#2502#0" expanded="false" />
+            <element signature="e#2590#3823#0" expanded="false" />
+            <element signature="e#3193#3709#0" expanded="false" />
+            <element signature="e#3207#3271#0" expanded="false" />
+            <element signature="e#3404#3462#0" expanded="false" />
+            <element signature="e#3511#3700#0" expanded="false" />
+            <element signature="e#3869#5006#0" expanded="false" />
+            <element signature="e#4541#4621#0" expanded="false" />
+            <element signature="e#5048#5794#0" expanded="false" />
+            <element signature="e#5300#5770#0" expanded="false" />
+            <element signature="e#5312#5359#0" expanded="false" />
+            <element signature="e#5367#5763#0" expanded="false" />
+            <element signature="e#5395#5549#0" expanded="false" />
+            <element signature="e#5557#5730#0" expanded="false" />
+            <element signature="e#5836#7294#0" expanded="false" />
+            <element signature="e#6598#7205#0" expanded="false" />
+            <element signature="e#6642#7177#0" expanded="false" />
+            <element signature="e#6656#6707#0" expanded="false" />
+            <element signature="e#6716#7172#0" expanded="false" />
+            <element signature="e#6746#6940#0" expanded="false" />
+            <element signature="e#6950#7137#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ebay/public/templates/userProfile/cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/cart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+        <state relative-caret-position="374">
+          <caret line="113" column="38" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="38" />
           <folding>
-            <element signature="e#184#1805#0" expanded="false" />
-            <element signature="e#315#442#0" expanded="false" />
-            <element signature="e#427#438#0" expanded="false" />
-            <element signature="e#467#819#0" expanded="false" />
-            <element signature="e#674#777#0" expanded="false" />
-            <element signature="e#843#1009#0" expanded="false" />
-            <element signature="e#1074#1206#0" expanded="false" />
-            <element signature="e#1141#1202#0" expanded="false" />
-            <element signature="e#1231#1598#0" expanded="false" />
-            <element signature="e#1330#1470#0" expanded="false" />
-            <element signature="e#1622#1788#0" expanded="false" />
-            <element signature="e#1856#2388#0" expanded="false" />
-            <element signature="e#1934#1964#0" expanded="false" />
-            <element signature="e#2199#2382#0" expanded="false" />
-            <element signature="e#2419#2462#0" expanded="false" />
-            <element signature="e#2500#3143#0" expanded="false" />
-            <element signature="e#2559#2710#0" expanded="false" />
-            <element signature="e#2622#2705#0" expanded="false" />
-            <element signature="e#2735#2924#0" expanded="false" />
-            <element signature="e#2948#3138#0" expanded="false" />
+            <element signature="e#1440#1580#0" expanded="false" />
+            <element signature="e#1732#1898#0" expanded="false" />
+            <element signature="e#1966#2498#0" expanded="false" />
+            <element signature="e#2044#2074#0" expanded="false" />
+            <element signature="e#2648#3291#0" expanded="false" />
+            <element signature="e#2770#2853#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/public/templates/userProfile/auctionWon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/public/templates/userProfile/cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="45" column="68" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/activity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="40" />
+          <folding>
+            <element signature="e#417#498#0" expanded="false" />
+            <element signature="e#1018#1085#0" expanded="false" />
+            <element signature="e#1112#1363#0" expanded="false" />
+            <element signature="e#1605#1679#0" expanded="false" />
+            <element signature="e#1706#1969#0" expanded="false" />
+            <element signature="e#1895#1939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/public/templates/userProfile/activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="144" column="53" selection-start-line="144" selection-start-column="53" selection-end-line="144" selection-end-column="53" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/routes/userProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="485" column="0" selection-start-line="485" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
+          <folding>
+            <element signature="e#101#221#0" expanded="false" />
+            <element signature="e#116#219#0" expanded="false" />
+            <element signature="e#267#337#0" expanded="false" />
+            <element signature="e#389#1901#0" expanded="false" />
+            <element signature="e#502#1816#0" expanded="false" />
+            <element signature="e#838#1782#0" expanded="false" />
+            <element signature="e#851#901#0" expanded="false" />
+            <element signature="e#910#1773#0" expanded="false" />
+            <element signature="e#939#1518#0" expanded="false" />
+            <element signature="e#1136#1509#0" expanded="false" />
+            <element signature="e#1527#1738#0" expanded="false" />
+            <element signature="e#1823#1899#0" expanded="false" />
+            <element signature="e#1952#3132#0" expanded="false" />
+            <element signature="e#2098#3024#0" expanded="false" />
+            <element signature="e#2465#2996#0" expanded="false" />
+            <element signature="e#2478#2529#0" expanded="false" />
+            <element signature="e#2538#2987#0" expanded="false" />
+            <element signature="e#2567#2735#0" expanded="false" />
+            <element signature="e#2744#2952#0" expanded="false" />
+            <element signature="e#3030#3130#0" expanded="false" />
+            <element signature="e#3181#4194#0" expanded="false" />
+            <element signature="e#3354#4191#0" expanded="false" />
+            <element signature="e#3636#4186#0" expanded="false" />
+            <element signature="e#3649#3700#0" expanded="false" />
+            <element signature="e#3709#4177#0" expanded="false" />
+            <element signature="e#3744#3912#0" expanded="false" />
+            <element signature="e#3921#4142#0" expanded="false" />
+            <element signature="e#4239#5547#0" expanded="false" />
+            <element signature="e#4241#4379#0" expanded="false" />
+            <element signature="e#4499#5440#0" expanded="false" />
+            <element signature="e#4751#5413#0" expanded="false" />
+            <element signature="e#4764#4815#0" expanded="false" />
+            <element signature="e#4824#5404#0" expanded="false" />
+            <element signature="e#4853#5236#0" expanded="false" />
+            <element signature="e#5002#5192#0" expanded="false" />
+            <element signature="e#5245#5369#0" expanded="false" />
+            <element signature="e#5445#5545#0" expanded="false" />
+            <element signature="n#!!block;n#AddItemToSoldTable#0" expanded="false" />
+            <element signature="e#5991#6353#0" expanded="false" />
+            <element signature="e#6025#6251#0" expanded="false" />
+            <element signature="e#6184#6215#0" expanded="false" />
+            <element signature="e#6258#6350#0" expanded="false" />
+            <element signature="n#!!block;n#updateItemQty#0" expanded="false" />
+            <element signature="e#6684#6989#0" expanded="false" />
+            <element signature="e#6718#6887#0" expanded="false" />
+            <element signature="e#6820#6851#0" expanded="false" />
+            <element signature="e#6894#6986#0" expanded="false" />
+            <element signature="n#!!block;n#removingItemFromCart#0" expanded="false" />
+            <element signature="e#7380#7980#0" expanded="false" />
+            <element signature="e#7392#7504#0" expanded="false" />
+            <element signature="e#7512#7977#0" expanded="false" />
+            <element signature="e#7757#7874#0" expanded="false" />
+            <element signature="e#7780#7837#0" expanded="false" />
+            <element signature="e#7882#7973#0" expanded="false" />
+            <element signature="e#7905#7936#0" expanded="false" />
+            <element signature="e#8045#9236#0" expanded="false" />
+            <element signature="e#8197#9129#0" expanded="false" />
+            <element signature="e#8644#9085#0" expanded="false" />
+            <element signature="e#8657#8707#0" expanded="false" />
+            <element signature="e#8716#9076#0" expanded="false" />
+            <element signature="e#8745#8935#0" expanded="false" />
+            <element signature="e#8944#9041#0" expanded="false" />
+            <element signature="e#9134#9234#0" expanded="false" />
+            <element signature="e#9284#10380#0" expanded="false" />
+            <element signature="e#9422#10273#0" expanded="false" />
+            <element signature="e#9821#10244#0" expanded="false" />
+            <element signature="e#9834#9884#0" expanded="false" />
+            <element signature="e#9893#10235#0" expanded="false" />
+            <element signature="e#9922#10101#0" expanded="false" />
+            <element signature="e#10110#10200#0" expanded="false" />
+            <element signature="e#10278#10378#0" expanded="false" />
+            <element signature="e#10436#11544#0" expanded="false" />
+            <element signature="e#10581#11437#0" expanded="false" />
+            <element signature="e#10975#11401#0" expanded="false" />
+            <element signature="e#10988#11039#0" expanded="false" />
+            <element signature="e#11048#11392#0" expanded="false" />
+            <element signature="e#11077#11258#0" expanded="false" />
+            <element signature="e#11267#11357#0" expanded="false" />
+            <element signature="e#11442#11542#0" expanded="false" />
+            <element signature="e#11687#13307#0" expanded="false" />
+            <element signature="e#13391#14663#0" expanded="false" />
+            <element signature="e#13528#14556#0" expanded="false" />
+            <element signature="e#14045#14528#0" expanded="false" />
+            <element signature="e#14058#14108#0" expanded="false" />
+            <element signature="e#14117#14519#0" expanded="false" />
+            <element signature="e#14146#14323#0" expanded="false" />
+            <element signature="e#14332#14484#0" expanded="false" />
+            <element signature="e#14561#14661#0" expanded="false" />
+            <element signature="e#15623#15653#0" expanded="false" />
+            <element signature="e#15700#15875#0" expanded="false" />
+            <element signature="e#15889#15989#0" expanded="false" />
+            <element signature="n#!!block;n#UpdateItemStatusToSold#0" expanded="false" />
+            <element signature="e#16381#16687#0" expanded="false" />
+            <element signature="e#16415#16584#0" expanded="false" />
+            <element signature="e#16520#16549#0" expanded="false" />
+            <element signature="e#16591#16684#0" expanded="false" />
+            <element signature="e#16747#17862#0" expanded="false" />
+            <element signature="e#16868#17754#0" expanded="false" />
+            <element signature="e#17315#17715#0" expanded="false" />
+            <element signature="e#17328#17379#0" expanded="false" />
+            <element signature="e#17388#17710#0" expanded="false" />
+            <element signature="e#17417#17578#0" expanded="false" />
+            <element signature="e#17587#17675#0" expanded="false" />
+            <element signature="e#17759#17859#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ebay/public/angularJS/auctionWon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="105" column="18" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
