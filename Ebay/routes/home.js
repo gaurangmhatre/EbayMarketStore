@@ -9,6 +9,25 @@ var logger = new (winston.Logger)({
 	]
 });
 
+//Redirects to the homepage
+exports.redirectToHome = function(req,res)
+{
+	//Checks before redirecting whether the session is valid
+	if(req.session.userid)
+	{
+		//Set these headers to notify the browser not to maintain any cache for the page being loaded
+		res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+		//res.render("homepage",{userid:req.session.userid});
+		res.render('products',{validationMessage:'Empty Messgage'});
+	}
+	else
+	{
+		res.redirect('/signin');
+	}
+};
+
+
+
 exports.signup=function (req,res) {
 	getAllAuctionResults();
 	res.render('signup', { validationMessage: 'Empty Message'});
