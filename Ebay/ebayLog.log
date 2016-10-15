@@ -12145,3 +12145,186 @@
 {"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:09:40.562Z"}
 {"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-15T09:09:40.563Z"}
 {"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:09:40.563Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:19:26.505Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:19:26.507Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:19:26.696Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-15T09:19:26.699Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:26.700Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:19:33.719Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:19:33.720Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:19:33.754Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-15T09:19:33.754Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:33.755Z"}
+{"level":"info","message":"Signin request from: gaurang@gmail.com","timestamp":"2016-10-15T09:19:37.474Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurang@gmail.com';","timestamp":"2016-10-15T09:19:37.475Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurang@gmail.com","timestamp":"2016-10-15T09:19:37.474Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-15T09:19:37.491Z"}
+{"level":"info","message":"Successful Login for = gaurang@gmail.com userId: 11","timestamp":"2016-10-15T09:19:37.752Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:37.753Z"}
+{"level":"info","message":"Session Initialized with email : gaurang@gmail.com","timestamp":"2016-10-15T09:19:37.753Z"}
+{"level":"info","message":"userid :: 11","timestamp":"2016-10-15T09:19:37.753Z"}
+{"level":"info","message":"SQL Query::select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:19:38.290Z"}
+{"level":"info","message":"SQL Query::select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:19:38.293Z"}
+{"level":"info","message":"Query:: select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:19:38.287Z"}
+{"level":"info","message":"Query:: select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:19:38.292Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:19:38.304Z"}
+{"level":"info","message":"Results are loaded for user (auction): 11","timestamp":"2016-10-15T09:19:38.310Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:38.312Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:19:38.318Z"}
+{"level":"info","message":"Results are loaded for user : 11","timestamp":"2016-10-15T09:19:38.324Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:38.328Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:19:41.148Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:19:41.148Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-15T09:19:41.158Z"}
+{"level":"info","message":"Successful got the user data  for userId11","timestamp":"2016-10-15T09:19:41.159Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:41.160Z"}
+{"level":"info","message":"Query:: select a.WinnerId, a.ItemId, a.PaymentByCard,a.PaymentDate,a.IsPaymentDone, i.ItemName, i.ItemDescription, i.price, b.BidAmount,b.BidTime from auctionwinners as a left join item as i on a.ItemId = i.ItemId left join bidderList as b on a.winnerId = b.BidderId and a.ItemId= b.ItemId where a.IsPaymentDone=0 and a.WinnerId = 11","timestamp":"2016-10-15T09:19:42.691Z"}
+{"level":"info","message":"SQL Query::select a.WinnerId, a.ItemId, a.PaymentByCard,a.PaymentDate,a.IsPaymentDone, i.ItemName, i.ItemDescription, i.price, b.BidAmount,b.BidTime from auctionwinners as a left join item as i on a.ItemId = i.ItemId left join bidderList as b on a.winnerId = b.BidderId and a.ItemId= b.ItemId where a.IsPaymentDone=0 and a.WinnerId = 11","timestamp":"2016-10-15T09:19:42.691Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:19:42.694Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:19:42.694Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:19:42.701Z"}
+{"level":"info","message":"Invalid string for userId:11","timestamp":"2016-10-15T09:19:42.702Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:42.703Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-15T09:19:42.736Z"}
+{"level":"info","message":"Successful got the user data  for userId11","timestamp":"2016-10-15T09:19:42.737Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:42.739Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:19:45.196Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:19:45.196Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:19:45.290Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-15T09:19:45.290Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:45.291Z"}
+{"level":"info","message":"Sign out request for userId: 11","timestamp":"2016-10-15T09:19:45.733Z"}
+{"level":"info","message":"---SQL Query ::UPDATE user\tSET LastLoggedIn = NOW() WHERE UserId = 11;---","timestamp":"2016-10-15T09:19:45.734Z"}
+{"level":"info","message":"Query:: UPDATE user\tSET LastLoggedIn = NOW() WHERE UserId = 11;","timestamp":"2016-10-15T09:19:45.734Z"}
+{"level":"error","message":"Database Results :: [object Object]","timestamp":"2016-10-15T09:19:45.958Z"}
+{"level":"info","message":"last Login for userId = 11 is added.","timestamp":"2016-10-15T09:19:45.959Z"}
+{"level":"info","message":"Store Connection Closed","timestamp":"2016-10-15T09:19:45.960Z"}
+{"level":"info","message":"Query:: select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:19:52.464Z"}
+{"level":"info","message":"SQL Query::select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:19:52.465Z"}
+{"level":"info","message":"Query:: select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:19:52.466Z"}
+{"level":"info","message":"SQL Query::select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:19:52.466Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:19:52.470Z"}
+{"level":"info","message":"Results are loaded for user : undefined","timestamp":"2016-10-15T09:19:52.472Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:52.472Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:19:52.476Z"}
+{"level":"info","message":"Results are loaded for user (auction): undefined","timestamp":"2016-10-15T09:19:52.479Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:52.480Z"}
+{"level":"info","message":"Query:: select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:19:57.045Z"}
+{"level":"info","message":"SQL Query::select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:19:57.046Z"}
+{"level":"info","message":"Query:: select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:19:57.047Z"}
+{"level":"info","message":"SQL Query::select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:19:57.047Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:19:57.051Z"}
+{"level":"info","message":"Results are loaded for user : undefined","timestamp":"2016-10-15T09:19:57.053Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:57.054Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:19:57.099Z"}
+{"level":"info","message":"Results are loaded for user (auction): undefined","timestamp":"2016-10-15T09:19:57.102Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:19:57.103Z"}
+{"level":"info","message":"Query:: select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:20:02.820Z"}
+{"level":"info","message":"SQL Query::select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:20:02.820Z"}
+{"level":"info","message":"Query:: select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:20:02.823Z"}
+{"level":"info","message":"SQL Query::select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:20:02.824Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:20:02.829Z"}
+{"level":"info","message":"Results are loaded for user : undefined","timestamp":"2016-10-15T09:20:02.832Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:20:02.833Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:20:02.836Z"}
+{"level":"info","message":"Results are loaded for user (auction): undefined","timestamp":"2016-10-15T09:20:02.838Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:20:02.839Z"}
+{"level":"info","message":"Query:: select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:21:01.552Z"}
+{"level":"info","message":"SQL Query::select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:21:01.554Z"}
+{"level":"info","message":"Query:: select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:21:01.557Z"}
+{"level":"info","message":"SQL Query::select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:21:01.557Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:21:01.579Z"}
+{"level":"info","message":"Results are loaded for user (auction): undefined","timestamp":"2016-10-15T09:21:01.580Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:01.582Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:21:01.590Z"}
+{"level":"info","message":"Results are loaded for user : undefined","timestamp":"2016-10-15T09:21:01.592Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:01.593Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:21:13.963Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:21:13.965Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:21:14.082Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-15T09:21:14.084Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:14.084Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:21:21.483Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:21:21.483Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:21:21.492Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-15T09:21:21.493Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:21.493Z"}
+{"level":"info","message":"Signin request from: gaurang@gmail.com","timestamp":"2016-10-15T09:21:24.350Z"}
+{"level":"info","message":"SQL Query::select UserId,Password from user where EmailId = 'gaurang@gmail.com';","timestamp":"2016-10-15T09:21:24.351Z"}
+{"level":"info","message":"select UserId,Password from user where EmailId = gaurang@gmail.com","timestamp":"2016-10-15T09:21:24.351Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-15T09:21:24.359Z"}
+{"level":"info","message":"Successful Login for = gaurang@gmail.com userId: 11","timestamp":"2016-10-15T09:21:24.615Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:24.617Z"}
+{"level":"info","message":"Session Initialized with email : gaurang@gmail.com","timestamp":"2016-10-15T09:21:24.616Z"}
+{"level":"info","message":"userid :: 11","timestamp":"2016-10-15T09:21:24.616Z"}
+{"level":"info","message":"SQL Query::select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:21:25.091Z"}
+{"level":"info","message":"SQL Query::select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:21:25.093Z"}
+{"level":"info","message":"Query:: select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:21:25.090Z"}
+{"level":"info","message":"Query:: select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:21:25.093Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:21:25.103Z"}
+{"level":"info","message":"Results are loaded for user : 11","timestamp":"2016-10-15T09:21:25.108Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:25.109Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:21:25.139Z"}
+{"level":"info","message":"Results are loaded for user (auction): 11","timestamp":"2016-10-15T09:21:25.142Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:25.143Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:21:27.423Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:21:27.422Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-15T09:21:27.429Z"}
+{"level":"info","message":"Successful got the user data  for userId11","timestamp":"2016-10-15T09:21:27.431Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:27.431Z"}
+{"level":"info","message":"Query:: select a.WinnerId, a.ItemId, a.PaymentByCard,a.PaymentDate,a.IsPaymentDone, i.ItemName, i.ItemDescription, i.price, b.BidAmount,b.BidTime from auctionwinners as a left join item as i on a.ItemId = i.ItemId left join bidderList as b on a.winnerId = b.BidderId and a.ItemId= b.ItemId where a.IsPaymentDone=0 and a.WinnerId = 11","timestamp":"2016-10-15T09:21:30.047Z"}
+{"level":"info","message":"SQL Query::select a.WinnerId, a.ItemId, a.PaymentByCard,a.PaymentDate,a.IsPaymentDone, i.ItemName, i.ItemDescription, i.price, b.BidAmount,b.BidTime from auctionwinners as a left join item as i on a.ItemId = i.ItemId left join bidderList as b on a.winnerId = b.BidderId and a.ItemId= b.ItemId where a.IsPaymentDone=0 and a.WinnerId = 11","timestamp":"2016-10-15T09:21:30.048Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:21:30.052Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:21:30.053Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-15T09:21:30.061Z"}
+{"level":"info","message":"Successful got the user data  for userId11","timestamp":"2016-10-15T09:21:30.062Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:30.063Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:21:30.067Z"}
+{"level":"info","message":"Invalid string for userId:11","timestamp":"2016-10-15T09:21:30.068Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:30.069Z"}
+{"level":"info","message":"Query:: SELECT ItemTypeId,ItemType FROM itemtype;","timestamp":"2016-10-15T09:21:31.430Z"}
+{"level":"info","message":"SQL Query::SELECT ItemTypeId,ItemType FROM itemtype;","timestamp":"2016-10-15T09:21:31.430Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:21:31.440Z"}
+{"level":"info","message":"Successful got All the ItemTypes.","timestamp":"2016-10-15T09:21:31.442Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:31.443Z"}
+{"level":"info","message":"Query:: select uc.UserCartId, uc.ItemId, i.ItemName, i.ItemDescription, i.ItemTypeId ,i.Price from ebay.usercart uc join ebay.item i on uc.ItemId =  i.itemId where uc.UserId = '11'","timestamp":"2016-10-15T09:21:32.306Z"}
+{"level":"info","message":"SQL Query::select uc.UserCartId, uc.ItemId, i.ItemName, i.ItemDescription, i.ItemTypeId ,i.Price from ebay.usercart uc join ebay.item i on uc.ItemId =  i.itemId where uc.UserId = '11'","timestamp":"2016-10-15T09:21:32.306Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:21:32.308Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:21:32.309Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:21:32.326Z"}
+{"level":"info","message":"No items in cart11","timestamp":"2016-10-15T09:21:32.328Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:32.328Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-15T09:21:32.721Z"}
+{"level":"info","message":"Successful got the user data  for userId11","timestamp":"2016-10-15T09:21:32.723Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:32.724Z"}
+{"level":"info","message":"Query:: select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:21:33.595Z"}
+{"level":"info","message":"SQL Query::select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= 11;","timestamp":"2016-10-15T09:21:33.595Z"}
+{"level":"info","message":"DB Results:[object Object]","timestamp":"2016-10-15T09:21:33.639Z"}
+{"level":"info","message":"Successful got the user data  for userId11","timestamp":"2016-10-15T09:21:33.640Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:33.640Z"}
+{"level":"info","message":"Query:: select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:21:35.165Z"}
+{"level":"info","message":"SQL Query::select ItemId, ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,IsBidItem, sold from item where IsBidItem=0 and Qty>0","timestamp":"2016-10-15T09:21:35.165Z"}
+{"level":"info","message":"Query:: select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:21:35.168Z"}
+{"level":"info","message":"Results are loaded for user (auction): 11","timestamp":"2016-10-15T09:21:35.177Z"}
+{"level":"info","message":"Results are loaded for user : 11","timestamp":"2016-10-15T09:21:35.186Z"}
+{"level":"info","message":"SQL Query::select i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem,i.sold, max(b.BidAmount) as MaxBidAmount from item as i left join bidderList as b on i.ItemId = b.ItemId  where i.IsBidItem=1 group by i.ItemId, i.ItemName,i.ItemDescription,i.ItemTypeId,i.SellerId,i.Price,i.Qty,i.DateAdded,i.AuctionEndDate,i.IsBidItem, i.sold","timestamp":"2016-10-15T09:21:35.168Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:21:35.174Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:35.179Z"}
+{"level":"info","message":"DB Results:[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]","timestamp":"2016-10-15T09:21:35.183Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:35.187Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:21:43.121Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:21:43.121Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:21:43.141Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-15T09:21:43.141Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:21:43.141Z"}
+{"level":"info","message":"Sign out request for userId: 11","timestamp":"2016-10-15T09:21:43.545Z"}
+{"level":"info","message":"---SQL Query ::UPDATE user\tSET LastLoggedIn = NOW() WHERE UserId = 11;---","timestamp":"2016-10-15T09:21:43.545Z"}
+{"level":"info","message":"Query:: UPDATE user\tSET LastLoggedIn = NOW() WHERE UserId = 11;","timestamp":"2016-10-15T09:21:43.545Z"}
+{"level":"error","message":"Database Results :: [object Object]","timestamp":"2016-10-15T09:21:43.927Z"}
+{"level":"info","message":"last Login for userId = 11 is added.","timestamp":"2016-10-15T09:21:43.927Z"}
+{"level":"info","message":"Store Connection Closed","timestamp":"2016-10-15T09:21:43.928Z"}
+{"level":"info","message":"Query:: select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:22:01.347Z"}
+{"level":"info","message":"SQL Query::select ItemId from item as i where i.IsBidItem =1  and i.AuctionEndDate < now() and sold = 0","timestamp":"2016-10-15T09:22:01.347Z"}
+{"level":"info","message":"DB Results:","timestamp":"2016-10-15T09:22:01.354Z"}
+{"level":"info","message":"Item doesn't for exist in auction completed list","timestamp":"2016-10-15T09:22:01.355Z"}
+{"level":"info","message":"\nConnection closed..","timestamp":"2016-10-15T09:22:01.355Z"}

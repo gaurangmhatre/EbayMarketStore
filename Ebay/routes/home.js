@@ -10,8 +10,7 @@ var logger = new (winston.Logger)({
 });
 
 //Redirects to the homepage
-exports.redirectToHome = function(req,res)
-{
+exports.redirectToHome = function(req,res) {
 	//Checks before redirecting whether the session is valid
 	if(req.session.userid)
 	{
@@ -25,8 +24,6 @@ exports.redirectToHome = function(req,res)
 		res.redirect('/signin');
 	}
 };
-
-
 
 exports.signup=function (req,res) {
 	getAllAuctionResults();
