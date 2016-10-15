@@ -200,12 +200,17 @@ exports.addProduct = function(req,res){
 	var Qty = req.param("Qty");
 	var IsBidItem = req.param("IsBidItem");
 	var Sold = 0;
+
+	if(IsBidItem==1)
+	{
+		Qty=1; // Bid can only happen on one item at a time.
+	}
 	var insertNewProductQuery = "INSERT INTO item (ItemName,ItemDescription,ItemTypeId,SellerId,Price,Qty,DateAdded,AuctionEndDate,IsBidItem,Sold) VALUES ('"+ItemName+"','"+ItemDescription+"',"+ItemTypeId+","+SellerId+","+Price+","+Qty+",NOW(),date_add(NOW(),INTERVAL 4 DAY),"+IsBidItem+","+Sold+")";
 
 	console.log("Query:: " + insertNewProductQuery);
 	logger.log('info',"Query:: " + insertNewProductQuery);
 
-	if(userId != undefined ){
+	if(SellerId != undefined ){
 		mysql.fetchData(function (err, results) {
 			if (err) {
 				throw err;

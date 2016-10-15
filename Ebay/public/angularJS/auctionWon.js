@@ -67,8 +67,18 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 			$scope.FirstName = data.FirstName;
 			$scope.LastName = data.LastName;
 			$scope.EmailId = data.EmailId;*/
-			$scope.Address = data.Address;
-			$scope.CreditCardNumber = data.CreditCardNumber;
+
+
+			if(data.Address!="undefined")
+			{
+				$scope.Address = data.Address;
+			}
+
+			if(data.CreditCardNumber!="undefined")
+			{
+				$scope.CreditCardNumber = data.CreditCardNumber;
+			}
+
 			
 			
 			//set all variables.

@@ -46,10 +46,11 @@
     <div class="well well-sm" ng-if="visibleTransactionDiv == true;">
         <strong><h2>Transaction details:</h2></strong>
         <br>
+        <form role="form">
 				<div class="form-group">
 			      <label for="creditCardNumber">Credit Card Number:</label>
 			      <input type="text" class="form-control" ng-model="CreditCardNumber" placeholder="Add credit card number" required/>
-			      <!-- <label ng-show = "ItemAddForm.firstname.$error.required">First Name is Required</label> -->
+			      <!-- \\\<label ng-show = "ItemAddForm.firstname.$error.required">First Name is Required</label> -->
 			    </div>
 			    
 			    <div class="form-group">
@@ -61,5 +62,6 @@
 			    <div class="form-group">
 			    <button type="submit" class="btn btn-success btn-block" ng-click= buyItemsInCart()>Place your order</button>
 				</div>
+        </form>
     </div>
 </div>

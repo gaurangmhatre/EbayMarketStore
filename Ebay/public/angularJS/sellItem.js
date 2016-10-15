@@ -1,6 +1,8 @@
 
 userProfile.controller('sellItemController', function($scope,$http) {
 	console.log("Inside sellItemController.");
+
+	$scope.IsBidItem=0;
 	
 	
 	$http({

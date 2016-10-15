@@ -65,10 +65,15 @@ userProfile.controller('cartController', function($scope,$http) {
 			$scope.FirstName = data.FirstName;
 			$scope.LastName = data.LastName;
 			$scope.EmailId = data.EmailId;*/
-			$scope.Address = data.Address;
-			$scope.CreditCardNumber = data.CreditCardNumber;
-			
-			
+			if(data.Address!="undefined")
+			{
+				$scope.Address = data.Address;
+			}
+
+			if(data.CreditCardNumber!="undefined")
+			{
+				$scope.CreditCardNumber = data.CreditCardNumber;
+			}
 			//set all variables.
 				 
 		}).error(function(error) {
@@ -130,7 +135,7 @@ userProfile.controller('cartController', function($scope,$http) {
 				console.log("Order is placed.");
 				console.log(data);
 				initialize();
-				window.location.assign("#/cart");
+				window.location.assign("#/activity");
 				//set all variables.
 					 
 			}).error(function(error) {
