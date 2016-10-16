@@ -10,6 +10,7 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 		$scope.TotalCostOfItems=0;
 		$scope.visibleTransactionDiv = false;
 		$scope.donotloadtemplate=true;
+		$scope.CreditCardNumber = 0;
 		//console.log("userId:: " + $scope.userId)
 	
 		
@@ -99,25 +100,27 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 		}
 	}
 	
-	$scope.payForWonItems = function(){
+	$scope.payForWonItems = function(CreditCardNumber){
 		console.log("Inside Pay for won Items.")
-		 $http({
-				method : "POST",
-				url : '/updatePaymentDetailsForAuction',
-				data : {
+		if(CreditCardNumber.length==16) {
+
+			$http({
+				method: "POST",
+				url: '/updatePaymentDetailsForAuction',
+				data: {
 					//Address: $scope.Address,
-					CreditCardNumber: $scope.CreditCardNumber,
+					CreditCardNumber: CreditCardNumber,
 					ItemId: $scope.allProductsWon[0].ItemId
-			}
-			}).success(function(data) {
+				}
+			}).success(function (data) {
 				console.log("inside success");
 				console.log("Order is placed.");
 				console.log(data);
 				//initialize();
 				window.location.assign("#/auctionWon");
 				//set all variables.
-					 
-			}).error(function(error) {
+
+			}).error(function (error) {
 				console.log("inside error");
 				console.log(error);
 				$scope.unexpected_error = false;
@@ -125,5 +128,9 @@ userProfile.controller('auctionWonController',function($scope, $filter,$http){
 				$window.alert("unexpected_error");
 				initialize();
 			});
+		}
+		else{
+			alert("You must enter valid 16 digit Credit Card number.");
+		}
 	}
 });

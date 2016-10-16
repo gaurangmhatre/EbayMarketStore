@@ -121,24 +121,26 @@ userProfile.controller('cartController', function($scope,$http) {
 		}
 	}
 	
-	$scope.buyItemsInCart = function(){
-		console.log("Inside place the order method.")
-		 $http({
-				method : "POST",
-				url : '/buyItemsInCart',
-				data : {
-					Address: $scope.Address,
-					CreditCardNumber: $scope.CreditCardNumber
-			}
-			}).success(function(data) {
+	$scope.buyItemsInCart = function(CreditCardNumber,Address){
+		console.log("Inside place the order method.");
+
+		if(CreditCardNumber.length==16) {
+			$http({
+				method: "POST",
+				url: '/buyItemsInCart',
+				data: {
+					Address: Address,
+					CreditCardNumber: CreditCardNumber
+				}
+			}).success(function (data) {
 				console.log("inside success");
 				console.log("Order is placed.");
 				console.log(data);
 				initialize();
 				window.location.assign("#/activity");
 				//set all variables.
-					 
-			}).error(function(error) {
+
+			}).error(function (error) {
 				console.log("inside error");
 				console.log(error);
 				$scope.unexpected_error = false;
@@ -146,5 +148,9 @@ userProfile.controller('cartController', function($scope,$http) {
 				$window.alert("unexpected_error");
 				initialize();
 			});
+		}
+		else{
+			alert("You must enter valid 16 digit Credit Card number.");
+		}
 	}
 });

@@ -9,10 +9,43 @@ var logger = new (winston.Logger)({
 	]
 });
 
+/*
+var conQue = queue();
+
+setInterval(function(){
+	var availCon= getFreeConnection();
+	if(availCon)
+	{	var load  = conQue.pop();
+		if(load)
+		{
+			availCon.connection.query(load.query,load.callback);
+			availCon.available = true;
+		}
+	}
+	else{
+	}
+},2000);
+
+exports.insertQuery = function(query, callback){
+	var load = {
+		query : query,
+		callback : callback
+	};
+	conQue.push(load);
+};
+
+
+var conPool = [{
+	available:true,
+	connection: createConnection(),                      },
+
+*/
+
+
 //connection pooling
 function getConnection(){
 	var connection = mysql.createPool({
-		connecitonLimit : 10, // The maximum number of connections to create at once. https://github.com/mysqljs/mysql
+		connectionLimit : 500, // The maximum number of connections to create at once. https://github.com/mysqljs/mysql
 	    host     : 'localhost',
 	    user     : 'root',
 	    password : 'toor',
