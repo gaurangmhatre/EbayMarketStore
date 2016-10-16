@@ -201,7 +201,6 @@ exports.getItemType = function(req,res){
 	
 };
 
-
 exports.addProduct = function(req,res){
 	console.log("Inside addProduct.");
 	
