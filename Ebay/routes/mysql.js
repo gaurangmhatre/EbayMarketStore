@@ -55,15 +55,11 @@ function getConnection(){
 	return connection;
 }
 
-
-
-
-
 function fetchData(callback,sqlQuery){
 
 	logger.log('info', 'SQL Query::'+sqlQuery);
 	console.log("\nSQL Query::"+sqlQuery);
-	
+
 	var connection=getConnection();
 	connection.getConnection(function(err, connection){
 		connection.query(sqlQuery, function(err, rows, fields) {
@@ -84,7 +80,42 @@ function fetchData(callback,sqlQuery){
 			console.log("\nConnection closed..");
 		});
 	});	
-}	
+}
+
+function fetchDataWithoutPool(callback,sqlQuery){
+
+	logger.log('info', 'SQL Query::'+sqlQuery);
+	console.log("\nSQL Query::"+sqlQuery);
+
+	var connection=mysql.createConnection({
+		host     : 'localhost',
+		user     : 'root',
+		password : 'toor',
+		database : 'ebay',
+		port	 : 3306
+	});
+	connection.connect();
+
+	connection.query(sqlQuery, function(err, rows, fields) {
+			if(err){
+				logger.log('error', 'ERROR: ' + err.message);
+				console.log("ERROR: " + err.message);
+			}
+			else
+			{	// return err or result
+				logger.log('info', 'DB Results:'+rows);
+
+				console.log("DB Results:");
+				console.log(rows);
+				callback(err, rows);
+			}
+
+			logger.log('info', '\nConnection closed..');
+			console.log("\nConnection closed..");
+		});
+
+	connection.end();
+}
 
 function storeData(sqlQuery,callback){
 	logger.log('info', '---SQL Query ::' + sqlQuery + '---');
@@ -139,5 +170,9 @@ function deleteData(sqlQuery, callback){
 }
 
 exports.fetchData=fetchData;
+exports.fetchDataWithoutPool=fetchDataWithoutPool;
 exports.storeData=storeData;
 exports.deleteData=deleteData;
+
+
+

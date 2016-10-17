@@ -1,6 +1,10 @@
 var mysql = require('./mysql');
 var winston = require('winston');
 
+//for connection pool
+var mysqlConnetionPoolTest = require('./mysqlForConnectionPool');
+
+
 var logger = new (winston.Logger)({
 	transports: [
 		new (winston.transports.Console)(),
@@ -77,6 +81,114 @@ exports.getUserAccountDetails = function(req,res){
 		res.send(json_responses);
 	}
 };
+
+//Connetion pool test starts
+
+exports.getUserAccountDetailsWithoutConnetionPool = function(req,res){
+
+	//console.log("userId: "+req.session.userid);
+
+	var userId = 1;
+
+	if(userId != undefined ) {
+		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= "+ userId+";";
+		console.log("Query :: " + getUserAccountDetailsQuery);
+		logger.log('info','Query:: ' + getUserAccountDetailsQuery);
+
+		mysql.fetchDataWithoutPool(function(err,results) {
+			if(err) {
+				throw err;
+				logger.log('error',err);
+			}
+			else {
+				if(results.length > 0) {
+					console.log("Successful got the user data");
+					console.log("UserId :  " + userId);
+					logger.log('info','Successful got the user data  for userId' + userId);
+
+					json_responses = {"UserId" : results[0].UserId
+						,"FirstName": results[0].FirstName
+						,"LastName": results[0].LastName
+						,"EmailId":results[0].EmailId
+						,"Address":results[0].Address
+						,"CreditCardNumber":results[0].CreditCardNumber
+						,"DateOfBirth":results[0].DateOfBirth
+						,"LastLoggedIn":results[0].LastLoggedIn
+					};
+				}
+				else{
+					res.send(json_responses);
+					console.log('No data retrieved for userId' + userId);
+					logger.log('info','No data retrieved for userId' + userId);
+
+					json_responses = {"statusCode" : 401};
+				}
+				res.send(json_responses);
+			}
+
+		}, getUserAccountDetailsQuery);
+
+	}
+	else {
+		var json_responses = {"statusCode": 401};
+		res.send(json_responses);
+	}
+};
+
+
+exports.getUserAccountDetailsWithConnetionPool = function(req,res){
+
+	//console.log("userId: "+req.session.userid);
+
+	var userId = 1;
+
+	if(userId != undefined ) {
+		var getUserAccountDetailsQuery = "select UserId,FirstName,LastName,EmailId,Password,Address,CreditCardNumber,DateOfBirth,LastLoggedIn from user where UserId= "+ userId+";";
+		console.log("Query :: " + getUserAccountDetailsQuery);
+		logger.log('info','Query:: ' + getUserAccountDetailsQuery);
+		mysqlConnetionPoolTest.fetchData(function(err,results) {
+			if(err) {
+				throw err;
+				logger.log('error',err);
+			}
+			else {
+				if(results.length > 0) {
+					console.log("Successful got the user data");
+					console.log("UserId :  " + userId);
+					logger.log('info','Successful got the user data  for userId' + userId);
+
+					json_responses = {"UserId" : results[0].UserId
+						,"FirstName": results[0].FirstName
+						,"LastName": results[0].LastName
+						,"EmailId":results[0].EmailId
+						,"Address":results[0].Address
+						,"CreditCardNumber":results[0].CreditCardNumber
+						,"DateOfBirth":results[0].DateOfBirth
+						,"LastLoggedIn":results[0].LastLoggedIn
+					};
+				}
+				else{
+					res.send(json_responses);
+					console.log('No data retrieved for userId' + userId);
+					logger.log('info','No data retrieved for userId' + userId);
+
+					json_responses = {"statusCode" : 401};
+				}
+				res.send(json_responses);
+			}
+
+		}, getUserAccountDetailsQuery);
+
+	}
+	else {
+		var json_responses = {"statusCode": 401};
+		res.send(json_responses);
+	}
+};
+
+
+//connetion pool test ends
+
 
 exports.getAllProductsInCart = function(req,res){
 	console.log("inside get All Products from cart for user: "+req.session.userid);

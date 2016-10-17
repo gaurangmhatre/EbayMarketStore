@@ -127,22 +127,7 @@ describe('Ebay unit tests', function() {
 
     it('[test]Test1: for login for sample user', function() {
 
-        var status=500;
-        /*server
-            .post("/checklogin")
-            .send({email : 'gaurangmhatre@gmail.com', password : 'aabc'})
-            .expect("Content-type", /json/)
-            //.expect(200) // THis is HTTP response
-            .end(function (err, res) {
-                // HTTP status should be 200
-                //res.statusCode.should.equal(200);
-                status = res.statusCode;
-
-
-                // Error key should be false.
-                //res.body.error.should.equal(false);
-                done();
-            });*/
+        var status=401;
 
         http = require('https');
         var options= {
@@ -161,14 +146,10 @@ describe('Ebay unit tests', function() {
 
                 status=data.statusCode;
 
-                assert.equal(200,status);
+
             })
         })
-/*
-        http.response.on(res,function(){
-            console.log("Hello:"+res);
-        })*/
 
-
+        //assert
     });
 });

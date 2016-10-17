@@ -83,6 +83,11 @@ app.post('/getAllWonAuctions',userProfile.getAllWonAuctions);
 app.post('/updatePaymentDetailsForAuction',userProfile.updatePaymentDetailsForAuction);
 app.post('/getAllAuctionProductHistory',userProfile.getAllAuctionProductHistory);
 
+//testing
+app.post('/getUserAccountDetailsWithConnetionPool',userProfile.getUserAccountDetailsWithConnetionPool);
+app.post('/getUserAccountDetailsWithoutConnetionPool',userProfile.getUserAccountDetailsWithoutConnetionPool);
+
+
 app.get('/products',products.getProductsPage);
 app.post('/getAllProducts',products.getAllProducts);
 app.post('/getAllProductsForAuction',products.getAllProductsForAuction);
