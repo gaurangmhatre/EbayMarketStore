@@ -3,7 +3,7 @@
  */
 var ejs = require('ejs');
 var mysql = require('mysql');
-var numberOfConnection = 50;
+var numberOfConnection = 500;
 var cntn;
 var cntnStack = [];
 var cntnQueue = [];
@@ -44,7 +44,6 @@ var getConnection = function(callback){
         cntnQueue.push(callback);
         console.log("Length of queue in getConnection method after push queue: "+ cntnQueue.length)
     }
-
 }
 
 setInterval(function(){
@@ -88,34 +87,4 @@ exports.fetchData = function(callback, sqlQuery ) {
     });
 }
 
-/*
 
-mysql.fetchData(function(err, results) {
-    console.log("fetching data from SQL");
-
-    if (err) {
-        console.log("fetching one");
-        throw err;
-    } else {
-        if (results.length > 0) {
-            console.log("fetching teo");
-            console.log("time updated");
-            json_responses = {
-                "statusCode" : 200
-            };
-            res.send(json_responses);
-
-        } else {
-
-            json_responses = {
-                "statusCode" : 401
-            };
-            console.log("Invalid Login");
-            res.send(json_responses);
-
-        }
-    }
-}, updateLastLoginTime);
-
-
-*/
